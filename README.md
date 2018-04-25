@@ -29,7 +29,7 @@ After that you should proceed as with any javascript project:
 ### Option #2: Copy the structure to your project
 If you want to roll on your own and don't want to use this as a template, you can create your own project and then copy the `/src` folder (which has all the code of your application) and update your `index.js`.
 
-Keep in mind that if you do this, you'll have to **install and link** all dependencies (native, and pure-JS).
+Keep in mind that if you do this, you'll have to **install and link** all dependencies (as well as adding all the necessary native code for each library that requires it).
 
 ## Folder sturcture
 This template follows a very simple project structure:
