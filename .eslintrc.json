@@ -5,9 +5,14 @@
         "es6": true
     },
     "parser": "babel-eslint",
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
     "rules": {
         "react/jsx-filename-extension": ".js",
-        "react/forbid-prop-types": false
+        "react/forbid-prop-types": false,
+        "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}]
     }
 }
