@@ -1,7 +1,10 @@
 import { Provider } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
 import { createStore } from 'redux';
-import registerScreens from './components/Navigation';
+import { Screens, registerScreens } from './components/Navigation';
+import homeIcon from './assets/ic_home/ic_home.png';
+import profileIcon from './assets/ic_settings/ic_settings.png';
+import Colors from './helpers/Colors';
 
 // Replace this with your own store.
 const rootStore = createStore((state, action) => state);
@@ -12,14 +15,42 @@ class App {
     this.provider = provider;
   }
 
-  startApp = () => {
-    registerScreens(this.store, this.provider);
+  startLoggedInApp = () => {
+    Navigation.startTabBasedApp({
+      tabs: [
+        {
+          screen: Screens.Home,
+          icon: homeIcon,
+          label: 'Home',
+        },
+        {
+          screen: Screens.Profile,
+          icon: profileIcon,
+          label: 'Profile',
+        },
+      ],
+      tabsStyle: {
+        tabBarSelectedButtonColor: Colors.primary,
+        tabBarButtonColor: Colors.gray,
+        initialTabIndex: 0,
+      },
+      animationType: 'fade',
+    });
+  }
+
+  startLoggedOutApp = () => {
     Navigation.startSingleScreenApp({
       screen: {
-        screen: 'Welcome',
-        title: 'Welcome',
+        screen: Screens.Login,
       },
+      animationType: 'fade',
     });
+  }
+
+  startApp = () => {
+    registerScreens(this.store, this.provider);
+    // Your logic to define which flow will you start with
+    this.startLoggedOutApp();
   }
 }
 
