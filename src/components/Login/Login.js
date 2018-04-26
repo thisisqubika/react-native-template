@@ -3,16 +3,16 @@ import {
   View,
   Text,
 } from 'react-native';
-import TextStyles from '../../helpers/TextStyles';
+import App from '../../App';
+import Button from '../common/Button';
 import TextField from '../common/TextField';
 import ShadowStyles from '../../helpers/ShadowStyles';
-import Button from '../common/Button';
+import TextStyles from '../../helpers/TextStyles';
 import styles from './styles';
-import App from '../../App';
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       email: '',
       password: '',
