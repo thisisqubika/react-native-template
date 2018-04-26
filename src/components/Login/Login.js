@@ -8,6 +8,7 @@ import Button from '../common/Button';
 import TextField from '../common/TextField';
 import ShadowStyles from '../../helpers/ShadowStyles';
 import TextStyles from '../../helpers/TextStyles';
+import strings from '../../localization';
 import styles from './styles';
 
 class Login extends Component {
@@ -30,25 +31,25 @@ class Login extends Component {
       <View style={styles.container}>
         <View style={[styles.formContainer, ShadowStyles.shadow]}>
           <Text style={TextStyles.fieldTitle}>
-            Email
+            {strings.email}
           </Text>
           <TextField
-            placeholder="Email"
+            placeholder={strings.email}
             onChangeText={this.emailChanged}
             value={this.state.email}
           />
           <Text style={TextStyles.fieldTitle}>
-            Password
+            {strings.password}
           </Text>
           <TextField
-            placeholder="Password"
+            placeholder={strings.password}
             value={this.state.password}
             onChangeText={this.passwordChanged}
             secureTextEntry
           />
           <Button
             onPress={this.login}
-            title="Login"
+            title={strings.login}
           />
         </View>
       </View>
