@@ -3,10 +3,13 @@ import {
   View,
   Text,
 } from 'react-native';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import strings from '../../localization';
 import TextStyles from '../../helpers/TextStyles';
 import Colors from '../../helpers/Colors';
 import Button from '../common/Button';
+import { logout } from '../../actions/UserActions';
 import App from '../../App';
 import styles from './styles';
 
@@ -17,7 +20,16 @@ class Profile extends Component {
     navBarBackgroundColor: Colors.primary,
   };
 
-  logout = () => App.startLoggedOutApp();
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.user === null) {
+      App.startLoggedOutApp();
+    }
+    return null;
+  }
+
+  state = {};
+
+  logout = () => this.props.logout();
 
   render() {
     return (
@@ -35,4 +47,21 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+Profile.propTypes = {
+  user: PropTypes.object,
+  logout: PropTypes.func.isRequired,
+};
+
+Profile.defaultProps = {
+  user: null,
+};
+
+const mapStateToProps = state => ({
+  user: state.user.user,
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

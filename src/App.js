@@ -1,14 +1,19 @@
-import { Provider } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 import { Screens, registerScreens } from './components/Navigation';
 import homeIcon from './assets/ic_home/ic_home.png';
 import profileIcon from './assets/ic_settings/ic_settings.png';
 import strings from './localization';
 import Colors from './helpers/Colors';
+import rootReducer from './reducers';
 
 // Replace this with your own store.
-const rootStore = createStore((state, action) => state);
+const rootStore = createStore(
+  rootReducer,
+  applyMiddleware(thunk),
+);
 
 class App {
   constructor(store, provider) {
