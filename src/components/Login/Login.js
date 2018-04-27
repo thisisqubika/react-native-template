@@ -12,6 +12,11 @@ import ShadowStyles from '../../helpers/ShadowStyles';
 import TextStyles from '../../helpers/TextStyles';
 import strings from '../../localization';
 import { login } from '../../actions/UserActions';
+import {
+  getUser,
+  getIsLoading,
+  getError,
+} from '../../selectors/UserSelectors';
 import styles from './styles';
 
 class Login extends Component {
@@ -85,9 +90,9 @@ Login.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  user: state.user.user,
-  isLoading: state.user.isLoading,
-  error: state.user.error,
+  user: getUser(state),
+  isLoading: getIsLoading(state),
+  error: getError(state),
 });
 
 const mapDispatchToProps = dispatch => ({
