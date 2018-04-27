@@ -4,6 +4,7 @@ import {
   Text,
 } from 'react-native';
 import TextStyles from '../../helpers/TextStyles';
+import strings from '../../localization';
 import styles from './styles';
 
 class Home extends Component {
@@ -15,10 +16,10 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={TextStyles.lightTitle}>
-          Home!
+          {strings.home}
         </Text>
         <Text>
-          As you can see, this tab does not display the navBar
+          {strings.homeMessage}
         </Text>
       </View>
     );

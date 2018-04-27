@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import { Screens, registerScreens } from './components/Navigation';
 import homeIcon from './assets/ic_home/ic_home.png';
 import profileIcon from './assets/ic_settings/ic_settings.png';
+import strings from './localization';
 import Colors from './helpers/Colors';
 
 // Replace this with your own store.
@@ -21,12 +22,12 @@ class App {
         {
           screen: Screens.Home,
           icon: homeIcon,
-          label: 'Home',
+          label: strings.home,
         },
         {
           screen: Screens.Profile,
           icon: profileIcon,
-          label: 'Profile',
+          label: strings.profile,
         },
       ],
       tabsStyle: {

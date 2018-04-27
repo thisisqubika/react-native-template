@@ -3,6 +3,7 @@ import {
   View,
   Text,
 } from 'react-native';
+import strings from '../../localization';
 import TextStyles from '../../helpers/TextStyles';
 import Colors from '../../helpers/Colors';
 import Button from '../common/Button';
@@ -21,12 +22,12 @@ class Profile extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={TextStyles.fieldTitle}> Profile! </Text>
+        <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
         <Text>
-          And this one has a nav, but with a different color than the login.
+          {strings.profileMessage}
         </Text>
         <Button
-          title="Logout"
+          title={strings.logout}
           onPress={this.logout}
         />
       </View>
