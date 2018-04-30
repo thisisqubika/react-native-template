@@ -1,5 +1,6 @@
 package com.reactnativetemplate;
 
+import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 
@@ -18,7 +19,7 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
-                // eg. new VectorIconsPackage()
+                new ReactNativeLocalizationPackage()
         );
     }
 
@@ -30,5 +31,10 @@ public class MainApplication extends NavigationApplication {
     @Override
     public String getJSMainModuleName() {
         return "index";
+    }
+
+    @Override
+    public boolean clearHostOnActivityDestroy() {
+        return false;
     }
 }
