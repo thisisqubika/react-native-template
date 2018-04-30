@@ -1,8 +1,9 @@
+import Status from '../helpers/Status';
 import { actionTypes } from '../actions/UserActions';
 
 const initialState = {
   user: null,
-  isLoading: false,
+  loginStatus: Status.NOT_STARTED,
   error: null,
 };
 
@@ -11,19 +12,19 @@ const userReducer = (state = initialState, action) => {
     case actionTypes.LOGIN_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        loginStatus: Status.LOADING,
       };
     case actionTypes.LOGIN_ERROR:
       return {
         ...state,
         error: action.error,
-        isLoading: false,
+        loginStatus: Status.LOADING_ERROR,
       };
     case actionTypes.LOGIN_SUCCESS:
       return {
         ...state,
         user: action.user,
-        isLoading: false,
+        loginStatus: Status.SUCCESS,
       };
     case actionTypes.LOGOUT:
       return initialState;

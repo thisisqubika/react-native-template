@@ -14,7 +14,7 @@ import strings from '../../localization';
 import { login } from '../../actions/UserActions';
 import {
   getUser,
-  getIsLoading,
+  loginIsLoading,
   getError,
 } from '../../selectors/UserSelectors';
 import styles from './styles';
@@ -46,6 +46,7 @@ class Login extends Component {
   login = () => this.props.login(this.state.email, this.state.password);
 
   render() {
+    const { isLoading } = this.props;
     return (
       <View style={styles.container}>
         <View style={[styles.formContainer, ShadowStyles.shadow]}>
@@ -69,7 +70,7 @@ class Login extends Component {
           { this.props.error && <Text>{this.props.error}</Text> }
           <Button
             onPress={this.login}
-            title={this.props.isLoading ? strings.loading : strings.login}
+            title={isLoading ? strings.loading : strings.login}
           />
         </View>
       </View>
@@ -91,7 +92,7 @@ Login.defaultProps = {
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  isLoading: getIsLoading(state),
+  isLoading: loginIsLoading(state),
   error: getError(state),
 });
 
