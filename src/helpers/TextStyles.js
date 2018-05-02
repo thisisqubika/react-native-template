@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.primary,
   },
+  error: {
+    fontSize: 14,
+    color: Colors.red,
+  },
 });
 
 export default styles;
