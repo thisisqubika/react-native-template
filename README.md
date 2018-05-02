@@ -46,7 +46,7 @@ This template follows a very simple project structure:
   - `helpers`: Folder to store any kind of helper that you have.
   - `reducers`: This folder should have all your reducers, and expose the combined result using its `index.js`
   - `selectors`: Folder to store your selectors for each reducer.
-  - `services`: Folder to store all your network services logic.
+  - `controllers`: Folder to store all your network and storage logic (you should have one controller per resource).
   - `App.js`: Main component that starts your whole app.
 - `index.js`: Entry point of your application as per React-Native standards.
 
