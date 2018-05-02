@@ -1,18 +1,15 @@
-import { Provider } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
-import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { Screens, registerScreens } from './components/Navigation';
 import homeIcon from './assets/ic_home/ic_home.png';
 import profileIcon from './assets/ic_settings/ic_settings.png';
 import strings from './localization';
 import Colors from './helpers/Colors';
-
-// Replace this with your own store.
-const rootStore = createStore((state, action) => state);
+import { store, persist } from './reducers';
 
 class App {
-  constructor(store, provider) {
-    this.store = store;
+  constructor(rootStore, provider) {
+    this.store = rootStore;
     this.provider = provider;
   }
 
@@ -50,9 +47,10 @@ class App {
 
   startApp = () => {
     registerScreens(this.store, this.provider);
-    // Your logic to define which flow will you start with
-    this.startLoggedOutApp();
+    persist(() => {
+      this.startLoggedOutApp();
+    });
   }
 }
 
-export default new App(rootStore, Provider);
+export default new App(store, Provider);
