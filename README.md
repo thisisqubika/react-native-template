@@ -2,6 +2,15 @@ React-Native-Template
 ================================================
 The goal of this project is to work as template for react-native applications, providing a base project structure, core dependencies and boilerplate to jumpstart development.
 
+## Prerequisites
+- Node > 7 and npm (Recommended: Use [nvm](https://github.com/creationix/nvm))
+- Watchman `brew install watchman`
+- React Native CLI `npm install -g react-native-cli`
+- XCode > 9
+- [JDK > 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- [Android Studio and Android SDK](https://developer.android.com/studio/index.html)
+
+
 ## Base dependencies
   - [axios](https://github.com/axios/axios) for networking.
   - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed propperties.
