@@ -10,7 +10,7 @@ import TextStyles from '../../helpers/TextStyles';
 import Colors from '../../helpers/Colors';
 import Button from '../common/Button';
 import { logout } from '../../actions/UserActions';
-import { getUser } from '../../selectors/UserSelectors';
+import getUser from '../../selectors/UserSelectors';
 import App from '../../App';
 import styles from './styles';
 

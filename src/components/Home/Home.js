@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextStyles from '../../helpers/TextStyles';
 import strings from '../../localization';
-import { getUser } from '../../selectors/UserSelectors';
+import getUser from '../../selectors/UserSelectors';
 import styles from './styles';
 
 class Home extends Component {

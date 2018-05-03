@@ -8,15 +8,14 @@ import PropTypes from 'prop-types';
 import App from '../../App';
 import Button from '../common/Button';
 import TextField from '../common/TextField';
+import ErrorView from '../common/ErrorView';
 import ShadowStyles from '../../helpers/ShadowStyles';
 import TextStyles from '../../helpers/TextStyles';
 import strings from '../../localization';
-import { login } from '../../actions/UserActions';
-import {
-  getUser,
-  loginIsLoading,
-  getError,
-} from '../../selectors/UserSelectors';
+import { login, actionTypes } from '../../actions/UserActions';
+import getUser from '../../selectors/UserSelectors';
+import loadingSelector from '../../selectors/LoadingSelector';
+import { errorsSelector } from '../../selectors/ErrorSelector';
 import styles from './styles';
 
 class Login extends Component {
@@ -46,7 +45,7 @@ class Login extends Component {
   login = () => this.props.login(this.state.email, this.state.password);
 
   render() {
-    const { isLoading } = this.props;
+    const { isLoading, errors } = this.props;
     return (
       <View style={styles.container}>
         <View style={[styles.formContainer, ShadowStyles.shadow]}>
@@ -67,7 +66,7 @@ class Login extends Component {
             onChangeText={this.passwordChanged}
             secureTextEntry
           />
-          { this.props.error && <Text>{this.props.error}</Text> }
+          <ErrorView errors={errors} />
           <Button
             onPress={this.login}
             title={isLoading ? strings.loading : strings.login}
@@ -82,18 +81,18 @@ Login.propTypes = {
   login: PropTypes.func.isRequired,
   user: PropTypes.object,
   isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.string,
+  errors: PropTypes.array,
 };
 
 Login.defaultProps = {
   user: null,
-  error: null,
+  errors: [],
 };
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  isLoading: loginIsLoading(state),
-  error: getError(state),
+  isLoading: loadingSelector([actionTypes.LOGIN])(state),
+  errors: errorsSelector([actionTypes.LOGIN])(state),
 });
 
 const mapDispatchToProps = dispatch => ({
