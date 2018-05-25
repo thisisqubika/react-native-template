@@ -62,7 +62,9 @@ This template follows a very simple project structure:
 ## Styleguide
 For coding styling we decided to go with ESLint and [Airbnb's styleguide](https://github.com/airbnb/javascript) with a few exceptions that you can find on the [.eslintrc.json](./.eslintrc.json)
 
-## Useful resources
+## Useful resources & Further reading
 This are some posts/guides that explain some things that we use inside the project:
 
 - [React-Native-Navigation and Redux](https://medium.com/react-native-training/explanation-of-react-native-navigation-wix-with-redux-deabcee8edfc).
+
+For further explaining on the decisions made on this template, as well as on how to use it, please refer to the [full tutorial](./docs/Tutorial.pdf)
