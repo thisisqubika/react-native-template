@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.primary,
   },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
 });
 
 export default styles;

@@ -3,6 +3,7 @@ package com.reactnativetemplate;
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
+import com.airbnb.android.react.maps.MapsPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +20,8 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
-                new ReactNativeLocalizationPackage()
+                new ReactNativeLocalizationPackage(),
+                new MapsPackage()
         );
     }
 

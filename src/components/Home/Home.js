@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MapView from 'react-native-maps';
 import {
   View,
   Text,
@@ -19,12 +20,16 @@ class Home extends Component {
     const { user } = this.props;
     return (
       <View style={styles.container}>
-        <Text style={TextStyles.lightTitle}>
-          {strings.home}
-        </Text>
-        <Text>
-          {`${strings.homeMessage} ${user && user.name}`}
-        </Text>
+        <MapView
+          style={styles.map}
+          region={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          }}
+        >
+        </MapView>
       </View>
     );
   }
