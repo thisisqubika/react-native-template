@@ -16,7 +16,8 @@ class UserController {
           password,
         },
       });
-      return this.user;
+      return result.data.user;
+      // Data is the object exposes by axios for the response json
     } catch (error) {
       return error;
     }
