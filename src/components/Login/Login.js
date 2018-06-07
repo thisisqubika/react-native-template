@@ -18,7 +18,7 @@ import loadingSelector from '../../selectors/LoadingSelector';
 import { errorsSelector } from '../../selectors/ErrorSelector';
 import styles from './styles';
 
-class Login extends Component {
+export class Login extends Component {
   static navigatorStyle = {
     navBarHidden: true,
   };
