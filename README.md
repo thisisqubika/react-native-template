@@ -59,6 +59,9 @@ This template follows a very simple project structure:
   - `App.js`: Main component that starts your whole app.
 - `index.js`: Entry point of your application as per React-Native standards.
 
+## Other options
+If your project is intended to use Maps, you should consider starting from branch 'alt/google-maps' which has already integrated the google maps API. Please note that you should update .env file and place your own API_KEY for google maps, you can generate it [here](https://console.cloud.google.com/)
+
 ## Styleguide
 For coding styling we decided to go with ESLint and [Airbnb's styleguide](https://github.com/airbnb/javascript) with a few exceptions that you can find on the [.eslintrc.json](./.eslintrc.json)
 
