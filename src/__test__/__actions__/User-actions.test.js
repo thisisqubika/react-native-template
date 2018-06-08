@@ -1,6 +1,5 @@
 import configureStore from 'redux-mock-store' //ES6 modules
 import * as userActions from '../../actions/UserActions'
-import expect from 'expect';
 import thunk from 'redux-thunk';
 
 const middlewares = [thunk]
