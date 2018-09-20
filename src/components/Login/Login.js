@@ -19,9 +19,13 @@ import { errorsSelector } from '../../selectors/ErrorSelector';
 import styles from './styles';
 
 class Login extends Component {
-  static navigatorStyle = {
-    navBarHidden: true,
-  };
+  static options() {
+    return {
+      topBar: {
+        visible: false,
+      },
+    };
+  }
 
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.user !== null) {

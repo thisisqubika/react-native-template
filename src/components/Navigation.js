@@ -11,7 +11,7 @@ export const Screens = {
 
 export const registerScreens = (store, provider) => {
   // Register all screens of the app
-  Navigation.registerComponent(Screens.Login, () => Login, store, provider);
-  Navigation.registerComponent(Screens.Home, () => Home, store, provider);
-  Navigation.registerComponent(Screens.Profile, () => Profile, store, provider);
+  Navigation.registerComponentWithRedux(Screens.Login, () => Login, provider, store);
+  Navigation.registerComponentWithRedux(Screens.Home, () => Home, provider, store);
+  Navigation.registerComponentWithRedux(Screens.Profile, () => Profile, provider, store);
 };

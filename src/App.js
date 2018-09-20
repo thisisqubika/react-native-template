@@ -7,41 +7,81 @@ import strings from './localization';
 import Colors from './helpers/Colors';
 import { store, persist } from './reducers';
 
+const navigatorStyles = {
+  topBar: {
+    background: {
+      color: Colors.primary,
+    },
+  },
+};
+
+const tabStyles = {
+  bottomTabs: {
+    visible: true,
+    currentTabIndex: 0,
+    currentTabId: Screens.Home,
+    drawBehind: false,
+    backgroundColor: Colors.white,
+  },
+};
+
 class App {
   constructor(rootStore, provider) {
     this.store = rootStore;
     this.provider = provider;
   }
 
-  startLoggedInApp = () => {
-    Navigation.startTabBasedApp({
-      tabs: [
-        {
-          screen: Screens.Home,
-          icon: homeIcon,
-          label: strings.home,
+  buildTab = (name, icon, text) => ({
+    stack: {
+      children: [{
+        component: {
+          name,
         },
-        {
-          screen: Screens.Profile,
-          icon: profileIcon,
-          label: strings.profile,
+      }],
+      options: {
+        bottomTab: {
+          text,
+          icon,
+          iconColor: Colors.gray,
+          selectedIconColor: Colors.primary,
+          textColor: Colors.gray,
+          selectedTextColor: Colors.primary,
         },
-      ],
-      tabsStyle: {
-        tabBarSelectedButtonColor: Colors.primary,
-        tabBarButtonColor: Colors.gray,
-        initialTabIndex: 0,
       },
-      animationType: 'fade',
+    },
+  })
+
+  startLoggedInApp = () => {
+    const homeTab = this.buildTab(Screens.Home, homeIcon, strings.home);
+    const profileTab = this.buildTab(Screens.Profile, profileIcon, strings.profile);
+    Navigation.setRoot({
+      root: {
+        bottomTabs: {
+          children: [
+            homeTab,
+            profileTab,
+          ],
+          options: { ...navigatorStyles },
+        },
+        options: {
+          ...tabStyles,
+        },
+      },
     });
   }
 
   startLoggedOutApp = () => {
-    Navigation.startSingleScreenApp({
-      screen: {
-        screen: Screens.Login,
+    Navigation.setRoot({
+      root: {
+        stack: {
+          options: navigatorStyles,
+          children: [{
+            component: {
+              name: Screens.Login,
+            },
+          }],
+        },
       },
-      animationType: 'fade',
     });
   }
 
