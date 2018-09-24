@@ -34,12 +34,15 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "jest": "23.4.0",
+    "jest": "23.4.1",
     "react-test-renderer": "^16.4.0",
     "moxios": "^0.4.0",
     "redux-mock-store": "^1.5.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   }
 }
