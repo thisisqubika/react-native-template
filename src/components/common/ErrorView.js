@@ -24,7 +24,8 @@ const ErrorView = (props) => {
         props.errors.map((error, index) => (
           <Text style={TextStyles.error} key={index}>
             {error}
-          </Text>))
+          </Text>
+        ))
       }
     </View>
   );

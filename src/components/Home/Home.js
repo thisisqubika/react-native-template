@@ -11,19 +11,23 @@ import getUser from '../../selectors/UserSelectors';
 import styles from './styles';
 
 class Home extends Component {
-  static navigatorStyle = {
-    navBarHidden: true,
+  static navigationOptions = {
+    title: strings.home,
   };
 
-  render() {
+  getMessage = () => {
     const { user } = this.props;
+    return `${strings.homeMessage} ${user && user.name}`;
+  }
+
+  render() {
     return (
       <View style={styles.container}>
         <Text style={TextStyles.lightTitle}>
           {strings.home}
         </Text>
         <Text>
-          {`${strings.homeMessage} ${user && user.name}`}
+          {this.getMessage()}
         </Text>
       </View>
     );

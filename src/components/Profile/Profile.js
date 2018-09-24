@@ -10,18 +10,19 @@ import TextStyles from '../../helpers/TextStyles';
 import Button from '../common/Button';
 import { logout } from '../../actions/UserActions';
 import getUser from '../../selectors/UserSelectors';
-import App from '../../App';
 import styles from './styles';
 
 class Profile extends Component {
-  static getDerivedStateFromProps(nextProps) {
-    if (nextProps.user === null) {
-      App.startLoggedOutApp();
+  static navigationOptions = {
+    title: strings.profile,
+  };
+
+  componentDidUpdate() {
+    if (this.props.user === null) {
+      this.props.navigation.navigate('Auth');
     }
     return null;
   }
-
-  state = {};
 
   logout = () => this.props.logout();
 
@@ -44,6 +45,7 @@ class Profile extends Component {
 Profile.propTypes = {
   user: PropTypes.object,
   logout: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 Profile.defaultProps = {
