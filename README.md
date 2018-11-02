@@ -13,9 +13,9 @@ The goal of this project is to work as template for react-native applications, p
 
 ## Base dependencies
   - [axios](https://github.com/axios/axios) for networking.
-  - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed propperties.
-  - [React-Native-Dotenv](https://github.com/zetachang/react-native-dotenv) to manage envionments.
-  - [React-Navigation](https://reactnavigation.org) navigation library.
+  - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed properties.
+  - [React-Native-Config](https://github.com/luggit/react-native-config) to manage envionments.
+  - [React-Native-Navigation](https://wix.github.io/react-native-navigation/#/) native navigation library.
   - [React-Native-Localization](https://github.com/stefalda/ReactNativeLocalization) for string localization.
   - [Redux](https://redux.js.org/) for state management.
   - [Redux-Persist](https://github.com/rt2zz/redux-persist) as persistance layer.
@@ -40,7 +40,7 @@ If you want to roll on your own and don't want to use this as a template, you ca
 
 Keep in mind that if you do this, you'll have to **install and link** all dependencies (as well as adding all the necessary native code for each library that requires it).
 
-## Folder sturcture
+## Folder structure
 This template follows a very simple project structure:
 - `src`: This folder is the main container of all the code inside your application.
   - `actions`: This folder contains all actions that can be dispatched to redux.
