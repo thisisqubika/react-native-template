@@ -14,11 +14,10 @@ The goal of this project is to work as template for react-native applications, p
 ## Base dependencies
   - [axios](https://github.com/axios/axios) for networking.
   - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed propperties.
-  - [React-Native-Config](https://github.com/luggit/react-native-config) to manage envionments.
-  - [React-Native-Navigation](https://wix.github.io/react-native-navigation/#/) native navigation library.
+  - [React-Native-Dotenv](https://github.com/zetachang/react-native-dotenv) to manage envionments.
+  - [React-Navigation](https://reactnavigation.org) navigation library.
   - [React-Native-Localization](https://github.com/stefalda/ReactNativeLocalization) for string localization.
   - [Redux](https://redux.js.org/) for state management.
-  - [Recompose](https://github.com/acdlite/recompose) for utilities.
   - [Redux-Persist](https://github.com/rt2zz/redux-persist) as persistance layer.
   - [Redux-Thunk](https://github.com/gaearon/redux-thunk) to dispatch asynchronous actions.
   - [Reselect](https://github.com/reactjs/reselect) the selector library for redux.

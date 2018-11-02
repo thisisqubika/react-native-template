@@ -1,56 +1,46 @@
-import { Navigation } from 'react-native-navigation';
+import React, { Component } from 'react';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
-import { Screens, registerScreens } from './components/Navigation';
-import homeIcon from './assets/ic_home/ic_home.png';
-import profileIcon from './assets/ic_settings/ic_settings.png';
-import strings from './localization';
+import Navigation from './components/navigation';
 import Colors from './helpers/Colors';
 import { store, persist } from './reducers';
 
-class App {
-  constructor(rootStore, provider) {
-    this.store = rootStore;
-    this.provider = provider;
-  }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.white,
+  },
+});
 
-  startLoggedInApp = () => {
-    Navigation.startTabBasedApp({
-      tabs: [
-        {
-          screen: Screens.Home,
-          icon: homeIcon,
-          label: strings.home,
-        },
-        {
-          screen: Screens.Profile,
-          icon: profileIcon,
-          label: strings.profile,
-        },
-      ],
-      tabsStyle: {
-        tabBarSelectedButtonColor: Colors.primary,
-        tabBarButtonColor: Colors.gray,
-        initialTabIndex: 0,
-      },
-      animationType: 'fade',
-    });
-  }
+class App extends Component {
+  state = {
+    ready: false,
+  };
 
-  startLoggedOutApp = () => {
-    Navigation.startSingleScreenApp({
-      screen: {
-        screen: Screens.Login,
-      },
-      animationType: 'fade',
-    });
-  }
-
-  startApp = () => {
-    registerScreens(this.store, this.provider);
+  componentDidMount() {
     persist(() => {
-      this.startLoggedOutApp();
+      this.setState({ ready: true });
     });
+  }
+
+  renderEmpty = () => (
+    <View style={styles.container}>
+      <ActivityIndicator />
+    </View>
+  );
+
+  render() {
+    const { ready } = this.state;
+    if (!ready) return this.renderEmpty();
+    return (
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
+    );
   }
 }
 
-export default new App(store, Provider);
+export default App;
+

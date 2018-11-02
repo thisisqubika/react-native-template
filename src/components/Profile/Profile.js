@@ -7,28 +7,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import strings from '../../localization';
 import TextStyles from '../../helpers/TextStyles';
-import Colors from '../../helpers/Colors';
 import Button from '../common/Button';
 import { logout } from '../../actions/UserActions';
 import getUser from '../../selectors/UserSelectors';
-import App from '../../App';
 import styles from './styles';
 
 class Profile extends Component {
-  static navigatorStyle = {
-    title: 'Profile',
-    navBarTextColor: Colors.white,
-    navBarBackgroundColor: Colors.primary,
+  static navigationOptions = {
+    title: strings.profile,
   };
 
-  static getDerivedStateFromProps(nextProps) {
-    if (nextProps.user === null) {
-      App.startLoggedOutApp();
+  componentDidUpdate() {
+    if (this.props.user === null) {
+      this.props.navigation.navigate('Auth');
     }
     return null;
   }
-
-  state = {};
 
   logout = () => this.props.logout();
 
@@ -51,6 +45,7 @@ class Profile extends Component {
 Profile.propTypes = {
   user: PropTypes.object,
   logout: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 Profile.defaultProps = {

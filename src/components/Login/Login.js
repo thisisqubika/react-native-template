@@ -5,7 +5,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import App from '../../App';
 import Button from '../common/Button';
 import TextField from '../common/TextField';
 import ErrorView from '../common/ErrorView';
@@ -19,23 +18,29 @@ import { errorsSelector } from '../../selectors/ErrorSelector';
 import styles from './styles';
 
 class Login extends Component {
-  static navigatorStyle = {
-    navBarHidden: true,
+  static navigationOptions = {
+    header: null,
   };
 
-  static getDerivedStateFromProps(nextProps) {
-    if (nextProps.user !== null) {
-      App.startLoggedInApp();
-    }
+  constructor(props) {
+    super(props);
+    this.navigateToHomeIfLogged();
+  }
+
+  state = {
+    email: '',
+    password: '',
+  };
+
+  componentDidUpdate() {
+    this.navigateToHomeIfLogged();
     return null;
   }
 
-  constructor() {
-    super();
-    this.state = {
-      email: '',
-      password: '',
-    };
+  navigateToHomeIfLogged = () => {
+    if (this.props.user !== null) {
+      this.props.navigation.navigate('App');
+    }
   }
 
   passwordChanged = value => this.setState({ password: value });
@@ -82,6 +87,7 @@ Login.propTypes = {
   user: PropTypes.object,
   isLoading: PropTypes.bool.isRequired,
   errors: PropTypes.array,
+  navigation: PropTypes.object.isRequired,
 };
 
 Login.defaultProps = {
