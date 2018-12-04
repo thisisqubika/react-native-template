@@ -15,7 +15,7 @@ The goal of this project is to work as template for react-native applications, p
   - [axios](https://github.com/axios/axios) for networking.
   - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed properties.
   - [React-Native-Config](https://github.com/luggit/react-native-config) to manage envionments.
-  - [React-Native-Navigation](https://wix.github.io/react-native-navigation/#/) native navigation library.
+  - [React-Navigation](https://reactnavigation.org/) navigation library.
   - [React-Native-Localization](https://github.com/stefalda/ReactNativeLocalization) for string localization.
   - [Redux](https://redux.js.org/) for state management.
   - [Redux-Persist](https://github.com/rt2zz/redux-persist) as persistance layer.
