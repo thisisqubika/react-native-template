@@ -43,3 +43,14 @@ export const successSelector = (actions, state) => actions.reduce(
   true,
 );
 
+export const fullStatusSelector = (action, state) => {
+  const status = state.status[`${action}`];
+  const error = state.error[`${action}`];
+  const isLoading = status === LOADING;
+  return {
+    status,
+    isLoading,
+    error,
+  };
+};
+
