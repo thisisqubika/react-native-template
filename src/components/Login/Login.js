@@ -13,8 +13,8 @@ import TextStyles from '../../helpers/TextStyles';
 import strings from '../../localization';
 import { login, actionTypes } from '../../actions/UserActions';
 import getUser from '../../selectors/UserSelectors';
-import loadingSelector from '../../selectors/LoadingSelector';
-import { errorsSelector } from '../../selectors/ErrorSelector';
+import errorsSelector from '../../selectors/ErrorSelectors';
+import { isLoadingSelector } from '../../selectors/StatusSelectors';
 import styles from './styles';
 
 class Login extends Component {
@@ -97,8 +97,8 @@ Login.defaultProps = {
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  isLoading: loadingSelector([actionTypes.LOGIN])(state),
-  errors: errorsSelector([actionTypes.LOGIN])(state),
+  isLoading: isLoadingSelector([actionTypes.LOGIN], state),
+  errors: errorsSelector([actionTypes.LOGIN], state),
 });
 
 const mapDispatchToProps = dispatch => ({
