@@ -28,7 +28,6 @@ const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
   />
 );
 
-
 const ProfileStack = createStackNavigator({ Profile });
 const HomeStack = createStackNavigator({ Home });
 const AppStack = createBottomTabNavigator(
@@ -45,7 +44,7 @@ const AppStack = createBottomTabNavigator(
         backgroundColor: Colors.White,
       },
     },
-    navigationOptions: ({ navigation }) => ({
+    defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ tintColor }) => (// eslint-disable-line
         <TabIcon
           icon={iconForTab(navigation)}
