@@ -19,7 +19,7 @@ export default (state = {}, action) => {
   if (!matchesReset) return state;
 
   const [, requestName] = matchesReset;
-  const newState = state;
+  const newState = { ...state };
   delete newState[requestName];
   return newState;
 };
