@@ -19,14 +19,14 @@
     "react-redux": "^7.0.3",
     "redux": "^4.0.1",
     "redux-persist": "^5.9.1",
-    "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "eslint": "^4.19.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
