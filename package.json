@@ -14,10 +14,10 @@
     "react-native": "0.59.4",
     "react-native-dotenv": "^0.2.0",
     "react-native-gesture-handler": "^1.2.1",
-    "react-native-localization": "^2.0.1",
+    "react-native-localization": "^2.1.1",
     "react-navigation": "^3.9.1",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
     "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
