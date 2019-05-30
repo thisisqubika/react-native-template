@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/GlobalActions';
+import { actionTypes } from 'actions/GlobalActions';
 import { NOT_STARTED, LOADING, SUCCESS, ERROR } from '../helpers/Status';
 
 export default (state = {}, action) => {

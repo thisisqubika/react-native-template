@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "actions/*": ["src/actions/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "controllers/*": ["src/controllers/*"],
+      "helpers/*": ["src/helpers/*"],
+      "localization/*": ["src/localization/*"],
+      "reducers/*": ["src/reducers/*"],
+      "selectors/*": ["src/selectors/*"],
+    }
+  }
+}

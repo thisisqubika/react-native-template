@@ -5,8 +5,8 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import getUser from '../../selectors/UserSelectors';
-import Colors from '../../helpers/Colors';
+import getUser from 'selectors/UserSelectors';
+import Colors from 'helpers/Colors';
 
 const styles = StyleSheet.create({
   container: {

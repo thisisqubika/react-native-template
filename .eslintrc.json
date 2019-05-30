@@ -13,6 +13,12 @@
     "rules": {
         "react/jsx-filename-extension": ".js",
         "react/forbid-prop-types": false,
-        "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}]
+        "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}],
+        "import/first": "off"
+    },
+    "settings": {
+        "import/resolver": {
+          "babel-module": {}
+        }
     }
 }

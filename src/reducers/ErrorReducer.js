@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/GlobalActions';
+import { actionTypes } from 'actions/GlobalActions';
 
 export default (state = {}, action) => {
   const { type, error } = action;
