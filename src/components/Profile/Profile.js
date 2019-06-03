@@ -5,12 +5,14 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import strings from '../../localization';
-import TextStyles from '../../helpers/TextStyles';
+
 import Button from '../common/Button';
-import { logout } from '../../actions/UserActions';
-import getUser from '../../selectors/UserSelectors';
 import styles from './styles';
+
+import strings from 'localization';
+import TextStyles from 'helpers/TextStyles';
+import { logout } from 'actions/UserActions';
+import getUser from 'selectors/UserSelectors';
 
 class Profile extends Component {
   static navigationOptions = {

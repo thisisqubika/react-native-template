@@ -5,17 +5,19 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import Button from '../common/Button';
 import TextField from '../common/TextField';
 import ErrorView from '../common/ErrorView';
-import ShadowStyles from '../../helpers/ShadowStyles';
-import TextStyles from '../../helpers/TextStyles';
-import strings from '../../localization';
-import { login, actionTypes } from '../../actions/UserActions';
-import getUser from '../../selectors/UserSelectors';
-import errorsSelector from '../../selectors/ErrorSelectors';
-import { isLoadingSelector } from '../../selectors/StatusSelectors';
 import styles from './styles';
+
+import ShadowStyles from 'helpers/ShadowStyles';
+import TextStyles from 'helpers/TextStyles';
+import getUser from 'selectors/UserSelectors';
+import errorsSelector from 'selectors/ErrorSelectors';
+import { isLoadingSelector } from 'selectors/StatusSelectors';
+import strings from 'localization';
+import { login, actionTypes } from 'actions/UserActions';
 
 class Login extends Component {
   static navigationOptions = {

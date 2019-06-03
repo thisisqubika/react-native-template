@@ -5,8 +5,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import TextStyles from '../../helpers/TextStyles';
-import Colors from '../../helpers/Colors';
+import TextStyles from 'helpers/TextStyles';
+import Colors from 'helpers/Colors';
 
 const styles = StyleSheet.create({
   button: {

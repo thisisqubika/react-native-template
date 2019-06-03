@@ -5,7 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import TextStyles from '../../helpers/TextStyles';
+import TextStyles from 'helpers/TextStyles';
 
 const styles = StyleSheet.create({
   container: {
