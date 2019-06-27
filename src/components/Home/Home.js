@@ -13,7 +13,7 @@ import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 
 function Home(props) {
-  const getMessage = useCallback(() => `${strings.homeMessage} ${props.user && props.user.name}`, []);
+  const getMessage = useCallback(() => `${strings.homeMessage} ${props.user && props.user.name}`, [props.user]);
 
   return (
     <View style={styles.container}>
