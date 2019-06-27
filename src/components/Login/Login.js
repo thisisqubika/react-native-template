@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -19,70 +19,59 @@ import { isLoadingSelector } from 'selectors/StatusSelectors';
 import strings from 'localization';
 import { login, actionTypes } from 'actions/UserActions';
 
-class Login extends Component {
-  static navigationOptions = {
-    header: null,
-  };
+function Login(props) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  constructor(props) {
-    super(props);
-    this.navigateToHomeIfLogged();
-  }
-
-  state = {
-    email: '',
-    password: '',
-  };
-
-  componentDidUpdate() {
-    this.navigateToHomeIfLogged();
-    return null;
-  }
-
-  navigateToHomeIfLogged = () => {
-    if (this.props.user !== null) {
-      this.props.navigation.navigate('App');
+  const navigateToHomeIfLogged = useCallback(() => {
+    if (props.user !== null) {
+      props.navigation.navigate('App');
     }
-  }
+  });
 
-  passwordChanged = value => this.setState({ password: value });
+  useEffect(() => {
+    navigateToHomeIfLogged();
+  });
 
-  emailChanged = value => this.setState({ email: value });
+  const passwordChanged = useCallback(value => setPassword(value), []);
+  const emailChanged = useCallback(value => setEmail(value), []);
+  const loginUser = useCallback(() => props.login(email, password), [email, password]);
 
-  login = () => this.props.login(this.state.email, this.state.password);
+  const { isLoading, errors } = props;
 
-  render() {
-    const { isLoading, errors } = this.props;
-    return (
-      <View style={styles.container}>
-        <View style={[styles.formContainer, ShadowStyles.shadow]}>
-          <Text style={TextStyles.fieldTitle}>
-            {strings.email}
-          </Text>
-          <TextField
-            placeholder={strings.email}
-            onChangeText={this.emailChanged}
-            value={this.state.email}
-          />
-          <Text style={TextStyles.fieldTitle}>
-            {strings.password}
-          </Text>
-          <TextField
-            placeholder={strings.password}
-            value={this.state.password}
-            onChangeText={this.passwordChanged}
-            secureTextEntry
-          />
-          <ErrorView errors={errors} />
-          <Button
-            onPress={this.login}
-            title={isLoading ? strings.loading : strings.login}
-          />
-        </View>
+  return (
+    <View style={styles.container}>
+      <View style={[styles.formContainer, ShadowStyles.shadow]}>
+        <Text style={TextStyles.fieldTitle}>
+          {strings.email}
+        </Text>
+        <TextField
+          placeholder={strings.email}
+          onChangeText={emailChanged}
+          value={email}
+        />
+        <Text style={TextStyles.fieldTitle}>
+          {strings.password}
+        </Text>
+        <TextField
+          placeholder={strings.password}
+          value={password}
+          onChangeText={passwordChanged}
+          secureTextEntry
+        />
+        <ErrorView errors={errors} />
+        <Button
+          onPress={loginUser}
+          title={isLoading ? strings.loading : strings.login}
+        />
       </View>
-    );
-  }
+    </View>
+  );
 }
+
+Login.navigationOptions = {
+  header: null,
+};
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,

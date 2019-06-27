@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import {
   View,
   Text,
@@ -12,29 +12,24 @@ import TextStyles from 'helpers/TextStyles';
 import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 
-class Home extends Component {
-  static navigationOptions = {
-    title: strings.home,
-  };
+function Home(props) {
+  const getMessage = useCallback(() => `${strings.homeMessage} ${props.user && props.user.name}`, []);
 
-  getMessage = () => {
-    const { user } = this.props;
-    return `${strings.homeMessage} ${user && user.name}`;
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={TextStyles.lightTitle}>
-          {strings.home}
-        </Text>
-        <Text>
-          {this.getMessage()}
-        </Text>
-      </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <Text style={TextStyles.lightTitle}>
+        {strings.home}
+      </Text>
+      <Text>
+        {getMessage()}
+      </Text>
+    </View>
+  );
 }
+
+Home.navigationOptions = {
+  title: strings.home,
+};
 
 Home.propTypes = {
   user: PropTypes.object,

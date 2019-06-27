@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   StyleSheet,
@@ -17,25 +17,18 @@ const styles = StyleSheet.create({
   },
 });
 
-class AuthHandler extends Component {
-  constructor(props) {
-    super(props);
-    this.navigateWithAuth();
-  }
-
-  navigateWithAuth = async () => {
-    if (this.props.user !== null) {
-      this.props.navigation.navigate('App');
+function AuthHandler(props) {
+  useEffect(() => {
+    if (props.user !== null) {
+      props.navigation.navigate('App');
     } else {
-      this.props.navigation.navigate('Auth');
+      props.navigation.navigate('Auth');
     }
-  }
+  });
 
-  render() {
-    return (
-      <View style={styles.container} />
-    );
-  }
+  return (
+    <View style={styles.container} />
+  );
 }
 
 AuthHandler.propTypes = {
