@@ -4,7 +4,7 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Button from '../common/Button';
 import styles from './styles';
@@ -15,13 +15,15 @@ import { logout } from 'actions/UserActions';
 import getUser from 'selectors/UserSelectors';
 
 function Profile(props) {
+  const user = useSelector(state => getUser(state));
+  const dispatch = useDispatch();
+  const logoutUser = useCallback(() => dispatch(logout()), [dispatch]);
+
   useEffect(() => {
-    if (props.user === null) {
+    if (user === null) {
       props.navigation.navigate('Auth');
     }
   });
-
-  const logoutUser = useCallback(() => props.logout(), []);
 
   return (
     <View style={styles.container}>
@@ -42,21 +44,7 @@ Profile.navigationOptions = {
 };
 
 Profile.propTypes = {
-  user: PropTypes.object,
-  logout: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
 };
 
-Profile.defaultProps = {
-  user: null,
-};
-
-const mapStateToProps = state => ({
-  user: getUser(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default Profile;

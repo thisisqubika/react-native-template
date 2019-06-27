@@ -16,7 +16,6 @@
 # limitations under the License.
 #
 
-
 ##############################################################################
 ##
 ##  Gradle start up script for UN*X
@@ -27,7 +26,7 @@
 # Resolve links: $0 may be a link
 PRG="$0"
 # Need this for relative symlinks.
-while [ -h "$PRG" ] ; 
+while [ -h "$PRG" ] ; do
     ls=`ls -ld "$PRG"`
     link=`expr "$ls" : '.*-> \(.*\)$'`
     if expr "$link" : '/.*' > /dev/null; then

@@ -3,8 +3,7 @@ import {
   View,
   Text,
 } from 'react-native';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import styles from './styles';
 
@@ -12,8 +11,9 @@ import TextStyles from 'helpers/TextStyles';
 import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 
-function Home(props) {
-  const getMessage = useCallback(() => `${strings.homeMessage} ${props.user && props.user.name}`, [props.user]);
+function Home() {
+  const user = useSelector(state => getUser(state));
+  const getMessage = useCallback(() => `${strings.homeMessage} ${user && user.name}`, [user]);
 
   return (
     <View style={styles.container}>
@@ -31,18 +31,4 @@ Home.navigationOptions = {
   title: strings.home,
 };
 
-Home.propTypes = {
-  user: PropTypes.object,
-};
-
-Home.defaultProps = {
-  user: null,
-};
-
-const mapStateToProps = state => ({
-  user: getUser(state),
-});
-
-const mapDispatchToProps = () => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

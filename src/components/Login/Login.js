@@ -3,7 +3,7 @@ import {
   View,
   Text,
 } from 'react-native';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Button from '../common/Button';
@@ -23,21 +23,20 @@ function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigateToHomeIfLogged = useCallback(() => {
-    if (props.user !== null) {
+  const user = useSelector(state => getUser(state));
+  const isLoading = useSelector(state => isLoadingSelector([actionTypes.LOGIN], state));
+  const errors = useSelector(state => errorsSelector([actionTypes.LOGIN], state));
+
+  const dispatch = useDispatch();
+  const loginUser = useCallback(() => dispatch(login(email, password)), [email, password, dispatch]);
+  const passwordChanged = useCallback(value => setPassword(value), []);
+  const emailChanged = useCallback(value => setEmail(value), []);
+
+  useEffect(() => {
+    if (user !== null) {
       props.navigation.navigate('App');
     }
   });
-
-  useEffect(() => {
-    navigateToHomeIfLogged();
-  });
-
-  const passwordChanged = useCallback(value => setPassword(value), []);
-  const emailChanged = useCallback(value => setEmail(value), []);
-  const loginUser = useCallback(() => props.login(email, password), [email, password]);
-
-  const { isLoading, errors } = props;
 
   return (
     <View style={styles.container}>
@@ -74,26 +73,7 @@ Login.navigationOptions = {
 };
 
 Login.propTypes = {
-  login: PropTypes.func.isRequired,
-  user: PropTypes.object,
-  isLoading: PropTypes.bool.isRequired,
-  errors: PropTypes.array,
   navigation: PropTypes.object.isRequired,
 };
 
-Login.defaultProps = {
-  user: null,
-  errors: [],
-};
-
-const mapStateToProps = state => ({
-  user: getUser(state),
-  isLoading: isLoadingSelector([actionTypes.LOGIN], state),
-  errors: errorsSelector([actionTypes.LOGIN], state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  login: (email, password) => dispatch(login(email, password)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;
