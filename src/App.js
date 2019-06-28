@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 import Navigation from './components/navigation';
@@ -14,33 +14,26 @@ const styles = StyleSheet.create({
   },
 });
 
-class App extends Component {
-  state = {
-    ready: false,
-  };
+export default function App() {
+  const [ready, setReady] = useState(false);
 
-  componentDidMount() {
+  useEffect(() => {
     persist(() => {
-      this.setState({ ready: true });
+      setReady(true);
     });
-  }
+  });
 
-  renderEmpty = () => (
+  const loading = (
     <View style={styles.container}>
       <ActivityIndicator />
     </View>
   );
 
-  render() {
-    const { ready } = this.state;
-    if (!ready) return this.renderEmpty();
-    return (
-      <Provider store={store}>
-        <Navigation />
-      </Provider>
-    );
-  }
+  const loaded = (
+    <Provider store={store}>
+      <Navigation />
+    </Provider>
+  );
+
+  return ready ? loaded : loading;
 }
-
-export default App;
-

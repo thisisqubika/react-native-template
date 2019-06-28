@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import {
   View,
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Button from '../common/Button';
 import styles from './styles';
@@ -14,52 +14,37 @@ import TextStyles from 'helpers/TextStyles';
 import { logout } from 'actions/UserActions';
 import getUser from 'selectors/UserSelectors';
 
-class Profile extends Component {
-  static navigationOptions = {
-    title: strings.profile,
-  };
+function Profile(props) {
+  const user = useSelector(state => getUser(state));
+  const dispatch = useDispatch();
+  const logoutUser = useCallback(() => dispatch(logout()), [dispatch]);
 
-  componentDidUpdate() {
-    if (this.props.user === null) {
-      this.props.navigation.navigate('Auth');
+  useEffect(() => {
+    if (user === null) {
+      props.navigation.navigate('Auth');
     }
-    return null;
-  }
+  });
 
-  logout = () => this.props.logout();
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
-        <Text>
-          {strings.profileMessage}
-        </Text>
-        <Button
-          title={strings.logout}
-          onPress={this.logout}
-        />
-      </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
+      <Text>
+        {strings.profileMessage}
+      </Text>
+      <Button
+        title={strings.logout}
+        onPress={logoutUser}
+      />
+    </View>
+  );
 }
 
+Profile.navigationOptions = {
+  title: strings.profile,
+};
+
 Profile.propTypes = {
-  user: PropTypes.object,
-  logout: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
 };
 
-Profile.defaultProps = {
-  user: null,
-};
-
-const mapStateToProps = state => ({
-  user: getUser(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default Profile;
