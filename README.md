@@ -25,6 +25,13 @@ The goal of this project is to work as template for react-native applications, p
 
 ## Usage
 
+#### Use Template button
+Click the "Use this template" button above the file list, then use the Owner drop-down menu, and select the account you want to own the repository. Creating a repository from a template has the following advantages:
+
+- A repository created from a template starts with a single commit.
+- Commits to a repository created from a template do appear in your contribution graph.
+- Creating a repository from a template starts a new project quickly.
+
 ### Option #1: Using React-Native-Rename
 You can start by cloning this repository and using [react-native-rename](https://github.com/junedomingo/react-native-rename). In the current state of this project, it should give you no issues at all, just run the script, delete your node modules and reinstall them and you should be good to go.
 
