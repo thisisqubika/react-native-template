@@ -16,10 +16,10 @@ class UserController {
         password,
       },
     });
-    return result.data.user;
+    return Promise.resolve(result.data.user);
     // Data is the object exposes by axios for the response json
   } catch (error) {
-    return error;
+     return Promise.reject(error);
   }
   */
     // This is a mocked example to simulate api behavior
