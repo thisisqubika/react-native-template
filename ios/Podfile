@@ -28,6 +28,11 @@ target 'rntemplate' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'Firebase/Analytics'
+  pod 'GoogleIDFASupport', '~> 3.14.0'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.13.2'
+
   pod ‘ReactNativeLocalization’,
      :path => “../node_modules/react-native-localization”
      

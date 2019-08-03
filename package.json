@@ -8,11 +8,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.8.6",
-    "react-native": "0.60.4",
     "axios": "^0.19.0",
     "prop-types": "^15.6.1",
+    "react": "16.8.6",
+    "react-native": "0.60.4",
     "react-native-dotenv": "^0.2.0",
+    "react-native-firebase": "^5.5.6",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-localization": "^2.1.1",
     "react-navigation": "^3.11.0",
