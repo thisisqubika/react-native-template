@@ -9,6 +9,7 @@ import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage;
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
