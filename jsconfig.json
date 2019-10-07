@@ -10,7 +10,7 @@
       "helpers/*": ["src/helpers/*"],
       "localization/*": ["src/localization/*"],
       "reducers/*": ["src/reducers/*"],
-      "selectors/*": ["src/selectors/*"],
+      "selectors/*": ["src/selectors/*"]
     }
   }
 }
