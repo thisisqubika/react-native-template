@@ -67,9 +67,6 @@ const AppNavigator = () => {
       tabBarOptions={{
         activeTintColor: Colors.primary,
         inactiveTintColor: Colors.dark,
-        style: {
-          backgroundColor: Colors.White,
-        },
       }}
     >
       <>
