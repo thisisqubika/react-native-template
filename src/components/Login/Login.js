@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,6 @@ import styles from './styles';
 
 import ShadowStyles from 'helpers/ShadowStyles';
 import TextStyles from 'helpers/TextStyles';
-import getUser from 'selectors/UserSelectors';
 import errorsSelector from 'selectors/ErrorSelectors';
 import { isLoadingSelector } from 'selectors/StatusSelectors';
 import strings from 'localization';
@@ -23,7 +22,6 @@ function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const user = useSelector(state => getUser(state));
   const isLoading = useSelector(state => isLoadingSelector([actionTypes.LOGIN], state));
   const errors = useSelector(state => errorsSelector([actionTypes.LOGIN], state));
 
@@ -32,11 +30,8 @@ function Login(props) {
   const passwordChanged = useCallback(value => setPassword(value), []);
   const emailChanged = useCallback(value => setEmail(value), []);
 
-  useEffect(() => {
-    if (user !== null) {
-      props.navigation.navigate('App');
-    }
-  });
+  const { navigation } = props;
+  navigation.setOptions({ headerShown: false });
 
   return (
     <View style={styles.container}>
@@ -67,10 +62,6 @@ function Login(props) {
     </View>
   );
 }
-
-Login.navigationOptions = {
-  header: null,
-};
 
 Login.propTypes = {
   navigation: PropTypes.object.isRequired,

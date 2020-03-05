@@ -1,6 +1,19 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import Login from '../Login';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import NavigationConstants from 'components/navigation/NavigationConstants';
+import Login from 'components/Login';
 
-const AuthStack = createStackNavigator({ Login });
+const AuthNavigator = () => {
+  const Stack = createStackNavigator();
+  const { login } = NavigationConstants;
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name={login}
+        component={Login}
+      />
+    </Stack.Navigator>
+  );
+};
 
-export default AuthStack;
+export default AuthNavigator;
