@@ -1,29 +1,29 @@
 {
-    "env": {
-        "node": true,
-        "browser": true,
-        "es6": true
-    },
-    "parser": "babel-eslint",
-    "extends": [
-        "airbnb",
-        "plugin:import/errors",
-        "plugin:import/warnings"
-    ],
-    "plugins": [
-        "react-hooks"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": ".js",
-        "react/forbid-prop-types": false,
-        "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}],
-        "import/first": "off",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
-    },
-    "settings": {
-        "import/resolver": {
-          "babel-module": {}
-        }
-    }
+  "env": {
+      "node": true,
+      "browser": true,
+      "es6": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+      "airbnb",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+  ],
+  "plugins": [
+      "react-hooks"
+  ],
+  "rules": {
+      "react/jsx-filename-extension": ".js",
+      "react/forbid-prop-types": false,
+      "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}],
+      "import/first": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+      "import/resolver": {
+        "babel-module": {}
+      }
+  }
 }
