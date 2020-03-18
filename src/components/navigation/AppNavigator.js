@@ -2,15 +2,16 @@ import React from 'react';
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import homeIcon from 'assets/ic_home/ic_home.png';
-import settingsIcon from 'assets/ic_settings/ic_settings.png';
 import Home from 'components/Home';
 import NavigationConstants from 'components/navigation/NavigationConstants';
 import Profile from 'components/Profile';
 import Colors from 'helpers/Colors';
+import iconForTab from 'helpers/TabNavigator';
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const HomeNavigator = () => {
-  const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -34,25 +35,12 @@ const ProfileNavigator = () => {
 };
 
 const AppNavigator = () => {
-  const iconForTab = routeName => {
-    switch (routeName) {
-      case NavigationConstants.home:
-        return homeIcon;
-      case NavigationConstants.profile:
-        return settingsIcon;
-      default:
-        return null;
-    }
-  };
-
   const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
     <Image
       source={icon}
       style={{ tintColor }}
     />
   );
-
-  const Tab = createBottomTabNavigator();
 
   return (
     <Tab.Navigator
