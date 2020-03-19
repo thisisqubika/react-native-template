@@ -1,17 +1,12 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import AuthHandler from './AuthHandler';
-import Auth from './AuthNavigator';
-import App from './AppNavigator';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import AuthNavigator from 'components/navigation/AuthNavigator';
+import AppNavigator from 'components/navigation/AppNavigator';
+import getUser from 'selectors/UserSelectors';
 
-export default createAppContainer( // eslint-disable-line
-  createSwitchNavigator(
-    {
-      App,
-      Auth,
-      AuthHandler,
-    },
-    {
-      initialRouteName: 'AuthHandler',
-    },
-  ),
-); // eslint-disable-line
+const Navigation = () => {
+  const user = useSelector(state => getUser(state));
+  return user ? <AppNavigator /> : <AuthNavigator />;
+};
+
+export default Navigation;

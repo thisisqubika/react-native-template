@@ -1,58 +1,68 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator } from 'react-navigation-stack';
-
-import Profile from '../Profile';
-import Home from '../Home';
-
-import homeIcon from 'assets/ic_home/ic_home.png';
-import settingsIcon from 'assets/ic_settings/ic_settings.png';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from 'components/Home';
+import NavigationConstants from 'components/navigation/NavigationConstants';
+import Profile from 'components/Profile';
 import Colors from 'helpers/Colors';
+import iconForTab from 'helpers/TabNavigator';
 
-const iconForTab = ({ state }) => {
-  switch (state.routeName) {
-    case 'Home':
-      return homeIcon;
-    case 'Profile':
-      return settingsIcon;
-    default:
-      return null;
-  }
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const HomeNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name={NavigationConstants.home}
+        component={Home}
+      />
+    </Stack.Navigator>
+  );
 };
 
-const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
-  <Image
-    source={icon}
-    style={{ tintColor }}
-  />
-);
+const ProfileNavigator = () => {
+  const Stack = createStackNavigator();
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name={NavigationConstants.profile}
+        component={Profile}
+      />
+    </Stack.Navigator>
+  );
+};
 
-const ProfileStack = createStackNavigator({ Profile });
-const HomeStack = createStackNavigator({ Home });
-const AppStack = createBottomTabNavigator(
-  {
-    Home: HomeStack,
-    Profile: ProfileStack,
-  },
-  {
-    tabBarPosition: 'bottom',
-    tabBarOptions: {
-      activeTintColor: Colors.primary,
-      inactiveTintColor: Colors.gray,
-      style: {
-        backgroundColor: Colors.White,
-      },
-    },
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ tintColor }) => (// eslint-disable-line
-        <TabIcon
-          icon={iconForTab(navigation)}
-          tintColor={tintColor}
-        />
-      ),
-    }),
-  },
-);
+const AppNavigator = () => {
+  const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
+    <Image
+      source={icon}
+      style={{ tintColor }}
+    />
+  );
 
-export default AppStack;
+  return (
+    <Tab.Navigator
+      screenOptions={({ route: { name } }) => ({
+        tabBarIcon: ({ color }) => ( //eslint-disable-line
+          <TabIcon
+            icon={iconForTab(name)}
+            tintColor={color}
+          />
+        ),
+      })}
+      tabBarOptions={{
+        activeTintColor: Colors.primary,
+        inactiveTintColor: Colors.dark,
+      }}
+    >
+      <>
+        <Tab.Screen name={NavigationConstants.home} component={HomeNavigator} />
+        <Tab.Screen name={NavigationConstants.profile} component={ProfileNavigator} />
+      </>
+    </Tab.Navigator>
+  );
+};
+
+export default AppNavigator;

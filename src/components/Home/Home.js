@@ -11,7 +11,7 @@ import TextStyles from 'helpers/TextStyles';
 import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 
-function Home() {
+const Home = () => {
   const user = useSelector(state => getUser(state));
   const getMessage = useCallback(() => `${strings.homeMessage} ${user && user.name}`, [user]);
 
@@ -25,10 +25,6 @@ function Home() {
       </Text>
     </View>
   );
-}
-
-Home.navigationOptions = {
-  title: strings.home,
 };
 
 export default Home;
