@@ -2,7 +2,8 @@
   "env": {
       "node": true,
       "browser": true,
-      "es6": true
+      "es6": true,
+      "jest": true
   },
   "parser": "babel-eslint",
   "extends": [
@@ -14,8 +15,8 @@
       "react-hooks"
   ],
   "rules": {
-      "react/jsx-filename-extension": ".js",
-      "react/forbid-prop-types": false,
+      "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+      "react/forbid-prop-types": 0,
       "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}],
       "import/first": "off",
       "react-hooks/rules-of-hooks": "error",
