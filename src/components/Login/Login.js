@@ -26,7 +26,8 @@ function Login(props) {
   const errors = useSelector(state => errorsSelector([actionTypes.LOGIN], state));
 
   const dispatch = useDispatch();
-  const loginUser = useCallback(() => dispatch(login(email, password)), [email, password, dispatch]);
+  const loginUser = useCallback(() => (
+    dispatch(login(email, password))), [email, password, dispatch]);
   const passwordChanged = useCallback(value => setPassword(value), []);
   const emailChanged = useCallback(value => setEmail(value), []);
 
