@@ -5,6 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { useTheme } from '@react-navigation/native';
 import TextStyles from 'helpers/TextStyles';
 
 const styles = StyleSheet.create({
@@ -14,7 +15,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const ErrorView = (props) => {
+const ErrorView = props => {
+  const { colors } = useTheme();
+
   if (props.errors.length === 0) {
     return null;
   }
@@ -22,7 +25,7 @@ const ErrorView = (props) => {
     <View style={styles.container} >
       {
         props.errors.map(error => (
-          <Text style={TextStyles.error} key={error}>
+          <Text style={[TextStyles.error, { color: colors.error }]} key={error}>
             {error}
           </Text>
         ))

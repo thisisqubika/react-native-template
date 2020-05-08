@@ -3,10 +3,10 @@ import { Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useTheme } from '@react-navigation/native';
 import Home from 'components/Home';
 import NavigationConstants from 'components/navigation/NavigationConstants';
 import Profile from 'components/Profile';
-import Colors from 'helpers/Colors';
 import iconForTab from 'helpers/TabNavigator';
 
 const Stack = createStackNavigator();
@@ -37,22 +37,25 @@ const ProfileNavigator = () => (
   </Stack.Navigator>
 );
 
-const AppNavigator = () => (
-  <Tab.Navigator
-    screenOptions={({ route: { name } }) => ({
-      tabBarIcon: props => TabIcon({ ...props, name }),
-    })}
-    tabBarOptions={{
-      activeTintColor: Colors.primary,
-      inactiveTintColor: Colors.dark,
-    }}
-  >
-    <>
-      <Tab.Screen name={NavigationConstants.home} component={HomeNavigator} />
-      <Tab.Screen name={NavigationConstants.profile} component={ProfileNavigator} />
-    </>
-  </Tab.Navigator>
-);
+const AppNavigator = () => {
+  const { colors } = useTheme();
+  return (
+    <Tab.Navigator
+      screenOptions={({ route: { name } }) => ({
+        tabBarIcon: props => TabIcon({ ...props, name }),
+      })}
+      tabBarOptions={{
+        activeTintColor: colors.activeTab,
+        inactiveTintColor: colors.inactiveTab,
+      }}
+    >
+      <>
+        <Tab.Screen name={NavigationConstants.home} component={HomeNavigator} />
+        <Tab.Screen name={NavigationConstants.profile} component={ProfileNavigator} />
+      </>
+    </Tab.Navigator>
+  );
+};
 
 TabIcon.propTypes = {
   name: PropTypes.string.isRequired,

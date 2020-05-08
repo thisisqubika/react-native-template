@@ -6,7 +6,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import TextStyles from 'helpers/TextStyles';
-import Colors from 'helpers/Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +13,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   line: {
-    backgroundColor: Colors.gray,
     marginTop: 2,
     height: 1,
     flexDirection: 'column',
