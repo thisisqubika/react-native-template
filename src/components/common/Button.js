@@ -29,7 +29,7 @@ const Button = props => {
       style={[styles.button, props.style]}
     >
       <Text
-        style={[TextStyles.fieldTitle, props.textStyle, { color: colors.text }]}
+        style={[{ color: colors.text }, TextStyles.fieldTitle, props.textStyle]}
       >
         {props.title}
       </Text>

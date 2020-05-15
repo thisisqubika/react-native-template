@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTheme } from '@react-navigation/native';
 import {
   View,
   TextInput,
@@ -23,16 +24,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const TextField = props => (
-  <View style={styles.container}>
-    <TextInput
-      {...props}
-      style={[TextStyles.textField, styles.field, props.style]}
-      underlineColorAndroid="transparent"
-    />
-    <View style={styles.line} />
-  </View>
-);
+const TextField = props => {
+  const { colors } = useTheme();
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        {...props}
+        style={[{ color: colors.text }, TextStyles.textField, styles.field, props.style]}
+        underlineColorAndroid="transparent"
+      />
+      <View style={styles.line} />
+    </View>
+  );
+};
 
 TextField.propTypes = {
   style: PropTypes.object,
