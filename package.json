@@ -20,6 +20,7 @@
     "prop-types": "^15.6.1",
     "react": "16.9.0",
     "react-native": "0.61.2",
+    "react-native-appearance": "^0.3.3",
     "react-native-dotenv": "^0.2.0",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-localization": "^2.1.1",

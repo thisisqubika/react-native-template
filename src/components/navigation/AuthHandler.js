@@ -6,14 +6,12 @@ import {
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import getUser from 'selectors/UserSelectors';
-import Colors from 'helpers/Colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.white,
   },
 });
 

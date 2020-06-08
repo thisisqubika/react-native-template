@@ -15,6 +15,7 @@
       "react-hooks"
   ],
   "rules": {
+      "arrow-parens": ["error", "as-needed"],
       "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
       "react/forbid-prop-types": 0,
       "import/order": ["error", {"groups": ["builtin", "external", "parent", "sibling", "index"]}],

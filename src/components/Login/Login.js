@@ -4,6 +4,7 @@ import {
   Text,
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTheme } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 
 import Button from '../common/Button';
@@ -34,21 +35,30 @@ function Login(props) {
   const { navigation } = props;
   navigation.setOptions({ headerShown: false });
 
+  const { colors } = useTheme();
+
   return (
     <View style={styles.container}>
-      <View style={[styles.formContainer, ShadowStyles.shadow]}>
-        <Text style={TextStyles.fieldTitle}>
+      <View style={[
+        styles.formContainer,
+        ShadowStyles.shadow,
+        { backgroundColor: colors.primary },
+      ]}
+      >
+        <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
           {strings.email}
         </Text>
         <TextField
+          style={{ color: colors.text }}
           placeholder={strings.email}
           onChangeText={emailChanged}
           value={email}
         />
-        <Text style={TextStyles.fieldTitle}>
+        <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
           {strings.password}
         </Text>
         <TextField
+          style={{ color: colors.text }}
           placeholder={strings.password}
           value={password}
           onChangeText={passwordChanged}
