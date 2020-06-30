@@ -184,6 +184,8 @@ PODS:
   - React-jsinspector (0.61.2)
   - react-native-appearance (0.3.3):
     - React
+  - react-native-config (1.2.1):
+    - React
   - react-native-safe-area-context (0.7.3):
     - React
   - React-RCTActionSheet (0.61.2):
@@ -253,6 +255,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-appearance (from `../node_modules/react-native-appearance`)
+  - react-native-config (from `../node_modules/react-native-config`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -308,6 +311,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-appearance:
     :path: "../node_modules/react-native-appearance"
+  react-native-config:
+    :path: "../node_modules/react-native-config"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-RCTActionSheet:
@@ -362,6 +367,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8909917ff7d8f21a57e443a866fd8d4560e50c65
   React-jsinspector: 111d7d342b07a904c400592e02a2b958f1098b60
   react-native-appearance: ff12122b6456efc29b3a22a3731eb54f7c291e69
+  react-native-config: ae9ef3bdbf539f2d14ebaf4ebeba508f766e066a
   react-native-safe-area-context: 8260e5157617df4b72865f44006797f895b2ada7
   React-RCTActionSheet: 89b037c0fb7d2671607cb645760164e7e0c013f6
   React-RCTAnimation: e3cefa93c38c004c318f7ec04b883eb14b8b8235
@@ -383,4 +389,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1876a4d6224653a4c0c20f11180bdb052797c0f2
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

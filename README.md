@@ -12,16 +12,15 @@ The goal of this project is to work as template for react-native applications, p
 
 
 ## Base dependencies
-  - [axios](https://github.com/axios/axios) for networking.
-  - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed properties.
-  - [React-Native-Config](https://github.com/luggit/react-native-config) to manage envionments.
-  - [React-Navigation](https://reactnavigation.org/) navigation library.
-  - [React-Native-Localization](https://github.com/stefalda/ReactNativeLocalization) for string localization.
-  - [Redux](https://redux.js.org/) for state management.
-  - [Redux-Persist](https://github.com/rt2zz/redux-persist) as persistance layer.
-  - [Redux-Thunk](https://github.com/gaearon/redux-thunk) to dispatch asynchronous actions.
-  - [Reselect](https://github.com/reactjs/reselect) the selector library for redux.
-  - [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme) for testing.
+- [axios](https://github.com/axios/axios) for networking.
+- [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed properties.
+- [React-Native-Config](https://github.com/luggit/react-native-config) to manage envionments.
+- [React-Navigation](https://reactnavigation.org/) navigation library.
+- [React-Native-Localization](https://github.com/stefalda/ReactNativeLocalization) for string localization.
+- [Redux](https://redux.js.org/) for state management.
+- [Redux-Persist](https://github.com/rt2zz/redux-persist) as persistance layer.
+- [Redux-Thunk](https://github.com/gaearon/redux-thunk) to dispatch asynchronous actions.
+- [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme) for testing.
 
 ## Usage
 
@@ -64,6 +63,28 @@ This template follows a very simple project structure:
   - `controllers`: Folder to store all your network and storage logic (you should have one controller per resource).
   - `App.js`: Main component that starts your whole app.
 - `index.js`: Entry point of your application as per React-Native standards.
+
+## Setup environments
+Add the environment variables files in root folder(.env.staging and .env.production)
+
+#### Android
+
+A map associating builds with env files is already defined in `app/build.gradle` you can modify or add environments if needed.
+
+#### iOS
+
+The basic idea in iOS is to have one scheme per environment file, so you can easily alternate between them.
+
+Start by creating a new scheme:
+
+- In the Xcode menu, go to Product > Scheme > Edit Scheme
+- Click Duplicate Scheme on the bottom
+- Give it a proper name on the top left. For instance: "Production"
+- Then edit the newly created scheme to make it use a different env file. From the same "manage scheme" window:
+
+Expand the "Build" settings on left
+- Click "Pre-actions", and under the plus sign select "New Run Script Action"
+- Where it says "Type a script or drag a script file", type: `echo ".env.production" > /tmp/envfile` replacing .env.production with your file
 
 ## Styleguide
 For coding styling we decided to go with ESLint and [Airbnb's styleguide](https://github.com/airbnb/javascript) with a few exceptions that you can find on the [.eslintrc.json](./.eslintrc.json)

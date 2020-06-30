@@ -21,7 +21,7 @@
     "react": "16.9.0",
     "react-native": "0.61.2",
     "react-native-appearance": "^0.3.3",
-    "react-native-dotenv": "^0.2.0",
+    "react-native-config": "^1.2.1",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-localization": "^2.1.1",
     "react-native-reanimated": "^1.7.0",
@@ -30,8 +30,7 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.1",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -39,8 +38,6 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-babel-module": "^5.1.0",
@@ -49,10 +46,10 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "jest": "^24.9.0",
-    "moxios": "^0.4.0",
-    "redux-mock-store": "^1.5.3",
     "metro-react-native-babel-preset": "^0.56.0",
-    "react-test-renderer": "16.9.0"
+    "moxios": "^0.4.0",
+    "react-test-renderer": "16.9.0",
+    "redux-mock-store": "^1.5.3"
   },
   "jest": {
     "preset": "react-native"

@@ -57,3 +57,8 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# environment variables
+.env
+.env.production
+.env.staging

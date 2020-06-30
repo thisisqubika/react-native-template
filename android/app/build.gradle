@@ -1,5 +1,13 @@
 apply plugin: "com.android.application"
 
+project.ext.envConfigFiles = [
+    debug: ".env",
+    release: ".env.production",
+    stagingrelease: ".env.staging",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -133,6 +141,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue "string", "build_config_package", "com.rntemplate"
     }
     splits {
         abi {
@@ -160,6 +169,10 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+        stagingrelease {
+            initWith release
+            matchingFallbacks = ['release']
         }
     }
     // applicationVariants are e.g. debug, release
