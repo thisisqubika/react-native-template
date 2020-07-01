@@ -6,6 +6,7 @@ export default {
   home: 'Home',
   homeMessage: 'Welcome',
   profile: 'Profile',
-  profileMessage: 'And this one has a nav, but with a different color than the login.',
+  profileMessage:
+    'And this one has a nav, but with a different color than the login.',
   logout: 'Logout',
 };

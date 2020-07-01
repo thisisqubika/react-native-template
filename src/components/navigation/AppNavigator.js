@@ -13,27 +13,18 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const TabIcon = ({ name, color }) => (
-  <Image
-    source={iconForTab(name)}
-    style={{ tintColor: color }}
-  />
+  <Image source={iconForTab(name)} style={{ tintColor: color }} />
 );
 
 const HomeNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen
-      name={NavigationConstants.home}
-      component={Home}
-    />
+    <Stack.Screen name={NavigationConstants.home} component={Home} />
   </Stack.Navigator>
 );
 
 const ProfileNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen
-      name={NavigationConstants.profile}
-      component={Profile}
-    />
+    <Stack.Screen name={NavigationConstants.profile} component={Profile} />
   </Stack.Navigator>
 );
 
@@ -51,7 +42,10 @@ const AppNavigator = () => {
     >
       <>
         <Tab.Screen name={NavigationConstants.home} component={HomeNavigator} />
-        <Tab.Screen name={NavigationConstants.profile} component={ProfileNavigator} />
+        <Tab.Screen
+          name={NavigationConstants.profile}
+          component={ProfileNavigator}
+        />
       </>
     </Tab.Navigator>
   );

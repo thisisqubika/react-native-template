@@ -9,10 +9,7 @@ const AuthNavigator = () => {
   const { login } = NavigationConstants;
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name={login}
-        component={Login}
-      />
+      <Stack.Screen name={login} component={Login} />
     </Stack.Navigator>
   );
 };

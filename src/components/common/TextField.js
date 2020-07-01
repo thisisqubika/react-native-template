@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@react-navigation/native';
-import {
-  View,
-  TextInput,
-  StyleSheet,
-} from 'react-native';
+import { View, TextInput, StyleSheet } from 'react-native';
 import TextStyles from 'helpers/TextStyles';
 
 const styles = StyleSheet.create({
@@ -25,13 +21,19 @@ const styles = StyleSheet.create({
 });
 
 const TextField = props => {
+  const { style } = props;
   const { colors } = useTheme();
 
   return (
     <View style={styles.container}>
       <TextInput
         {...props}
-        style={[{ color: colors.text }, TextStyles.textField, styles.field, props.style]}
+        style={[
+          { color: colors.text },
+          TextStyles.textField,
+          styles.field,
+          style,
+        ]}
         underlineColorAndroid="transparent"
       />
       <View style={styles.line} />
