@@ -44,13 +44,3 @@ target 'rntemplate' do
 
   use_native_modules!
 end
-
-target 'rntemplate-tvOS' do
-  # Pods for rntemplate-tvOS
-
-  target 'rntemplate-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end

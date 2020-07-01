@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_URL } from 'react-native-dotenv';
+import { API_URL } from 'react-native-config';
 
 /*
   Base client config for your application.
