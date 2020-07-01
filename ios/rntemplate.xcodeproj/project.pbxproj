@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4658F25AC44E6F435630C6F9 /* libPods-rntemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 246A79694D014D679D80147C /* libPods-rntemplateTests.a */; };
 		639C4F14DC9DF777C1DF554D /* libPods-rntemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A84668B7640F339899217E /* libPods-rntemplate.a */; };
+		DB0B50D024ACD3FA00882428 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0B50CF24ACD3FA00882428 /* BootSplash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		708B2B7E781F22B70F28FC99 /* Pods-rntemplate-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rntemplate-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rntemplate-tvOSTests/Pods-rntemplate-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74700CACBEC20A13DA5E7773 /* Pods-rntemplate-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rntemplate-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rntemplate-tvOS/Pods-rntemplate-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A84668B7640F339899217E /* libPods-rntemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rntemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0B50CF24ACD3FA00882428 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = rntemplate/BootSplash.storyboard; sourceTree = "<group>"; };
 		DED8DB7B01C9D6EC09DD9827 /* Pods-rntemplate-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rntemplate-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rntemplate-tvOS/Pods-rntemplate-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		EA2E5EA43D1E45C101A16EB2 /* Pods-rntemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rntemplateTests.debug.xcconfig"; path = "Target Support Files/Pods-rntemplateTests/Pods-rntemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -98,6 +100,7 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				DB0B50CF24ACD3FA00882428 /* BootSplash.storyboard */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0B50D024ACD3FA00882428 /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

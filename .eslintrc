@@ -1,0 +1,33 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2020": true,
+    "jest": true
+  },
+  "extends": [
+    "@react-native-community",
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react-native-a11y/basic",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/forbid-prop-types": "off",
+    "import/order": [
+      "error",
+      { "groups": ["builtin", "external", "parent", "sibling", "index"] }
+    ],
+    "import/first": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}
