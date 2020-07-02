@@ -15,13 +15,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const Button = props => {
-  const { style, textStyle, title } = props;
+const Button = ({ style, textStyle, title, ...rest }) => {
   const { colors } = useTheme();
 
   return (
     <TouchableOpacity
-      {...props}
+      {...rest}
       style={[styles.button, { borderColor: colors.border }, style]}
     >
       <Text style={[{ color: colors.text }, TextStyles.fieldTitle, textStyle]}>

@@ -20,14 +20,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const TextField = props => {
-  const { style } = props;
+const TextField = ({ style, ...rest }) => {
   const { colors } = useTheme();
 
   return (
     <View style={styles.container}>
       <TextInput
-        {...props}
+        {...rest}
         style={[
           { color: colors.text },
           TextStyles.textField,

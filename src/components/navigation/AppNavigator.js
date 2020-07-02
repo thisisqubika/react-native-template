@@ -33,7 +33,7 @@ const AppNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route: { name } }) => ({
-        tabBarIcon: props => TabIcon({ ...props, name }),
+        tabBarIcon: ({ color }) => <TabIcon color={color} name={name} />,
       })}
       tabBarOptions={{
         activeTintColor: colors.activeTab,
