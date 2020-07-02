@@ -1,37 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import TextStyles from 'helpers/TextStyles';
 
-const Button = props => {
-  const { colors } = useTheme();
+const styles = StyleSheet.create({
+  button: {
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    borderWidth: 1,
+    marginTop: 10,
+    padding: 5,
+    borderRadius: 5,
+  },
+});
 
-  const styles = StyleSheet.create({
-    button: {
-      alignSelf: 'stretch',
-      alignItems: 'center',
-      borderWidth: 1,
-      marginTop: 10,
-      padding: 5,
-      borderColor: colors.border,
-      borderRadius: 5,
-    },
-  });
+const Button = ({ style, textStyle, title, ...rest }) => {
+  const { colors } = useTheme();
 
   return (
     <TouchableOpacity
-      {...props}
-      style={[styles.button, props.style]}
+      {...rest}
+      style={[styles.button, { borderColor: colors.border }, style]}
     >
-      <Text
-        style={[{ color: colors.text }, TextStyles.fieldTitle, props.textStyle]}
-      >
-        {props.title}
+      <Text style={[{ color: colors.text }, TextStyles.fieldTitle, textStyle]}>
+        {title}
       </Text>
     </TouchableOpacity>
   );

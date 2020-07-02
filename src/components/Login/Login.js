@@ -1,9 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { View, Text } from 'react-native';
+import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import { useTheme } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 
@@ -19,31 +16,38 @@ import { isLoadingSelector } from 'selectors/StatusSelectors';
 import strings from 'localization';
 import { login, actionTypes } from 'actions/UserActions';
 
-function Login(props) {
+function Login({ navigation }) {
+  const { colors } = useTheme();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const isLoading = useSelector(state => isLoadingSelector([actionTypes.LOGIN], state));
-  const errors = useSelector(state => errorsSelector([actionTypes.LOGIN], state));
+  const isLoading = useSelector(state =>
+    isLoadingSelector([actionTypes.LOGIN], state)
+  );
 
-  const dispatch = useDispatch();
-  const loginUser = useCallback(() => (
-    dispatch(login(email, password))), [email, password, dispatch]);
+  const errors = useSelector(
+    state => errorsSelector([actionTypes.LOGIN], state),
+    shallowEqual
+  );
+
+  const loginUser = useCallback(() => {
+    dispatch(login(email, password));
+  }, [email, password, dispatch]);
+
   const passwordChanged = useCallback(value => setPassword(value), []);
   const emailChanged = useCallback(value => setEmail(value), []);
 
-  const { navigation } = props;
   navigation.setOptions({ headerShown: false });
-
-  const { colors } = useTheme();
 
   return (
     <View style={styles.container}>
-      <View style={[
-        styles.formContainer,
-        ShadowStyles.shadow,
-        { backgroundColor: colors.primary },
-      ]}
+      <View
+        style={[
+          styles.formContainer,
+          ShadowStyles.shadow,
+          { backgroundColor: colors.primary },
+        ]}
       >
         <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
           {strings.email}

@@ -36,8 +36,4 @@ const DarkTheme = {
   },
 };
 
-export {
-  ColorScheme,
-  LightTheme,
-  DarkTheme,
-};
+export { ColorScheme, LightTheme, DarkTheme };

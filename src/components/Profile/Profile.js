@@ -1,8 +1,5 @@
 import React, { useCallback } from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { View, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { useTheme } from '@react-navigation/native';
 import Button from '../common/Button';
@@ -21,13 +18,8 @@ function Profile() {
       <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
         {strings.profile}
       </Text>
-      <Text style={{ color: colors.text }}>
-        {strings.profileMessage}
-      </Text>
-      <Button
-        title={strings.logout}
-        onPress={logoutUser}
-      />
+      <Text style={{ color: colors.text }}>{strings.profileMessage}</Text>
+      <Button title={strings.logout} onPress={logoutUser} />
     </View>
   );
 }
