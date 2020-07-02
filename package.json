@@ -20,8 +20,8 @@
     "axios": "^0.19.0",
     "jetifier": "^1.6.6",
     "prop-types": "^15.6.1",
-    "react": "16.9.0",
-    "react-native": "0.61.2",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
     "react-native-appearance": "^0.3.3",
     "react-native-bootsplash": "^2.2.4",
     "react-native-config": "^1.2.1",
@@ -52,10 +52,10 @@
     "eslint-plugin-react-hooks": "^4.0.5",
     "eslint-plugin-react-native-a11y": "^2.0.0",
     "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.56.0",
+    "metro-react-native-babel-preset": "^0.58.0",
     "moxios": "^0.4.0",
     "prettier": "^2.0.5",
-    "react-test-renderer": "16.9.0",
+    "react-test-renderer": "16.11.0",
     "redux-mock-store": "^1.5.3"
   },
   "jest": {
