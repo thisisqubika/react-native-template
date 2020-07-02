@@ -1,12 +1,8 @@
 import { combineReducers } from 'redux';
 import error from './ErrorReducer';
-import user from './UserReducer';
 import status from './StatusReducer';
+import user from './UserReducer';
 
-const rootReducer = combineReducers({
-  error,
-  user,
-  status,
-});
+const rootReducer = combineReducers({ error, status, user });
 
 export default rootReducer;

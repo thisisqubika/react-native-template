@@ -9,5 +9,5 @@ export default {
   password: 'Password',
   profile: 'Profile',
   profileMessage:
-  'And this one has a nav, but with a different color than the login.',
+    'And this one has a nav, but with a different color than the login.',
 };

@@ -1,7 +1,6 @@
 import { actionTypes } from 'actions/GlobalActions';
 
-export default (state = {}, action) => {
-  const { type, error } = action;
+const errorReducer = (state = {}, { type, error }) => {
   const matches = /(.*)_(REQUEST|ERROR)/.exec(type);
 
   if (matches) {
@@ -23,3 +22,5 @@ export default (state = {}, action) => {
   delete newState[requestName];
   return newState;
 };
+
+export default errorReducer;
