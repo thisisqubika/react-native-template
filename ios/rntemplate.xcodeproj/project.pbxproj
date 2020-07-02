@@ -16,6 +16,7 @@
 		8A8DC7C6AD981D55BE4F6679 /* libPods-rntemplate-rntemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9851218C398FA32E9CD0F9C3 /* libPods-rntemplate-rntemplateTests.a */; };
 		DB00B36E24AE57C500B402C0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB00B36D24AE57C500B402C0 /* File.swift */; };
 		DB0B50D024ACD3FA00882428 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0B50CF24ACD3FA00882428 /* BootSplash.storyboard */; };
+		DB77AD2E24AE5C5F00662146 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = DB77AD2D24AE5C5F00662146 /* main.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* rntemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rntemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* rntemplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rntemplateTests.m; sourceTree = "<group>"; };
@@ -47,6 +47,7 @@
 		9851218C398FA32E9CD0F9C3 /* libPods-rntemplate-rntemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rntemplate-rntemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB00B36D24AE57C500B402C0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DB0B50CF24ACD3FA00882428 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = rntemplate/BootSplash.storyboard; sourceTree = "<group>"; };
+		DB77AD2D24AE5C5F00662146 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		E1A0040C077ED28870A6ABDF /* Pods-rntemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rntemplate.debug.xcconfig"; path = "Target Support Files/Pods-rntemplate/Pods-rntemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,7 +93,7 @@
 		13B07FAE1A68108700A75B9A /* rntemplate */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				DB77AD2D24AE5C5F00662146 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				DB00B36D24AE57C500B402C0 /* File.swift */,
@@ -252,6 +253,7 @@
 				DB0B50D024ACD3FA00882428 /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				DB77AD2E24AE5C5F00662146 /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +510,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
