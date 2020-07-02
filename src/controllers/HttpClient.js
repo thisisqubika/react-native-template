@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_URL } from 'react-native-config';
+import strings from 'localization';
 
 /*
   Base client config for your application.
@@ -19,7 +20,7 @@ client.interceptors.request.use(
     console.log('Failed to make request with error:');
     console.log(error);
     return Promise.reject(error);
-  }
+  },
 );
 
 // Custom middleware for responses (this one just logs the error).
@@ -27,14 +28,14 @@ client.interceptors.response.use(
   response => response,
   error => {
     if (!error.response) {
-      throw new Error('Connection error');
+      throw new Error(strings.connectionError);
     }
 
     console.log('Request got response with error:');
     console.log(error);
 
     return Promise.reject(error);
-  }
+  },
 );
 
 export default client;
