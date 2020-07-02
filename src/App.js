@@ -1,38 +1,24 @@
 import 'react-native-gesture-handler';
-import React, { useState, useEffect } from 'react';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
-import { store, persist } from './reducers';
+import RNBootSplash from 'react-native-bootsplash';
+import { enableScreens } from 'react-native-screens';
+import { store, persist } from 'reducers';
 import Navigation from 'components/navigation';
 import { ColorScheme, DarkTheme, LightTheme } from 'helpers/Themes';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+enableScreens();
 
-export default function App() {
-  const [ready, setReady] = useState(false);
+function App() {
   const scheme = useColorScheme();
 
   useEffect(() => {
-    persist(() => {
-      setReady(true);
-    });
-  });
+    persist(RNBootSplash.hide);
+  }, []);
 
-  const loading = (
-    <View style={styles.container}>
-      <ActivityIndicator />
-    </View>
-  );
-
-  const loaded = (
+  return (
     <Provider store={store}>
       <AppearanceProvider>
         <NavigationContainer
@@ -43,6 +29,6 @@ export default function App() {
       </AppearanceProvider>
     </Provider>
   );
-
-  return ready ? loaded : loading;
 }
+
+export default App;
