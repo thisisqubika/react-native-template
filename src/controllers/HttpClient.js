@@ -20,7 +20,7 @@ client.interceptors.request.use(
     console.log('Failed to make request with error:');
     console.log(error);
     return Promise.reject(error);
-  },
+  }
 );
 
 // Custom middleware for responses (this one just logs the error).
@@ -35,7 +35,7 @@ client.interceptors.response.use(
     console.log(error);
 
     return Promise.reject(error);
-  },
+  }
 );
 
 export default client;

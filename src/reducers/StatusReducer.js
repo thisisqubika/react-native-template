@@ -1,9 +1,7 @@
 import { NOT_STARTED, LOADING, SUCCESS, ERROR } from '../helpers/Status';
 import { actionTypes } from 'actions/GlobalActions';
 
-export default (state = {}, action) => {
-  const { type } = action;
-
+const statusReducer = (state = {}, { type }) => {
   if (type === actionTypes.GLOBAL_RESET) return {};
 
   const matchesStart = /(.*)_(REQUEST)/.exec(type);
@@ -41,3 +39,5 @@ export default (state = {}, action) => {
 
   return state;
 };
+
+export default statusReducer;
