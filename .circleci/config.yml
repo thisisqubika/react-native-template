@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/react-native-template
     docker:
-      - image: circleci/node:8.11.2
+      - image: circleci/node:lts
     steps:
       - checkout
       - run:
