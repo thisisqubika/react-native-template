@@ -1,6 +1,6 @@
 #### :page_facing_up: Description:
 
-A good description of the problem this PR address.
+A good description of the problem this PR addresses.
 
 ---
 
