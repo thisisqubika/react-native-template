@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Button = ({ style, textStyle, title, ...rest }) => {
+function Button({ style, textStyle, title, ...rest }) {
   const { colors } = useTheme();
 
   return (
@@ -28,7 +28,7 @@ const Button = ({ style, textStyle, title, ...rest }) => {
       </Text>
     </TouchableOpacity>
   );
-};
+}
 
 Button.propTypes = {
   style: PropTypes.object,

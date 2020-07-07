@@ -13,6 +13,8 @@ module.exports = {
           localization: './src/localization',
           reducers: './src/reducers',
           selectors: './src/selectors',
+          store: './src/store',
+          'test-utils': './src/test-utils',
         },
       },
     ],

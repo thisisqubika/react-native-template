@@ -1,19 +1,19 @@
 class UserController {
-  constructor() {
-    this.basePath = '/users';
-  }
-
-  login = async (email, password) =>
-    // This is a mocked example to simulate api behavior
-    new Promise((resolve, reject) => {
-      if (email !== 'a@a.com' && password !== '') {
+  static async login(email, password) {
+    return new Promise((resolve, reject) => {
+      if (email && password) {
         setTimeout(() => resolve({ name: 'Jorge' }), 1000);
       } else {
         setTimeout(() => reject(new Error('Invalid Email/Password')), 1000);
       }
     });
+  }
 
-  logout = () => null;
+  static async logout() {
+    return new Promise(resolve => {
+      setTimeout(resolve, 1000);
+    });
+  }
 }
 
-export default new UserController();
+export default UserController;

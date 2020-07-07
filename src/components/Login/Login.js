@@ -1,8 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import { useTheme } from '@react-navigation/native';
-import PropTypes from 'prop-types';
 
 import Button from '../common/Button';
 import TextField from '../common/TextField';
@@ -16,7 +15,7 @@ import { isLoadingSelector } from 'selectors/StatusSelectors';
 import strings from 'localization';
 import { login, actionTypes } from 'actions/UserActions';
 
-function Login({ navigation }) {
+function Login() {
   const { colors } = useTheme();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -31,14 +30,17 @@ function Login({ navigation }) {
     shallowEqual
   );
 
-  const loginUser = useCallback(() => {
+  const loginUser = () => {
     dispatch(login(email, password));
-  }, [email, password, dispatch]);
+  };
 
-  const passwordChanged = useCallback(value => setPassword(value), []);
-  const emailChanged = useCallback(value => setEmail(value), []);
+  const handleEmailChange = value => {
+    setEmail(value);
+  };
 
-  navigation.setOptions({ headerShown: false });
+  const handlePasswordChange = value => {
+    setPassword(value);
+  };
 
   return (
     <View style={styles.container}>
@@ -53,20 +55,24 @@ function Login({ navigation }) {
           {strings.email}
         </Text>
         <TextField
-          style={{ color: colors.text }}
+          accessibilityHint={strings.emailHint}
+          accessibilityLabel={strings.email.toLowerCase()}
+          onChangeText={handleEmailChange}
           placeholder={strings.email}
-          onChangeText={emailChanged}
+          style={{ color: colors.text }}
           value={email}
         />
         <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
           {strings.password}
         </Text>
         <TextField
-          style={{ color: colors.text }}
+          secureTextEntry
+          accessibilityHint={strings.passwordHint}
+          accessibilityLabel={strings.password.toLowerCase()}
+          onChangeText={handlePasswordChange}
           placeholder={strings.password}
           value={password}
-          onChangeText={passwordChanged}
-          secureTextEntry
+          style={{ color: colors.text }}
         />
         <ErrorView errors={errors} />
         <Button
@@ -77,9 +83,5 @@ function Login({ navigation }) {
     </View>
   );
 }
-
-Login.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
 
 export default Login;

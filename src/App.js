@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { useColorScheme } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 import { enableScreens } from 'react-native-screens';
-import { store, persistor } from 'reducers';
+import { store, persistor } from 'store';
 import Navigation from 'components/navigation';
 import { ColorScheme, DarkTheme, LightTheme } from 'helpers/Themes';
 

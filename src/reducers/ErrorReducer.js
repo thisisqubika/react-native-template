@@ -1,13 +1,13 @@
 import { actionTypes } from 'actions/GlobalActions';
 
-const errorReducer = (state = {}, { type, error }) => {
+const errorReducer = (state = {}, { payload, type }) => {
   const matches = /(.*)_(REQUEST|ERROR)/.exec(type);
 
   if (matches) {
     const [, requestName, requestState] = matches;
     return {
       ...state,
-      [requestName]: requestState === 'ERROR' ? error : null,
+      [requestName]: requestState === 'ERROR' ? payload.error : null,
     };
   }
 
