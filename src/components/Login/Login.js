@@ -30,16 +30,8 @@ function Login() {
     shallowEqual
   );
 
-  const loginUser = () => {
+  const handleSubmit = () => {
     dispatch(login(email, password));
-  };
-
-  const handleEmailChange = value => {
-    setEmail(value);
-  };
-
-  const handlePasswordChange = value => {
-    setPassword(value);
   };
 
   return (
@@ -57,7 +49,7 @@ function Login() {
         <TextField
           accessibilityHint={strings.emailHint}
           accessibilityLabel={strings.email.toLowerCase()}
-          onChangeText={handleEmailChange}
+          onChangeText={setEmail}
           placeholder={strings.email}
           style={{ color: colors.text }}
           value={email}
@@ -69,14 +61,14 @@ function Login() {
           secureTextEntry
           accessibilityHint={strings.passwordHint}
           accessibilityLabel={strings.password.toLowerCase()}
-          onChangeText={handlePasswordChange}
+          onChangeText={setPassword}
           placeholder={strings.password}
           value={password}
           style={{ color: colors.text }}
         />
         <ErrorView errors={errors} />
         <Button
-          onPress={loginUser}
+          onPress={handleSubmit}
           title={isLoading ? strings.loading : strings.login}
         />
       </View>
