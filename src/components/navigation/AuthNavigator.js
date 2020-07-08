@@ -5,13 +5,16 @@ import Login from 'components/Login';
 
 const Stack = createStackNavigator();
 
-const AuthNavigator = () => {
-  const { login } = NavigationConstants;
+function AuthNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={login} component={Login} />
+      <Stack.Screen
+        component={Login}
+        name={NavigationConstants.login}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
-};
+}
 
 export default AuthNavigator;

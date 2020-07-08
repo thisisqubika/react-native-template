@@ -11,24 +11,29 @@ import iconForTab from 'helpers/TabNavigator';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const { home, profile } = NavigationConstants;
 
-const TabIcon = ({ name, color }) => (
-  <Image source={iconForTab(name)} style={{ tintColor: color }} />
-);
+function TabIcon({ name, color }) {
+  return <Image source={iconForTab(name)} style={{ tintColor: color }} />;
+}
 
-const HomeNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name={NavigationConstants.home} component={Home} />
-  </Stack.Navigator>
-);
+function HomeNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name={home} component={Home} />
+    </Stack.Navigator>
+  );
+}
 
-const ProfileNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name={NavigationConstants.profile} component={Profile} />
-  </Stack.Navigator>
-);
+function ProfileNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name={profile} component={Profile} />
+    </Stack.Navigator>
+  );
+}
 
-const AppNavigator = () => {
+function AppNavigator() {
   const { colors } = useTheme();
   return (
     <Tab.Navigator
@@ -40,16 +45,11 @@ const AppNavigator = () => {
         inactiveTintColor: colors.inactiveTab,
       }}
     >
-      <>
-        <Tab.Screen name={NavigationConstants.home} component={HomeNavigator} />
-        <Tab.Screen
-          name={NavigationConstants.profile}
-          component={ProfileNavigator}
-        />
-      </>
+      <Tab.Screen name={home} component={HomeNavigator} />
+      <Tab.Screen name={profile} component={ProfileNavigator} />
     </Tab.Navigator>
   );
-};
+}
 
 TabIcon.propTypes = {
   name: PropTypes.string.isRequired,

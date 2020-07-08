@@ -10,20 +10,22 @@ export const actionTypes = {
 
 const loginRequest = () => ({
   type: actionTypes.LOGIN_REQUEST,
+  payload: null,
 });
 
 const loginError = error => ({
   type: actionTypes.LOGIN_ERROR,
-  error,
+  payload: { error },
 });
 
 const loginSuccess = user => ({
   type: actionTypes.LOGIN_SUCCESS,
-  user,
+  payload: { user },
 });
 
 const logoutRequest = () => ({
   type: actionTypes.LOGOUT,
+  payload: null,
 });
 
 export const login = (email, password) => async dispatch => {

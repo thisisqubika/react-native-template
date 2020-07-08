@@ -1,1 +1,1 @@
-export default state => state.user.user;
+export default state => state.user;

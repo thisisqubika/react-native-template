@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const TextField = ({ style, ...rest }) => {
+function TextField({ style, ...rest }) {
   const { colors } = useTheme();
 
   return (
@@ -38,7 +38,7 @@ const TextField = ({ style, ...rest }) => {
       <View style={styles.line} />
     </View>
   );
-};
+}
 
 TextField.propTypes = {
   style: PropTypes.object,
