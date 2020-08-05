@@ -1,8 +1,9 @@
+import { fireEvent } from '@testing-library/react-native';
 import React from 'react';
 import Profile from 'components/Profile';
 import UserController from 'controllers/UserController';
 import strings from 'localization';
-import { fireEvent, render } from 'test-utils';
+import { renderWithProviders } from 'test-utils/render';
 
 jest.mock('controllers/UserController', () => ({
   logout: jest.fn(() => {
@@ -12,7 +13,7 @@ jest.mock('controllers/UserController', () => ({
 
 describe('Profile', () => {
   test('should render the title and logout button', () => {
-    const { getByText } = render(<Profile />);
+    const { getByText } = renderWithProviders(<Profile />);
     const profileTitle = getByText(strings.profile);
     const logoutButton = getByText(strings.logout);
 
@@ -21,7 +22,7 @@ describe('Profile', () => {
   });
 
   test('should logout the user', async () => {
-    const { getByText } = render(<Profile />);
+    const { getByText } = renderWithProviders(<Profile />);
     const logoutButton = getByText(strings.logout);
 
     fireEvent.press(logoutButton);
