@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './Home';
-import { render } from 'test-utils';
+import Home from 'components/Home';
+import { renderWithProviders } from 'test-utils/render';
 
 const fakeStore = {
   user: {
@@ -14,7 +14,9 @@ const fakeStore = {
 
 describe('Home', () => {
   test('should render a welcome message with the user name', () => {
-    const { getByText } = render(<Home />, { initialState: fakeStore });
+    const { getByText } = renderWithProviders(<Home />, {
+      initialState: fakeStore,
+    });
 
     expect(getByText('Home')).toBeTruthy();
     expect(getByText('Welcome John')).toBeTruthy();

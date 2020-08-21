@@ -1,8 +1,9 @@
+import { fireEvent, waitFor } from '@testing-library/react-native';
 import React from 'react';
 import Login from 'components/Login';
 import UserController from 'controllers/UserController';
 import strings from 'localization';
-import { fireEvent, render, wait } from 'test-utils';
+import { renderWithProviders } from 'test-utils/render';
 
 jest.mock('controllers/UserController', () => ({
   login: jest.fn((email, password) => {
@@ -20,7 +21,7 @@ describe('Login', () => {
   };
 
   it('should submit correctly', async () => {
-    const { getByHintText, getByText } = render(<Login />);
+    const { getByHintText, getByText } = renderWithProviders(<Login />);
     const submitButton = getByText(strings.login);
     const emailInput = getByHintText(strings.emailHint);
     const passwordInput = getByHintText(strings.passwordHint);
@@ -29,7 +30,7 @@ describe('Login', () => {
     fireEvent.changeText(passwordInput, fakeUser.password);
     fireEvent.press(submitButton);
 
-    await wait(() =>
+    await waitFor(() =>
       expect(UserController.login).toHaveBeenCalledWith(
         fakeUser.email,
         fakeUser.password
@@ -38,13 +39,15 @@ describe('Login', () => {
   });
 
   it('should show error on response failure', async () => {
-    const { getByHintText, getByText } = render(<Login />);
+    const { getByHintText, getByText } = renderWithProviders(<Login />);
     const submitButton = getByText(strings.login);
     const emailInput = getByHintText(strings.emailHint);
 
     fireEvent.changeText(emailInput, fakeUser.email);
     fireEvent.press(submitButton);
 
-    await wait(() => expect(getByText('Invalid Email/Password')).toBeTruthy());
+    await waitFor(() =>
+      expect(getByText('Invalid Email/Password')).toBeTruthy()
+    );
   });
 });

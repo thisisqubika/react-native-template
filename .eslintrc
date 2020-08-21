@@ -1,7 +1,5 @@
 {
   "env": {
-    "node": true,
-    "browser": true,
     "es2020": true,
     "jest": true
   },
@@ -11,6 +9,7 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:react-native-a11y/basic",
+    "plugin:testing-library/recommended",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
@@ -23,7 +22,7 @@
       "error",
       { "groups": ["builtin", "external", "parent", "sibling", "index"] }
     ],
-    "import/first": "off"
+    "import/prefer-default-export": "off"
   },
   "settings": {
     "import/resolver": {
