@@ -4,7 +4,7 @@ const userReducer = (state = {}, { payload, type }) => {
   switch (type) {
     case actionTypes.LOGIN_SUCCESS:
       return { ...state, ...payload.user };
-    case actionTypes.LOGOUT:
+    case actionTypes.CLEAR_STORE:
       return {};
     default:
       return state;

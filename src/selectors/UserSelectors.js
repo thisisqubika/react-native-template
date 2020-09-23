@@ -1,1 +1,3 @@
-export default state => state.user;
+const userSelector = state => state.user;
+
+export default userSelector;

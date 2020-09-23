@@ -1,11 +1,13 @@
 class UserController {
   static async login(email, password) {
     return new Promise((resolve, reject) => {
-      if (email && password) {
-        setTimeout(() => resolve({ name: 'Jorge' }), 1000);
-      } else {
-        setTimeout(() => reject(new Error('Invalid Email/Password')), 1000);
-      }
+      setTimeout(() => {
+        if (email && password) {
+          resolve({ name: 'Jorge' });
+        } else {
+          reject(new Error('Invalid Email/Password'));
+        }
+      }, 1000);
     });
   }
 
