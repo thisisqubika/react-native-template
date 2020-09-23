@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';

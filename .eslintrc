@@ -15,8 +15,9 @@
   ],
   "parser": "babel-eslint",
   "rules": {
-    "react/jsx-filename-extension": "off",
     "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
     "import/order": [
       "error",
       { "groups": ["builtin", "external", "parent", "sibling", "index"] }
