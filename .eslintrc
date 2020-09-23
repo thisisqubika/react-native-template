@@ -15,8 +15,7 @@
   ],
   "parser": "babel-eslint",
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-filename-extension": "off",
     "react/forbid-prop-types": "off",
     "import/order": [
       "error",

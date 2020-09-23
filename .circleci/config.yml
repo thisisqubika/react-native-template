@@ -1,26 +1,20 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@4.0.0
 jobs:
-  build:
-    working_directory: ~/react-native-template
-    docker:
-      - image: circleci/node:lts
+  test-and-lint:
+    executor:
+      name: node/default
     steps:
       - checkout
+      - node/install-packages
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@latest'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          name: Run tests
+          command: npm run test
       - run:
-          name: install-npm-wee
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: test
-          command: npm test
-      - store_artifacts:
-          path: ./coverage
-          prefix: coverage
+          name: Run linter
+          command: npm run lint
+workflows:
+  test-and-lint:
+    jobs:
+      - test-and-lint
