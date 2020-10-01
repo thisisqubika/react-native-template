@@ -2,38 +2,45 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as userActions from 'actions/UserActions';
 
+const user = {
+  email: 'user@test.com',
+  password: 'password',
+};
+
+const loginActions = [
+  {
+    type: userActions.actionTypes.LOGIN_REQUEST,
+    payload: null,
+  },
+  {
+    type: userActions.actionTypes.LOGIN_SUCCESS,
+    payload: { user: { name: 'Jorge' } },
+  },
+];
+
+const logoutActions = [
+  {
+    type: userActions.actionTypes.CLEAR_STORE,
+    payload: null,
+  },
+];
+
 describe('UserActions', () => {
-  const credentials = { email: 'user@test.com', password: 'password' };
-  const user = { name: 'Jorge' };
-  const store = configureStore([thunk])(user);
+  const mockStore = configureStore([thunk]);
 
-  afterEach(() => {
-    store.clearActions();
+  it('should create an action for login', async () => {
+    const store = mockStore({});
+
+    await store.dispatch(userActions.login(user.email, user.password));
+    const actions = store.getActions();
+    expect(actions).toEqual(loginActions);
   });
 
-  it('should create an action for login', () => {
-    const expectedAction = {
-      type: userActions.actionTypes.LOGIN_REQUEST,
-      payload: null,
-    };
+  it('should create an action for logout', async () => {
+    const store = mockStore({});
 
-    store.dispatch(userActions.login(credentials.email, credentials.password));
-
+    await store.dispatch(userActions.logout());
     const actions = store.getActions();
-
-    expect(actions).toEqual([expectedAction]);
-  });
-
-  it('should create an action for logout', () => {
-    const expectedAction = {
-      type: userActions.actionTypes.LOGOUT,
-      payload: null,
-    };
-
-    store.dispatch(userActions.logout());
-
-    const actions = store.getActions();
-
-    expect(actions).toEqual([expectedAction]);
+    expect(actions).toEqual(logoutActions);
   });
 });

@@ -1,8 +1,10 @@
-import { NOT_STARTED, LOADING, SUCCESS, ERROR } from '../helpers/Status';
 import { actionTypes } from 'actions/GlobalActions';
+import { ERROR, LOADING, NOT_STARTED, SUCCESS } from 'constants/status';
 
 const statusReducer = (state = {}, { type }) => {
-  if (type === actionTypes.GLOBAL_RESET) return {};
+  if (type === actionTypes.GLOBAL_RESET) {
+    return {};
+  }
 
   const matchesStart = /(.*)_(REQUEST)/.exec(type);
   const matchesError = /(.*)_(ERROR)/.exec(type);
@@ -31,10 +33,7 @@ const statusReducer = (state = {}, { type }) => {
   }
 
   if (key) {
-    return {
-      ...state,
-      [key]: status,
-    };
+    return { ...state, [key]: status };
   }
 
   return state;

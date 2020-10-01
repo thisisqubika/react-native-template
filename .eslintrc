@@ -15,12 +15,29 @@
   ],
   "parser": "babel-eslint",
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/render.js",
+          "**/*.test.js"
+        ]
+      }
+    ],
     "import/order": [
       "error",
-      { "groups": ["builtin", "external", "parent", "sibling", "index"] }
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
     ],
     "import/prefer-default-export": "off"
   },

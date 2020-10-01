@@ -7,7 +7,7 @@ import rootReducer from 'reducers';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['loading', 'error'],
+  blacklist: ['error', 'status'],
 };
 
 export const store = createStore(
