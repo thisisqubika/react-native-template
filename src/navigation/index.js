@@ -17,7 +17,7 @@ function Navigation({ theme }) {
 }
 
 Navigation.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.object.isRequired,
 };
 
 export default Navigation;
