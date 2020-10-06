@@ -1,3 +1,3 @@
-import strings from './Localization';
+import strings from 'localization/Localization';
 
 export default strings;

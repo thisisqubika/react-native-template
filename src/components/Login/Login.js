@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import { shallowEqual, useSelector, useDispatch } from 'react-redux';
 import { useTheme } from '@react-navigation/native';
-
-import Button from '../common/Button';
-import TextField from '../common/TextField';
-import ErrorView from '../common/ErrorView';
-import styles from './styles';
-
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { actionTypes, login } from 'actions/UserActions';
+import Button from 'components/common/Button';
+import ErrorView from 'components/common/ErrorView';
+import TextField from 'components/common/TextField';
+import styles from 'components/Login/styles';
 import ShadowStyles from 'helpers/ShadowStyles';
 import TextStyles from 'helpers/TextStyles';
+import strings from 'localization';
 import errorsSelector from 'selectors/ErrorSelectors';
 import { isLoadingSelector } from 'selectors/StatusSelectors';
-import strings from 'localization';
-import { login, actionTypes } from 'actions/UserActions';
 
 function Login() {
   const { colors } = useTheme();
