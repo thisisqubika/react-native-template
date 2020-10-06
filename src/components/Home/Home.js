@@ -1,15 +1,15 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { shallowEqual, useSelector } from 'react-redux';
 import { useTheme } from '@react-navigation/native';
-import styles from './styles';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
+import styles from 'components/Home/styles';
 import TextStyles from 'helpers/TextStyles';
 import strings from 'localization';
-import getUser from 'selectors/UserSelectors';
+import { getUser } from 'selectors/UserSelectors';
 
-const Home = () => {
+function Home() {
   const { colors } = useTheme();
-  const user = useSelector(state => getUser(state), shallowEqual);
+  const user = useSelector(getUser);
 
   return (
     <View style={styles.container}>
@@ -21,6 +21,6 @@ const Home = () => {
       </Text>
     </View>
   );
-};
+}
 
 export default Home;

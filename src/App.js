@@ -5,7 +5,7 @@ import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
 import Navigation from 'navigation';
 import { DarkTheme, LightTheme } from 'helpers/Themes';
-import { colorScheme } from 'constants/colorScheme';
+import { DARK } from 'constants/colorScheme';
 import { persistor, store } from 'store';
 
 enableScreens();
@@ -19,9 +19,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Navigation
-        theme={scheme === colorScheme.DARK ? DarkTheme : LightTheme}
-      />
+      <Navigation theme={scheme === DARK ? DarkTheme : LightTheme} />
     </Provider>
   );
 }
