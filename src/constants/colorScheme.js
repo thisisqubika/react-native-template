@@ -1,4 +1,2 @@
-export const colorScheme = {
-  LIGHT: 'light',
-  DARK: 'dark',
-};
+export const DARK = 'dark';
+export const LIGHT = 'light';

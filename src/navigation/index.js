@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import AuthNavigator from 'navigation/AuthNavigator';
 import AppNavigator from 'navigation/AppNavigator';
-import getUser from 'selectors/UserSelectors';
+import { getUser } from 'selectors/UserSelectors';
 
 function Navigation({ theme }) {
   const user = useSelector(getUser);
@@ -17,7 +17,7 @@ function Navigation({ theme }) {
 }
 
 Navigation.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.object.isRequired,
 };
 
 export default Navigation;

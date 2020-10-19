@@ -1,12 +1,12 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { useDispatch } from 'react-redux';
 import { useTheme } from '@react-navigation/native';
-import styles from './styles';
-import Button from 'components/common/Button';
-import strings from 'localization';
-import TextStyles from 'helpers/TextStyles';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import { logout } from 'actions/UserActions';
+import Button from 'components/common/Button';
+import styles from 'components/Profile/styles';
+import TextStyles from 'helpers/TextStyles';
+import strings from 'localization';
 
 function Profile() {
   const { colors } = useTheme();

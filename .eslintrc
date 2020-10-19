@@ -43,7 +43,14 @@
   },
   "settings": {
     "import/resolver": {
-      "babel-module": {}
+      "babel-module": {
+        "extensions": [
+          ".android.js",
+          ".ios.js",
+          ".js",
+          ".native"
+        ]
+      }
     }
   }
 }
