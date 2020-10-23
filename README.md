@@ -3,16 +3,16 @@ React-Native-Template
 The goal of this project is to work as template for react-native applications, providing a base project structure, core dependencies and boilerplate to jumpstart development.
 
 ## Prerequisites
-- Node > 7 and npm (Recommended: Use [nvm](https://github.com/creationix/nvm))
-- Watchman `brew install watchman`
-- React Native CLI `npm install -g react-native-cli`
-- XCode > 9
+- [Node JS > 12](https://nodejs.org/) and npm (Recommended: Use [nvm](https://github.com/nvm-sh/nvm))
+- [Watchman](https://facebook.github.io/watchman/)
+- [Xcode](https://developer.apple.com/xcode/)
+- [Cocoapods](https://cocoapods.org/)
 - [JDK > 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Android Studio and Android SDK](https://developer.android.com/studio/index.html)
 
 
 ## Base dependencies
-- [axios](https://github.com/axios/axios) for networking.
+- [Axios](https://github.com/axios/axios) for networking.
 - [PropTypes](https://github.com/facebook/prop-types) to type-check our components exposed properties.
 - [React-Native-Config](https://github.com/luggit/react-native-config) to manage envionments.
 - [React-Navigation](https://reactnavigation.org/) navigation library.
@@ -20,7 +20,7 @@ The goal of this project is to work as template for react-native applications, p
 - [Redux](https://redux.js.org/) for state management.
 - [Redux-Persist](https://github.com/rt2zz/redux-persist) as persistance layer.
 - [Redux-Thunk](https://github.com/gaearon/redux-thunk) to dispatch asynchronous actions.
-- [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme) for testing.
+- [Jest](https://facebook.github.io/jest/) and [React-Native-Testing-Library](https://callstack.github.io/react-native-testing-library/) for testing.
 
 ## Usage
 
@@ -39,7 +39,7 @@ Keep in mind that this library can cause trouble if you are renaming a project t
 After that you should proceed as with any javascript project:
 - Go to your project's root folder and run `npm install`.
 - Create a `.env` file to store all your configuration constants. Remember to not commit this file, since it can store sensible information of your product.
-- Run `react-native run-ios` or `react-native run-android` to start your application!
+- Run `npm run ios` or `npm run android` to start your application!
 
 ### Option #2: Copy the structure to your project
 If you want to roll on your own and don't want to use this as a template, you can create your own project and then copy the `/src` folder (which has all the code of your application) and update your `index.js`.
@@ -52,15 +52,19 @@ This template follows a very simple project structure:
   - `actions`: This folder contains all actions that can be dispatched to redux.
   - `assets`: Asset folder to store all images, vectors, etc.
   - `components`: Folder that contains all your application components.
-    - `Common`: Folder to store any common component that you use through your app (such as a generic button, textfields, etc).
+    - `common`: Folder to store any common component that you use through your app (such as a generic button, textfields, etc).
     - `MyComponent`: Each component should be stored inside it's own folder, and inside it a file for its code and a separate one for the styles. Then, the `index.js` is only used to export the final component that will be used on the app.
       - `MyComponent.js`
       - `styles.js`
       - `index.js`
+  - `constants`: Folder to store any kind of constant that you have.
+  - `controllers`: Folder to store all your network and storage logic (you should have one controller per resource).
   - `helpers`: Folder to store any kind of helper that you have.
+  - `localization`: Folder to store the languages files.
+  - `navigation`: Folder to store the navigators.
   - `reducers`: This folder should have all your reducers, and expose the combined result using its `index.js`
   - `selectors`: Folder to store your selectors for each reducer.
-  - `controllers`: Folder to store all your network and storage logic (you should have one controller per resource).
+  - `store`: Folder to put all redux middlewares and the store.
   - `App.js`: Main component that starts your whole app.
 - `index.js`: Entry point of your application as per React-Native standards.
 
@@ -91,11 +95,4 @@ Expand the "Build" settings on left
 - Where it says "Type a script or drag a script file", type: `echo ".env.production" > /tmp/envfile` replacing .env.production with your file
 
 ## Styleguide
-For coding styling we decided to go with ESLint and [Airbnb's styleguide](https://github.com/airbnb/javascript) with a few exceptions that you can find on the [.eslintrc.json](./.eslintrc.json)
-
-## Useful resources & Further reading
-This are some posts/guides that explain some things that we use inside the project:
-
-- [React-Native-Navigation and Redux](https://medium.com/react-native-training/explanation-of-react-native-navigation-wix-with-redux-deabcee8edfc).
-
-For further explaining on the decisions made on this template, as well as on how to use it, please refer to the [full tutorial](./docs/Tutorial.pdf)
+For coding styling we decided to go with ESLint and [Airbnb's styleguide](https://github.com/airbnb/javascript) with a few exceptions that you can find on the [.eslintrc](./.eslintrc)
