@@ -79,6 +79,8 @@ Add the environment variables files in root folder(.env.staging and .env.product
 
 A map associating builds with env files is already defined in `app/build.gradle` you can modify or add environments if needed.
 
+For multiple enviroments to work you would need to change `-keep class [YOUR_PACKAGE_NAME].BuildConfig { *; }` on `proguard-rules.pro` file.
+
 #### iOS
 
 The basic idea in iOS is to have one scheme per environment file, so you can easily alternate between them.
