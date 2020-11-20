@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-import RNBootSplash from 'react-native-bootsplash';
+import { hide } from 'react-native-bootsplash';
 import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
 import Navigation from 'navigation';
@@ -13,8 +13,12 @@ enableScreens();
 function App() {
   const scheme = useColorScheme();
 
+  const hideSplashScreen = async () => {
+    await hide({ fade: true });
+  };
+
   useEffect(() => {
-    persistor(RNBootSplash.hide);
+    persistor(hideSplashScreen);
   }, []);
 
   return (
