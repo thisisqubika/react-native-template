@@ -15,6 +15,7 @@ module.exports = {
           navigation: './src/navigation',
           reducers: './src/reducers',
           selectors: './src/selectors',
+          storage: './src/storage',
           store: './src/store',
           'test-utils': './src/test-utils',
         },
