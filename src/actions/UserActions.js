@@ -1,6 +1,6 @@
-import UserController from 'controllers/UserController';
+import { UserController } from '_controllers';
 
-export const actionTypes = {
+export const TYPES = {
   CLEAR_STORE: 'CLEAR_STORE',
   LOGIN: 'LOGIN',
   LOGIN_REQUEST: 'LOGIN_REQUEST',
@@ -9,29 +9,29 @@ export const actionTypes = {
 };
 
 const loginRequest = () => ({
-  type: actionTypes.LOGIN_REQUEST,
+  type: TYPES.LOGIN_REQUEST,
   payload: null,
 });
 
 const loginError = error => ({
-  type: actionTypes.LOGIN_ERROR,
+  type: TYPES.LOGIN_ERROR,
   payload: { error },
 });
 
 const loginSuccess = user => ({
-  type: actionTypes.LOGIN_SUCCESS,
+  type: TYPES.LOGIN_SUCCESS,
   payload: { user },
 });
 
 const clearStore = () => ({
-  type: actionTypes.CLEAR_STORE,
+  type: TYPES.CLEAR_STORE,
   payload: null,
 });
 
-export const login = (email, password) => async dispatch => {
+export const login = (username, password) => async dispatch => {
   dispatch(loginRequest());
   try {
-    const user = await UserController.login(email, password);
+    const user = await UserController.login(username, password);
     dispatch(loginSuccess(user));
   } catch (error) {
     dispatch(loginError(error.message));

@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from 'reducers';
+import rootReducer from '_reducers';
 
 const initialStore = { error: {}, status: {}, user: {} };
 

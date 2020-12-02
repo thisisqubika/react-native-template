@@ -1,8 +1,10 @@
-import { actionTypes } from 'actions/GlobalActions';
-import { ERROR, LOADING, NOT_STARTED, SUCCESS } from 'constants/status';
+import { TYPES } from '_actions/GlobalActions';
+import { STATUS } from '_constants';
+
+const { ERROR, LOADING, NOT_STARTED, SUCCESS } = STATUS;
 
 const statusReducer = (state = {}, { type }) => {
-  if (type === actionTypes.GLOBAL_RESET) {
+  if (type === TYPES.GLOBAL_RESET) {
     return {};
   }
 

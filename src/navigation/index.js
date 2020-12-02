@@ -1,23 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
-import PropTypes from 'prop-types';
 import React from 'react';
+import { useColorScheme } from 'react-native';
 import { useSelector } from 'react-redux';
-import AuthNavigator from 'navigation/AuthNavigator';
-import AppNavigator from 'navigation/AppNavigator';
-import { getUser } from 'selectors/UserSelectors';
+import AppNavigator from '_navigation/AppNavigator';
+import AuthNavigator from '_navigation/AuthNavigator';
+import { getUser } from '_selectors/UserSelectors';
+import { theme } from '_theme';
 
-function Navigation({ theme }) {
+function RootNavigator() {
   const user = useSelector(getUser);
+  const scheme = useColorScheme();
 
   return (
-    <NavigationContainer theme={theme}>
+    <NavigationContainer theme={theme[scheme]}>
       {user ? <AppNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 }
 
-Navigation.propTypes = {
-  theme: PropTypes.object.isRequired,
-};
-
-export default Navigation;
+export default RootNavigator;

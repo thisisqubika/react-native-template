@@ -1,10 +1,10 @@
-import { actionTypes } from 'actions/UserActions';
+import { TYPES } from '_actions/UserActions';
 
 const userReducer = (state = {}, { payload, type }) => {
   switch (type) {
-    case actionTypes.LOGIN_SUCCESS:
+    case TYPES.LOGIN_SUCCESS:
       return { ...state, ...payload.user };
-    case actionTypes.CLEAR_STORE:
+    case TYPES.CLEAR_STORE:
       return {};
     default:
       return state;

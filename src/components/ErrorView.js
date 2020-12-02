@@ -1,8 +1,8 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import PropTypes from 'prop-types';
 import { useTheme } from '@react-navigation/native';
-import TextStyles from 'helpers/TextStyles';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { TextStyles } from '_theme';
 
 const styles = StyleSheet.create({
   container: {
