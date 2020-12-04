@@ -3,16 +3,19 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 40,
   },
   formContainer: {
-    alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginHorizontal: 40,
+    borderRadius: 5,
     padding: 20,
-    borderRadius: 4,
+    width: '100%',
+  },
+  submitButton: {
+    marginTop: 20,
   },
 });
 

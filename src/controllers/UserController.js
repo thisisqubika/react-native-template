@@ -1,19 +1,21 @@
+import strings from '_localization';
+
 class UserController {
-  static async login(email, password) {
+  static async login(username, password) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (email && password) {
-          resolve({ name: 'Jorge' });
+        if (username && password) {
+          resolve({ username });
         } else {
-          reject(new Error('Invalid Email/Password'));
+          reject(new Error(strings.login.invalidCredentials));
         }
-      }, 1000);
+      }, 500);
     });
   }
 
   static async logout() {
     return new Promise(resolve => {
-      setTimeout(resolve, 1000);
+      setTimeout(resolve, 500);
     });
   }
 }

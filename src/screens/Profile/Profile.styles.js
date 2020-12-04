@@ -3,9 +3,12 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     padding: 40,
+  },
+  legend: {
+    textAlign: 'center',
   },
 });
 

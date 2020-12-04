@@ -1,32 +1,12 @@
-/* eslint-disable react/prop-types */
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import TabBarIcon from 'components/common/TabBarIcon';
-import Home from 'components/Home';
-import Profile from 'components/Profile';
-import navigationConstants from 'constants/navigation';
+import { TabBarIcon } from '_components';
+import { NAVIGATION } from '_constants';
+import HomeNavigator from '_navigation/HomeNavigator';
+import ProfileNavigator from '_navigation/ProfileNavigator';
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const { home, profile } = navigationConstants;
-
-function HomeNavigator() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name={home} component={Home} />
-    </Stack.Navigator>
-  );
-}
-
-function ProfileNavigator() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name={profile} component={Profile} />
-    </Stack.Navigator>
-  );
-}
 
 function AppNavigator() {
   const { colors } = useTheme();
@@ -41,8 +21,8 @@ function AppNavigator() {
         inactiveTintColor: colors.inactiveTab,
       }}
     >
-      <Tab.Screen name={home} component={HomeNavigator} />
-      <Tab.Screen name={profile} component={ProfileNavigator} />
+      <Tab.Screen name={NAVIGATION.home} component={HomeNavigator} />
+      <Tab.Screen name={NAVIGATION.profile} component={ProfileNavigator} />
     </Tab.Navigator>
   );
 }
