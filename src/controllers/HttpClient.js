@@ -24,4 +24,8 @@ const setAuthorization = token => {
   client.defaults.headers.common.authorization = token;
 };
 
-export default { ...client, setAuthorization };
+const clearAuthorization = () => {
+  delete client.defaults.headers.common.authorization;
+};
+
+export default { ...client, setAuthorization, clearAuthorization };

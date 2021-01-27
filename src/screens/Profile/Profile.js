@@ -1,6 +1,6 @@
 import { useTheme } from '@react-navigation/native';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { logout } from '_actions/UserActions';
 import { Button } from '_components';
@@ -17,14 +17,14 @@ function Profile() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text
         style={[TextStyles.fieldTitle, styles.legend, { color: colors.text }]}
       >
         {strings.profile.message}
       </Text>
       <Button title={strings.profile.logout} onPress={logoutUser} />
-    </View>
+    </ScrollView>
   );
 }
 
