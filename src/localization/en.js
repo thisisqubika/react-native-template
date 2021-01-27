@@ -20,6 +20,6 @@ export default {
   profile: {
     header: 'Profile',
     logout: 'Logout',
-    message: 'This screen has the iOS native collapsible navbar.',
+    message: 'This screen has the iOS native large header.',
   },
 };

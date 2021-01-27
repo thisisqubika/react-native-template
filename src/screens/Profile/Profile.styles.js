@@ -2,12 +2,11 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    alignItems: 'center',
+    flex: 1,
     justifyContent: 'space-between',
     padding: 40,
   },
-  legend: {
+  title: {
     textAlign: 'center',
   },
 });
