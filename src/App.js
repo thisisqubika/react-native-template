@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { hide } from 'react-native-bootsplash';
 import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import RootNavigator from '_navigation';
 import { persistor, store } from '_store';
 
@@ -12,13 +13,11 @@ function App() {
     await hide({ fade: true });
   };
 
-  useEffect(() => {
-    persistor(hideSplashScreen);
-  }, []);
-
   return (
     <Provider store={store}>
-      <RootNavigator />
+      <PersistGate onBeforeLift={hideSplashScreen} persistor={persistor}>
+        <RootNavigator />
+      </PersistGate>
     </Provider>
   );
 }

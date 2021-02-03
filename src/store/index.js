@@ -15,6 +15,4 @@ export const store = createStore(
   applyMiddleware(thunk)
 );
 
-export const persistor = callback => {
-  return persistStore(store, null, callback);
-};
+export const persistor = persistStore(store);
