@@ -19,7 +19,7 @@ function Profile() {
   return (
     <View style={styles.container}>
       <Text
-        style={[TextStyles.fieldTitle, styles.legend, { color: colors.text }]}
+        style={[TextStyles.fieldTitle, styles.title, { color: colors.text }]}
       >
         {strings.profile.message}
       </Text>

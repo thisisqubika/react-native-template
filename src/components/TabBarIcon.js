@@ -10,13 +10,19 @@ const tabIcon = {
   [NAVIGATION.profile]: settingsIcon,
 };
 
-function TabBarIcon({ name, color }) {
-  return <Image source={tabIcon[name]} style={{ tintColor: color }} />;
+function TabBarIcon({ color, routeName }) {
+  return (
+    <Image
+      accessibilityIgnoresInvertColors
+      source={tabIcon[routeName]}
+      style={{ tintColor: color }}
+    />
+  );
 }
 
 TabBarIcon.propTypes = {
-  name: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  routeName: PropTypes.string.isRequired,
 };
 
 export default TabBarIcon;

@@ -13,8 +13,10 @@ function AppNavigator() {
 
   return (
     <Tab.Navigator
-      screenOptions={({ route: { name } }) => ({
-        tabBarIcon: ({ color }) => <TabBarIcon color={color} name={name} />,
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color }) => (
+          <TabBarIcon color={color} routeName={route.name} />
+        ),
       })}
       tabBarOptions={{
         activeTintColor: colors.activeTab,

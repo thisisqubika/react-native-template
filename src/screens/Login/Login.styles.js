@@ -8,8 +8,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
   },
   formContainer: {
-    justifyContent: 'center',
-    alignItems: 'flex-start',
     borderRadius: 5,
     padding: 20,
     width: '100%',

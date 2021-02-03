@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   textField: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'normal',
   },
   fieldTitle: {

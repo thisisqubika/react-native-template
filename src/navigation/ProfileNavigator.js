@@ -1,24 +1,17 @@
-import { useTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { NAVIGATION } from '_constants';
 import { Profile } from '_screens';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 function ProfileNavigator() {
-  const { colors } = useTheme();
-
   return (
     <Stack.Navigator>
       <Stack.Screen
         name={NAVIGATION.profile}
         component={Profile}
-        options={{
-          headerStyle: {
-            backgroundColor: colors.activeTab,
-          },
-        }}
+        options={{ headerLargeTitle: true }}
       />
     </Stack.Navigator>
   );

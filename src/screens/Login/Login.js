@@ -1,6 +1,6 @@
 import { useTheme } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { login, TYPES } from '_actions/UserActions';
 import { Button, ErrorView, TextField } from '_components';
@@ -8,7 +8,7 @@ import strings from '_localization';
 import styles from '_screens/Login/Login.styles';
 import errorsSelector from '_selectors/ErrorSelectors';
 import { isLoadingSelector } from '_selectors/StatusSelectors';
-import { ShadowStyles, TextStyles } from '_theme';
+import { ShadowStyles } from '_theme';
 
 function Login() {
   const { colors } = useTheme();
@@ -38,25 +38,22 @@ function Login() {
           { backgroundColor: colors.primary },
         ]}
       >
-        <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
-          {strings.login.username}
-        </Text>
         <TextField
+          autoCapitalize="none"
           accessibilityHint={strings.login.usernameHint}
           accessibilityLabel={strings.login.username}
           onChangeText={setUsername}
           placeholder={strings.login.username}
           value={username}
         />
-        <Text style={[TextStyles.fieldTitle, { color: colors.text }]}>
-          {strings.login.password}
-        </Text>
         <TextField
           secureTextEntry
           accessibilityHint={strings.login.passwordHint}
           accessibilityLabel={strings.login.password}
+          autoCapitalize="none"
           onChangeText={setPassword}
           placeholder={strings.login.password}
+          textContentType="password"
           value={password}
         />
         <ErrorView errors={errors} />

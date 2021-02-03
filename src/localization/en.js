@@ -20,6 +20,6 @@ export default {
   profile: {
     header: 'Profile',
     logout: 'Logout',
-    message: 'This one has a nav with a different color than the home.',
+    message: 'This screen has the iOS native large header.',
   },
 };

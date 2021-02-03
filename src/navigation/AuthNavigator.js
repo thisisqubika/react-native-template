@@ -1,24 +1,17 @@
-import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { NAVIGATION } from '_constants';
 import { Login } from '_screens';
-import { getUser } from '_selectors/UserSelectors';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 function AuthNavigator() {
-  const user = useSelector(getUser);
-
   return (
     <Stack.Navigator>
       <Stack.Screen
         component={Login}
         name={NAVIGATION.login}
-        options={{
-          headerShown: false,
-          animationTypeForReplace: user ? 'push' : 'pop',
-        }}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 5,
     borderWidth: 1,
-    padding: 5,
+    padding: 10,
     width: '100%',
   },
 });
@@ -33,13 +33,12 @@ function Button({ style, textStyle, title, ...rest }) {
 Button.propTypes = {
   style: PropTypes.object,
   textStyle: PropTypes.object,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 Button.defaultProps = {
   style: null,
   textStyle: null,
-  title: '',
 };
 
 export default Button;
