@@ -1,22 +1,24 @@
 import axios from 'axios';
-import ENV from 'react-native-config';
+import { Config } from 'react-native-config';
 import strings from '_localization';
 
 const client = axios.create({
-  baseURL: ENV.API_BASE_URL,
+  baseURL: Config.API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
 client.interceptors.response.use(
-  response => response,
+  response => response.data,
   error => {
-    if (!error.response) {
-      throw new Error(strings.network.connectionError);
+    if (error.response) {
+      return Promise.reject(error.response.data);
+    } else if (error.request) {
+      return Promise.reject({ error: strings.network.connectionError });
+    } else {
+      return Promise.reject(error);
     }
-
-    return Promise.reject(error);
   }
 );
 
