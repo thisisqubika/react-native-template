@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android --variant=developmentDebug",
+    "android:prod": "react-native run-android --variant=productionDebug",
+    "android:staging": "react-native run-android --variant=stagingDebug",
     "ios": "react-native run-ios",
     "clean": "watchman watch-del-all && rm -rf package-lock.json && rm -rf node_modules && npm install",
     "start": "react-native start",
