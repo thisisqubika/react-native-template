@@ -39,7 +39,6 @@ Keep in mind that this library can cause trouble if you are renaming a project t
 
 After that you should proceed as with any javascript project:
 - Go to your project's root folder and run `npm install`.
-- Create a `.env` file to store all your configuration constants. Remember to not commit this file, since it can store sensible information of your product.
 - Run `npm run ios` or `npm run android` to start your application!
 
 ### Option #2: Copy the structure to your project
@@ -75,7 +74,7 @@ This template follows a very simple project structure:
 To customize the splash screen (logo and background color) use the CLI provided in the [official docs](https://github.com/zoontek/react-native-bootsplash#assets-generation).
 
 ## Setup environments
-Add the environment variables files in root folder(.env.staging and .env.production)
+Modify the environment variables files in root folder (`.env.development`, `.env.production` and `.env.staging`)
 
 #### Android
 A map associating builds with env files is already defined in `app/build.gradle` you can modify or add environments if needed.
@@ -85,16 +84,15 @@ For multiple enviroments to work you would need to change `-keep class [YOUR_PAC
 #### iOS
 The basic idea in iOS is to have one scheme per environment file, so you can easily alternate between them.
 
-Start by creating a new scheme:
-
+To create a new scheme:
 - In the Xcode menu, go to Product > Scheme > Edit Scheme
 - Click Duplicate Scheme on the bottom
-- Give it a proper name on the top left. For instance: "Production"
+- Give it a proper name on the top left. For instance: "qa"
 - Then edit the newly created scheme to make it use a different env file. From the same "manage scheme" window:
 
 Expand the "Build" settings on left
 - Click "Pre-actions", and under the plus sign select "New Run Script Action"
-- Where it says "Type a script or drag a script file", type: `echo ".env.production" > /tmp/envfile` replacing .env.production with your file
+- Where it says "Type a script or drag a script file", type: `echo ".env.qa" > /tmp/envfile` replacing `.env.qa` with your file.
 
 ## Styleguide
 For coding styling we decided to go with ESLint and [React Native community's styleguide](https://github.com/facebook/react-native/tree/master/packages/eslint-config-react-native-community#readme).

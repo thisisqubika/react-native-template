@@ -21,6 +21,7 @@ abstract_target 'App' do
   end
 
   use_flipper!({'Flipper' => '0.76.0'})
+
   post_install do |installer|
     flipper_post_install(installer)
   end
