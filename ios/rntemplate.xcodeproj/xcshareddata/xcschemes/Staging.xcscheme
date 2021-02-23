@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1220"
-   version = "1.3">
+   LastUpgradeVersion = "1240"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -10,7 +10,16 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "echo &quot;.env&quot; &gt; /tmp/envfile&#10;">
+               scriptText = "echo &quot;.env.staging&quot; &gt; /tmp/envfile&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
+                     BuildableName = "RNTemplateStaging.app"
+                     BlueprintName = "RNTemplateStaging"
+                     ReferencedContainer = "container:rntemplate.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -23,9 +32,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rntemplate.app"
-               BlueprintName = "rntemplate"
+               BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
+               BuildableName = "RNTemplateStaging.app"
+               BlueprintName = "RNTemplateStaging"
                ReferencedContainer = "container:rntemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -37,16 +46,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "rntemplateTests.xctest"
-               BlueprintName = "rntemplateTests"
-               ReferencedContainer = "container:rntemplate.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -63,9 +62,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rntemplate.app"
-            BlueprintName = "rntemplate"
+            BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
+            BuildableName = "RNTemplateStaging.app"
+            BlueprintName = "RNTemplateStaging"
             ReferencedContainer = "container:rntemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,9 +79,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rntemplate.app"
-            BlueprintName = "rntemplate"
+            BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
+            BuildableName = "RNTemplateStaging.app"
+            BlueprintName = "RNTemplateStaging"
             ReferencedContainer = "container:rntemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -92,6 +91,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "RNTemplate Staging"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

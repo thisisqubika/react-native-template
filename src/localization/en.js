@@ -8,6 +8,7 @@ export default {
   home: {
     header: 'Home',
     message: 'Welcome',
+    variant: 'App variant: ',
   },
   login: {
     username: 'Username',

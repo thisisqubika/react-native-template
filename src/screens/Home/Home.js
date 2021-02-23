@@ -1,6 +1,7 @@
 import { useTheme } from '@react-navigation/native';
 import React from 'react';
 import { Text, View } from 'react-native';
+import { Config } from 'react-native-config';
 import { useSelector } from 'react-redux';
 import strings from '_localization';
 import styles from '_screens/Home/Home.styles';
@@ -15,6 +16,9 @@ function Home() {
     <View style={styles.container}>
       <Text style={[TextStyles.lightTitle, { color: colors.text }]}>
         {strings.home.message} {user?.username}
+      </Text>
+      <Text style={[TextStyles.textField, { color: colors.text }]}>
+        {strings.home.variant} {Config.BUILD_VARIANT}
       </Text>
     </View>
   );
