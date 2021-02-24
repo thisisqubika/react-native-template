@@ -9,7 +9,10 @@ jest.mock('react-native-bootsplash', () => ({
 }));
 
 jest.mock('react-native-config', () => ({
-  API_BASE_URL: 'https://api.github.com',
+  Config: {
+    API_BASE_URL: 'XXX',
+    BUILD_VARIANT: 'TEST',
+  },
 }));
 
 jest.mock('react-native-reanimated', () => {
