@@ -16,7 +16,7 @@
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
                      BuildableName = "RNTemplateStaging.app"
-                     BlueprintName = "RNTemplateStaging"
+                     BlueprintName = "Staging"
                      ReferencedContainer = "container:rntemplate.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
                BuildableName = "RNTemplateStaging.app"
-               BlueprintName = "RNTemplateStaging"
+               BlueprintName = "Staging"
                ReferencedContainer = "container:rntemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -64,7 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
             BuildableName = "RNTemplateStaging.app"
-            BlueprintName = "RNTemplateStaging"
+            BlueprintName = "Staging"
             ReferencedContainer = "container:rntemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72C7E06E25E5AB5600C8F72C"
             BuildableName = "RNTemplateStaging.app"
-            BlueprintName = "RNTemplateStaging"
+            BlueprintName = "Staging"
             ReferencedContainer = "container:rntemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

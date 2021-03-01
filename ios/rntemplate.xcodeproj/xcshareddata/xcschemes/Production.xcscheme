@@ -16,7 +16,7 @@
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                      BuildableName = "RNTemplate.app"
-                     BlueprintName = "RNTemplate"
+                     BlueprintName = "Production"
                      ReferencedContainer = "container:rntemplate.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "RNTemplate.app"
-               BlueprintName = "RNTemplate"
+               BlueprintName = "Production"
                ReferencedContainer = "container:rntemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -64,7 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "RNTemplate.app"
-            BlueprintName = "RNTemplate"
+            BlueprintName = "Production"
             ReferencedContainer = "container:rntemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "RNTemplate.app"
-            BlueprintName = "RNTemplate"
+            BlueprintName = "Production"
             ReferencedContainer = "container:rntemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
