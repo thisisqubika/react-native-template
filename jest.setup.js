@@ -1,6 +1,8 @@
 import { NativeModules } from 'react-native';
 
-NativeModules.ReactLocalization = { language: 'en' };
+NativeModules.ReactLocalization = {
+  language: 'en',
+};
 
 jest.mock('react-native-bootsplash', () => ({
   hide: jest.fn().mockResolvedValueOnce(),

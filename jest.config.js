@@ -6,6 +6,6 @@ module.exports = {
   ],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?react-native|@react-native-community|@react-navigation)',
+    'node_modules/(?!react-native|@react-native-community|@react-navigation)',
   ],
 };
