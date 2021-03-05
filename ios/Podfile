@@ -3,26 +3,28 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '12.0'
 
-abstract_target 'App' do
+abstract_target 'RNTemplate' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'RNTemplate' do
-    #Production-specific pods
+  target 'Production' do
+    # Production-specific pods
   end
 
-  target 'RNTemplateDevelopment' do
-    #Development-specific pods
+  target 'Development' do
+    # Development-specific pods
   end
 
-  target 'RNTemplateStaging' do
-    #Staging-specific pods
+  target 'Staging' do
+    # Staging-specific pods
   end
 
-  use_flipper!({'Flipper' => '0.76.0'})
+  if !ENV['CI']
+    use_flipper!({ 'Flipper' => '0.79.0' })
 
-  post_install do |installer|
-    flipper_post_install(installer)
+    post_install do |installer|
+      flipper_post_install(installer)
+    end
   end
 end
