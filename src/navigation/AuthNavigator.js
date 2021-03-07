@@ -5,7 +5,7 @@ import { Login } from '_screens';
 
 const Stack = createNativeStackNavigator();
 
-function AuthNavigator() {
+export function AuthNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -16,5 +16,3 @@ function AuthNavigator() {
     </Stack.Navigator>
   );
 }
-
-export default AuthNavigator;

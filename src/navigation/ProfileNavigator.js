@@ -5,7 +5,7 @@ import { Profile } from '_screens';
 
 const Stack = createNativeStackNavigator();
 
-function ProfileNavigator() {
+export function ProfileNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -16,5 +16,3 @@ function ProfileNavigator() {
     </Stack.Navigator>
   );
 }
-
-export default ProfileNavigator;

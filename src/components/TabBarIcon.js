@@ -10,7 +10,7 @@ const tabIcon = {
   [NAVIGATION.profile]: settingsIcon,
 };
 
-function TabBarIcon({ color, routeName }) {
+export function TabBarIcon({ color, routeName }) {
   return (
     <Image
       accessibilityIgnoresInvertColors
@@ -24,5 +24,3 @@ TabBarIcon.propTypes = {
   color: PropTypes.string.isRequired,
   routeName: PropTypes.string.isRequired,
 };
-
-export default TabBarIcon;

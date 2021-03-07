@@ -3,12 +3,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { Config } from 'react-native-config';
 import { useSelector } from 'react-redux';
-import strings from '_localization';
-import styles from '_screens/Home/Home.styles';
+import { strings } from '_localization';
+import { styles } from '_screens/Home/Home.styles';
 import { getUser } from '_selectors/UserSelectors';
 import { TextStyles } from '_theme';
 
-function Home() {
+export function Home() {
   const { colors } = useTheme();
   const user = useSelector(getUser);
 
@@ -23,5 +23,3 @@ function Home() {
     </View>
   );
 }
-
-export default Home;

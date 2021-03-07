@@ -3,12 +3,12 @@ import { hide } from 'react-native-bootsplash';
 import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import RootNavigator from '_navigation';
+import { RootNavigator } from '_navigation';
 import { persistor, store } from '_store';
 
 enableScreens();
 
-function App() {
+export function App() {
   const hideSplashScreen = async () => {
     await hide({ fade: true });
   };
@@ -21,5 +21,3 @@ function App() {
     </Provider>
   );
 }
-
-export default App;

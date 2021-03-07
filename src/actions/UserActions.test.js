@@ -14,7 +14,11 @@ const loginActions = [
   },
   {
     type: TYPES.LOGIN_SUCCESS,
-    payload: { user: { username: 'username' } },
+    payload: {
+      user: {
+        username: 'username',
+      },
+    },
   },
 ];
 

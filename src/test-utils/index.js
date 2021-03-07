@@ -1,2 +1,2 @@
-export { default as configureStore } from '_test-utils/configureStore';
-export { default as withProviders } from '_test-utils/render';
+export { configureStore } from '_test-utils/configureStore';
+export { withProviders } from '_test-utils/render';

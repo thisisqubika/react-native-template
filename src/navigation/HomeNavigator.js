@@ -5,12 +5,10 @@ import { Home } from '_screens';
 
 const Stack = createNativeStackNavigator();
 
-function HomeNavigator() {
+export function HomeNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name={NAVIGATION.home} component={Home} />
     </Stack.Navigator>
   );
 }
-
-export default HomeNavigator;

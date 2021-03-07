@@ -4,13 +4,13 @@ import { View } from 'react-native';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { login, TYPES } from '_actions/UserActions';
 import { Button, ErrorView, TextField } from '_components';
-import strings from '_localization';
-import styles from '_screens/Login/Login.styles';
-import errorsSelector from '_selectors/ErrorSelectors';
+import { strings } from '_localization';
+import { styles } from '_screens/Login/Login.styles';
+import { errorsSelector } from '_selectors/ErrorSelectors';
 import { isLoadingSelector } from '_selectors/StatusSelectors';
 import { ShadowStyles } from '_theme';
 
-function Login() {
+export function Login() {
   const { colors } = useTheme();
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
@@ -66,5 +66,3 @@ function Login() {
     </View>
   );
 }
-
-export default Login;

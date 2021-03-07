@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
  * generated with https://ethercreative.github.io/react-native-shadow-generator/
  * to get the same shadow on both platforms
  */
-const styles = StyleSheet.create({
+export const ShadowStyles = StyleSheet.create({
   shadow: {
     elevation: 5,
     shadowColor: '#000000',
@@ -16,5 +16,3 @@ const styles = StyleSheet.create({
     },
   },
 });
-
-export default styles;

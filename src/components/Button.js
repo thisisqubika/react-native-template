@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function Button({ style, textStyle, title, ...rest }) {
+export function Button({ style, textStyle, title, ...rest }) {
   const { colors } = useTheme();
 
   return (
@@ -40,5 +40,3 @@ Button.defaultProps = {
   style: null,
   textStyle: null,
 };
-
-export default Button;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Config } from 'react-native-config';
-import strings from '_localization';
+import { strings } from '_localization';
 
 const client = axios.create({
   baseURL: Config.API_BASE_URL,
@@ -30,4 +30,4 @@ const clearAuthorization = () => {
   delete client.defaults.headers.common.authorization;
 };
 
-export default { ...client, setAuthorization, clearAuthorization };
+export const HttpClient = { ...client, setAuthorization, clearAuthorization };

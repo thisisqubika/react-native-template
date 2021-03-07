@@ -3,7 +3,7 @@ import { STATUS } from '_constants';
 
 const { ERROR, LOADING, NOT_STARTED, SUCCESS } = STATUS;
 
-const statusReducer = (state = {}, { type }) => {
+export const statusReducer = (state = {}, { type }) => {
   if (type === TYPES.GLOBAL_RESET) {
     return {};
   }
@@ -40,5 +40,3 @@ const statusReducer = (state = {}, { type }) => {
 
   return state;
 };
-
-export default statusReducer;

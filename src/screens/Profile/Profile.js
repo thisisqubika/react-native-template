@@ -4,11 +4,11 @@ import { Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { logout } from '_actions/UserActions';
 import { Button } from '_components';
-import strings from '_localization';
-import styles from '_screens/Profile/Profile.styles';
+import { strings } from '_localization';
+import { styles } from '_screens/Profile/Profile.styles';
 import { TextStyles } from '_theme';
 
-function Profile() {
+export function Profile() {
   const { colors } = useTheme();
   const dispatch = useDispatch();
 
@@ -27,5 +27,3 @@ function Profile() {
     </View>
   );
 }
-
-export default Profile;

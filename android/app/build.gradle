@@ -177,18 +177,18 @@ android {
         }
     }
 
-    flavorDimensions "version"
+    flavorDimensions "environment"
 
     productFlavors {
         development {
-            dimension "version"
+            dimension "environment"
             applicationIdSuffix ".dev"
         }
         production {
-            dimension "version"
+            dimension "environment"
         }
         staging {
-            dimension "version"
+            dimension "environment"
             applicationIdSuffix '.staging'
         }
     }
