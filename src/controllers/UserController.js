@@ -1,4 +1,4 @@
-import { strings } from '_localization';
+import { strings } from '@/localization';
 
 export class UserController {
   static async login(username, password) {

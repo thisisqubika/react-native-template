@@ -1,4 +1,4 @@
-import { TYPES } from '_actions/UserActions';
+import { TYPES } from '@/actions/UserActions';
 
 export const userReducer = (state = {}, { payload, type }) => {
   switch (type) {

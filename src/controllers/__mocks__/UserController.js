@@ -1,4 +1,4 @@
-import { strings } from '_localization';
+import { strings } from '@/localization';
 
 export const UserController = {
   login: (username, password) => {

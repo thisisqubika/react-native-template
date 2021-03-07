@@ -1,11 +1,11 @@
 import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
-import { UserController } from '_controllers';
-import { strings } from '_localization';
-import { Profile } from '_screens/Profile/Profile';
-import { withProviders } from '_test-utils';
+import { UserController } from '@/controllers';
+import { strings } from '@/localization';
+import { Profile } from '@/screens/Profile/Profile';
+import { withProviders } from '@/test-utils';
 
-jest.mock('_controllers/UserController');
+jest.mock('@/controllers/UserController');
 
 describe('Profile', () => {
   it('should match the snapshot', () => {

@@ -2,10 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { useColorScheme } from 'react-native';
 import { useSelector } from 'react-redux';
-import { AppNavigator } from '_navigation/AppNavigator';
-import { AuthNavigator } from '_navigation/AuthNavigator';
-import { getUser } from '_selectors/UserSelectors';
-import { theme } from '_theme';
+import { AppNavigator } from '@/navigation/AppNavigator';
+import { AuthNavigator } from '@/navigation/AuthNavigator';
+import { getUser } from '@/selectors/UserSelectors';
+import { theme } from '@/theme';
 
 export function RootNavigator() {
   const user = useSelector(getUser);

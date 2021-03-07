@@ -3,10 +3,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { Config } from 'react-native-config';
 import { useSelector } from 'react-redux';
-import { strings } from '_localization';
-import { styles } from '_screens/Home/Home.styles';
-import { getUser } from '_selectors/UserSelectors';
-import { TextStyles } from '_theme';
+import { strings } from '@/localization';
+import { styles } from '@/screens/Home/Home.styles';
+import { getUser } from '@/selectors/UserSelectors';
+import { TextStyles } from '@/theme';
 
 export function Home() {
   const { colors } = useTheme();

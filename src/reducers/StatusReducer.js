@@ -1,5 +1,5 @@
-import { TYPES } from '_actions/GlobalActions';
-import { STATUS } from '_constants';
+import { TYPES } from '@/actions/GlobalActions';
+import { STATUS } from '@/constants';
 
 const { ERROR, LOADING, NOT_STARTED, SUCCESS } = STATUS;
 

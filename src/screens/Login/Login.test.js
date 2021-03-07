@@ -1,11 +1,11 @@
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import React from 'react';
-import { UserController } from '_controllers';
-import { strings } from '_localization';
-import { Login } from '_screens/Login/Login';
-import { withProviders } from '_test-utils';
+import { UserController } from '@/controllers';
+import { strings } from '@/localization';
+import { Login } from '@/screens/Login/Login';
+import { withProviders } from '@/test-utils';
 
-jest.mock('_controllers/UserController');
+jest.mock('@/controllers/UserController');
 
 describe('Login', () => {
   const fakeData = {

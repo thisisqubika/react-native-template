@@ -2,7 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { TextStyles } from '_theme';
+import { TextStyles } from '@/theme';
 
 const styles = StyleSheet.create({
   button: {

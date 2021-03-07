@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Image } from 'react-native';
-import homeIcon from '_assets/ic_home/ic_home.png';
-import settingsIcon from '_assets/ic_settings/ic_settings.png';
-import { NAVIGATION } from '_constants';
+import { homeIcon, settingsIcon } from '@/assets';
+import { NAVIGATION } from '@/constants';
 
 const tabIcon = {
   [NAVIGATION.home]: homeIcon,

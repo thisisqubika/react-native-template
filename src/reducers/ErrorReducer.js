@@ -1,4 +1,4 @@
-import { TYPES } from '_actions/GlobalActions';
+import { TYPES } from '@/actions/GlobalActions';
 
 export const errorReducer = (state = {}, { payload, type }) => {
   if (type === TYPES.GLOBAL_RESET) {

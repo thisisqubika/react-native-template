@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import { strings } from '_localization';
-import { Home } from '_screens/Home/Home';
-import { withProviders } from '_test-utils';
+import { strings } from '@/localization';
+import { Home } from '@/screens/Home/Home';
+import { withProviders } from '@/test-utils';
 
 const fakeStore = {
   error: {},

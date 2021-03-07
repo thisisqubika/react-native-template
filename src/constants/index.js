@@ -1,2 +1,2 @@
-export { NAVIGATION } from '_constants/navigation';
-export { STATUS } from '_constants/status';
+export { NAVIGATION } from '@/constants/navigation';
+export { STATUS } from '@/constants/status';

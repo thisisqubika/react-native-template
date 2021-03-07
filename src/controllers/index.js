@@ -1,2 +1,2 @@
-export { HttpClient } from '_controllers/HttpClient';
-export { UserController } from '_controllers/UserController';
+export { HttpClient } from '@/controllers/HttpClient';
+export { UserController } from '@/controllers/UserController';

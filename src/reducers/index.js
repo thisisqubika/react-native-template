@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { errorReducer } from '_reducers/ErrorReducer';
-import { statusReducer } from '_reducers/StatusReducer';
-import { userReducer } from '_reducers/UserReducer';
+import { errorReducer } from '@/reducers/ErrorReducer';
+import { statusReducer } from '@/reducers/StatusReducer';
+import { userReducer } from '@/reducers/UserReducer';
 
 export const rootReducer = combineReducers({
   error: errorReducer,

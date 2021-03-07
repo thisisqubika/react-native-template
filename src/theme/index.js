@@ -1,3 +1,3 @@
-export { ShadowStyles } from '_theme/ShadowStyles';
-export { TextStyles } from '_theme/TextStyles';
-export { theme } from '_theme/theme';
+export { ShadowStyles } from '@/theme/ShadowStyles';
+export { TextStyles } from '@/theme/TextStyles';
+export { theme } from '@/theme/theme';

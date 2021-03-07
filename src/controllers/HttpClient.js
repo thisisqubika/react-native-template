@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Config } from 'react-native-config';
-import { strings } from '_localization';
+import { strings } from '@/localization';
 
 const client = axios.create({
   baseURL: Config.API_BASE_URL,
