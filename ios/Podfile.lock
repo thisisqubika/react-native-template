@@ -241,7 +241,7 @@ PODS:
     - react-native-config/App (= 1.4.2)
   - react-native-config/App (1.4.2):
     - React-Core
-  - react-native-mmkv-storage (0.5.2):
+  - react-native-mmkv-storage (0.5.3):
     - MMKV (= 1.2.7)
     - React-Core
   - react-native-safe-area-context (3.2.0):
@@ -526,7 +526,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-config: c98128a72bc2c3a1ca72caec0b021f0fa944aa29
-  react-native-mmkv-storage: 363309242c9f068c2e667d190fba6401ef23b329
+  react-native-mmkv-storage: 21a24b5439231dad4f360713954ea22b566d990a
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
