@@ -18,9 +18,7 @@ export function Profile() {
 
   return (
     <View style={styles.container}>
-      <Text
-        style={[TextStyles.fieldTitle, styles.title, { color: colors.text }]}
-      >
+      <Text style={[TextStyles.title, styles.title, { color: colors.text }]}>
         {strings.profile.message}
       </Text>
       <Button title={strings.profile.logout} onPress={logoutUser} />

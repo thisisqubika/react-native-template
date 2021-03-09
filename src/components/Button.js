@@ -23,7 +23,7 @@ export function Button({ style, textStyle, title, ...rest }) {
       style={[styles.button, { borderColor: colors.border }, style]}
       {...rest}
     >
-      <Text style={[{ color: colors.text }, TextStyles.fieldTitle, textStyle]}>
+      <Text style={[{ color: colors.text }, TextStyles.label, textStyle]}>
         {title}
       </Text>
     </TouchableOpacity>

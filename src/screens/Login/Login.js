@@ -60,7 +60,7 @@ export function Login() {
         <Button
           onPress={handleSubmit}
           style={styles.submitButton}
-          title={isLoading ? strings.actions.loading : strings.login.button}
+          title={isLoading ? strings.common.loading : strings.login.button}
         />
       </View>
     </View>

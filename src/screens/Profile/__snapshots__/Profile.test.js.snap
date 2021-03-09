@@ -14,7 +14,7 @@ exports[`Profile should match the snapshot 1`] = `
     style={
       Array [
         Object {
-          "fontSize": 16,
+          "fontSize": 18,
           "fontWeight": "700",
         },
         Object {

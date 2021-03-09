@@ -15,7 +15,7 @@ client.interceptors.response.use(
     if (error.response) {
       return Promise.reject(error.response.data);
     } else if (error.request) {
-      return Promise.reject({ error: strings.network.connectionError });
+      return Promise.reject({ error: strings.common.connectionError });
     } else {
       return Promise.reject(error);
     }

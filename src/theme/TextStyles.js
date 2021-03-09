@@ -1,19 +1,20 @@
 import { StyleSheet } from 'react-native';
 
 export const TextStyles = StyleSheet.create({
-  lightTitle: {
+  title: {
     fontSize: 18,
     fontWeight: '700',
   },
-  textField: {
+  text: {
     fontSize: 16,
-    fontWeight: 'normal',
+    fontWeight: '400',
   },
-  fieldTitle: {
+  label: {
     fontSize: 16,
     fontWeight: '700',
   },
   error: {
     fontSize: 14,
+    fontWeight: '400',
   },
 });

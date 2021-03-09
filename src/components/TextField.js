@@ -17,12 +17,7 @@ export function TextField({ style, ...rest }) {
 
   return (
     <TextInput
-      style={[
-        { color: colors.text },
-        TextStyles.textField,
-        styles.input,
-        style,
-      ]}
+      style={[{ color: colors.text }, TextStyles.text, styles.input, style]}
       underlineColorAndroid="transparent"
       {...rest}
     />

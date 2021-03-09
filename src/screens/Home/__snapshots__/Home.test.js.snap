@@ -31,7 +31,7 @@ exports[`Home should match the snapshot 1`] = `
       Array [
         Object {
           "fontSize": 16,
-          "fontWeight": "normal",
+          "fontWeight": "400",
         },
         Object {
           "color": "rgb(28, 28, 30)",
