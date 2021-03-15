@@ -59,7 +59,7 @@ This template follows a very simple project structure:
   - `navigation`: Folder to store the navigators.
   - `reducers`: This folder should have all your reducers, and expose the combined result using its `index.js`
   - `screens`: Folder that contains all your application screens/features.
-      - `Screen`: Each screen should be stored inside it's own folder, and inside it a file for its code and a separate one for the styles and tests.
+      - `Screen`: Each screen should be stored inside its own folder, and inside it a file for its code and a separate one for the styles and tests.
         - `Screen.js`
         - `Screen.styles.js`
         - `Screen.test.js`
