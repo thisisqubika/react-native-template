@@ -9,13 +9,9 @@ import { RootNavigator } from '@/navigation';
 enableScreens();
 
 export function App() {
-  const hideSplashScreen = async () => {
-    await hide({ fade: true });
-  };
-
   return (
     <Provider store={store}>
-      <PersistGate onBeforeLift={hideSplashScreen} persistor={persistor}>
+      <PersistGate onBeforeLift={hide} persistor={persistor}>
         <RootNavigator />
       </PersistGate>
     </Provider>
