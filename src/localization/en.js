@@ -1,8 +1,6 @@
-export default {
-  actions: {
+export const en = {
+  common: {
     loading: 'Loading',
-  },
-  network: {
     connectionError: 'Connection error',
   },
   home: {

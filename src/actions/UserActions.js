@@ -1,4 +1,4 @@
-import { UserController } from '_controllers';
+import { UserController } from '@/controllers';
 
 export const TYPES = {
   CLEAR_STORE: 'CLEAR_STORE',

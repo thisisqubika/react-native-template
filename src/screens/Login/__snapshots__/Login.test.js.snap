@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "paddingHorizontal": 40,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+          "padding": 20,
+          "width": "100%",
+        },
+        Object {
+          "elevation": 5,
+          "shadowColor": "#000000",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.25,
+          "shadowRadius": 3.84,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 122, 255)",
+        },
+      ]
+    }
+  >
+    <TextInput
+      accessibilityHint="Enter your username"
+      accessibilityLabel="Username"
+      allowFontScaling={true}
+      autoCapitalize="none"
+      onChangeText={[Function]}
+      placeholder="Username"
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "color": "rgb(28, 28, 30)",
+          },
+          Object {
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {
+            "borderBottomWidth": 0.5,
+            "marginVertical": 15,
+            "paddingVertical": 5,
+          },
+          null,
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      accessibilityHint="Enter your password"
+      accessibilityLabel="Password"
+      allowFontScaling={true}
+      autoCapitalize="none"
+      onChangeText={[Function]}
+      placeholder="Password"
+      rejectResponderTermination={true}
+      secureTextEntry={true}
+      style={
+        Array [
+          Object {
+            "color": "rgb(28, 28, 30)",
+          },
+          Object {
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Object {
+            "borderBottomWidth": 0.5,
+            "marginVertical": 15,
+            "paddingVertical": 5,
+          },
+          null,
+        ]
+      }
+      textContentType="password"
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderColor": "rgb(216, 216, 216)",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "marginTop": 20,
+          "opacity": 1,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "rgb(28, 28, 30)",
+            },
+            Object {
+              "fontSize": 16,
+              "fontWeight": "700",
+            },
+            null,
+          ]
+        }
+      >
+        Login
+      </Text>
+    </View>
+  </View>
+</View>
+`;

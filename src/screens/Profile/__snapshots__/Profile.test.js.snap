@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "space-between",
+      "padding": 40,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 18,
+          "fontWeight": "700",
+        },
+        Object {
+          "textAlign": "center",
+        },
+        Object {
+          "color": "rgb(28, 28, 30)",
+        },
+      ]
+    }
+  >
+    This screen has the iOS native large header.
+  </Text>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderColor": "rgb(216, 216, 216)",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "justifyContent": "center",
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "rgb(28, 28, 30)",
+          },
+          Object {
+            "fontSize": 16,
+            "fontWeight": "700",
+          },
+          null,
+        ]
+      }
+    >
+      Logout
+    </Text>
+  </View>
+</View>
+`;

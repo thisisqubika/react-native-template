@@ -1,11 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import { NAVIGATION } from '_constants';
-import { Profile } from '_screens';
+import { NAVIGATION } from '@/constants';
+import { Profile } from '@/screens';
 
 const Stack = createNativeStackNavigator();
 
-function ProfileNavigator() {
+export function ProfileNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -16,5 +16,3 @@ function ProfileNavigator() {
     </Stack.Navigator>
   );
 }
-
-export default ProfileNavigator;

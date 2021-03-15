@@ -2,7 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { TextStyles } from '_theme';
+import { TextStyles } from '@/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function ErrorView({ errors }) {
+export function ErrorView({ errors }) {
   const { colors } = useTheme();
 
   if (errors.length === 0) {
@@ -32,5 +32,3 @@ function ErrorView({ errors }) {
 ErrorView.propTypes = {
   errors: PropTypes.array.isRequired,
 };
-
-export default ErrorView;

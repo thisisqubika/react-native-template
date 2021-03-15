@@ -1,4 +1,4 @@
-const errorsSelector = (actions, state) => {
+export const errorsSelector = (actions, state) => {
   return actions.reduce((prevState, value) => {
     const error = state.error[value];
 
@@ -9,5 +9,3 @@ const errorsSelector = (actions, state) => {
     return prevState;
   }, []);
 };
-
-export default errorsSelector;

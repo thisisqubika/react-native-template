@@ -1,14 +1,14 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from '@react-navigation/native';
 import React from 'react';
-import { TabBarIcon } from '_components';
-import { NAVIGATION } from '_constants';
-import HomeNavigator from '_navigation/HomeNavigator';
-import ProfileNavigator from '_navigation/ProfileNavigator';
+import { TabBarIcon } from '@/components';
+import { NAVIGATION } from '@/constants';
+import { HomeNavigator } from '@/navigation/HomeNavigator';
+import { ProfileNavigator } from '@/navigation/ProfileNavigator';
 
 const Tab = createBottomTabNavigator();
 
-function AppNavigator() {
+export function AppNavigator() {
   const { colors } = useTheme();
 
   return (
@@ -28,5 +28,3 @@ function AppNavigator() {
     </Tab.Navigator>
   );
 }
-
-export default AppNavigator;

@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { globalReset, TYPES } from '_actions/GlobalActions';
+import { globalReset, TYPES } from '@/actions/GlobalActions';
 
 const globalActions = [
   {

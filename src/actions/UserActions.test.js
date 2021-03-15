@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { login, logout, TYPES } from '_actions/UserActions';
+import { login, logout, TYPES } from '@/actions/UserActions';
 
 const user = {
   username: 'username',
@@ -14,7 +14,11 @@ const loginActions = [
   },
   {
     type: TYPES.LOGIN_SUCCESS,
-    payload: { user: { username: 'username' } },
+    payload: {
+      user: {
+        username: 'username',
+      },
+    },
   },
 ];
 

@@ -2,7 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
-import { TextStyles } from '_theme';
+import { TextStyles } from '@/theme';
 
 const styles = StyleSheet.create({
   input: {
@@ -12,17 +12,12 @@ const styles = StyleSheet.create({
   },
 });
 
-function TextField({ style, ...rest }) {
+export function TextField({ style, ...rest }) {
   const { colors } = useTheme();
 
   return (
     <TextInput
-      style={[
-        { color: colors.text },
-        TextStyles.textField,
-        styles.input,
-        style,
-      ]}
+      style={[{ color: colors.text }, TextStyles.text, styles.input, style]}
       underlineColorAndroid="transparent"
       {...rest}
     />
@@ -36,5 +31,3 @@ TextField.propTypes = {
 TextField.defaultProps = {
   style: null,
 };
-
-export default TextField;

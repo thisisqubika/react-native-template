@@ -1,6 +1,6 @@
-import strings from '_localization';
+import { strings } from '@/localization';
 
-class UserController {
+export class UserController {
   static async login(username, password) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -19,5 +19,3 @@ class UserController {
     });
   }
 }
-
-export default UserController;

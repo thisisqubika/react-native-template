@@ -2,7 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { TextStyles } from '_theme';
+import { TextStyles } from '@/theme';
 
 const styles = StyleSheet.create({
   button: {
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function Button({ style, textStyle, title, ...rest }) {
+export function Button({ style, textStyle, title, ...rest }) {
   const { colors } = useTheme();
 
   return (
@@ -23,7 +23,7 @@ function Button({ style, textStyle, title, ...rest }) {
       style={[styles.button, { borderColor: colors.border }, style]}
       {...rest}
     >
-      <Text style={[{ color: colors.text }, TextStyles.fieldTitle, textStyle]}>
+      <Text style={[{ color: colors.text }, TextStyles.label, textStyle]}>
         {title}
       </Text>
     </TouchableOpacity>
@@ -40,5 +40,3 @@ Button.defaultProps = {
   style: null,
   textStyle: null,
 };
-
-export default Button;

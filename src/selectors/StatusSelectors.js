@@ -1,4 +1,4 @@
-import { STATUS } from '_constants';
+import { STATUS } from '@/constants';
 
 const { ERROR, LOADING, NOT_STARTED, SUCCESS } = STATUS;
 

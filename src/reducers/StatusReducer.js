@@ -1,9 +1,9 @@
-import { TYPES } from '_actions/GlobalActions';
-import { STATUS } from '_constants';
+import { TYPES } from '@/actions/GlobalActions';
+import { STATUS } from '@/constants';
 
 const { ERROR, LOADING, NOT_STARTED, SUCCESS } = STATUS;
 
-const statusReducer = (state = {}, { type }) => {
+export const statusReducer = (state = {}, { type }) => {
   if (type === TYPES.GLOBAL_RESET) {
     return {};
   }
@@ -40,5 +40,3 @@ const statusReducer = (state = {}, { type }) => {
 
   return state;
 };
-
-export default statusReducer;

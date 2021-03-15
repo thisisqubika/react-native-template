@@ -1,6 +1,6 @@
-import { TYPES } from '_actions/GlobalActions';
+import { TYPES } from '@/actions/GlobalActions';
 
-const errorReducer = (state = {}, { payload, type }) => {
+export const errorReducer = (state = {}, { payload, type }) => {
   if (type === TYPES.GLOBAL_RESET) {
     return {};
   }
@@ -26,5 +26,3 @@ const errorReducer = (state = {}, { payload, type }) => {
 
   return state;
 };
-
-export default errorReducer;

@@ -1,4 +1,4 @@
-export default {
+export const STATUS = {
   ERROR: 'ERROR',
   LOADING: 'LOADING',
   NOT_STARTED: 'NOT_STARTED',

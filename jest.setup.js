@@ -4,6 +4,8 @@ NativeModules.ReactLocalization = {
   language: 'en',
 };
 
+require('./node_modules/react-native-reanimated/src/reanimated2/jestUtils').setUpTests();
+
 jest.mock('react-native-bootsplash', () => ({
   hide: jest.fn().mockResolvedValueOnce(),
   show: jest.fn().mockResolvedValueOnce(),
@@ -16,14 +18,6 @@ jest.mock('react-native-config', () => ({
     BUILD_VARIANT: 'TEST',
   },
 }));
-
-jest.mock('react-native-reanimated', () => {
-  const reanimatedMock = require('react-native-reanimated/mock');
-
-  reanimatedMock.useValue = val => new reanimatedMock.Value(val);
-
-  return reanimatedMock;
-});
 
 // Silence the warning: Animated: `useNativeDriver` is not supported
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');

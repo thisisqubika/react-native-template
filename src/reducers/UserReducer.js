@@ -1,6 +1,6 @@
-import { TYPES } from '_actions/UserActions';
+import { TYPES } from '@/actions/UserActions';
 
-const userReducer = (state = {}, { payload, type }) => {
+export const userReducer = (state = {}, { payload, type }) => {
   switch (type) {
     case TYPES.LOGIN_SUCCESS:
       return { ...state, ...payload.user };
@@ -10,5 +10,3 @@ const userReducer = (state = {}, { payload, type }) => {
       return state;
   }
 };
-
-export default userReducer;

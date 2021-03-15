@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import strings from '_localization';
-import Home from '_screens/Home';
-import { withProviders } from '_test-utils';
+import { strings } from '@/localization';
+import { Home } from '@/screens/Home/Home';
+import { withProviders } from '@/test-utils';
 
 const fakeStore = {
   error: {},
@@ -13,7 +13,13 @@ const fakeStore = {
 };
 
 describe('Home', () => {
-  test('should render a welcome message with the user name', () => {
+  it('should match the snapshot', () => {
+    const { toJSON } = render(withProviders(<Home />));
+
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  it('should render a welcome message with the user name', () => {
     const { getByText } = render(
       withProviders(<Home />, { initialState: fakeStore })
     );

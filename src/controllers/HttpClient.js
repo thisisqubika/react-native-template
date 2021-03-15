@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Config } from 'react-native-config';
-import strings from '_localization';
+import { strings } from '@/localization';
 
 const client = axios.create({
   baseURL: Config.API_BASE_URL,
@@ -15,7 +15,7 @@ client.interceptors.response.use(
     if (error.response) {
       return Promise.reject(error.response.data);
     } else if (error.request) {
-      return Promise.reject({ error: strings.network.connectionError });
+      return Promise.reject({ error: strings.common.connectionError });
     } else {
       return Promise.reject(error);
     }
@@ -30,4 +30,4 @@ const clearAuthorization = () => {
   delete client.defaults.headers.common.authorization;
 };
 
-export default { ...client, setAuthorization, clearAuthorization };
+export const HttpClient = { ...client, setAuthorization, clearAuthorization };

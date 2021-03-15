@@ -1,3 +1,3 @@
-export { default as Home } from '_screens/Home';
-export { default as Login } from '_screens/Login';
-export { default as Profile } from '_screens/Profile';
+export { Home } from '@/screens/Home/Home';
+export { Login } from '@/screens/Login/Login';
+export { Profile } from '@/screens/Profile/Profile';
