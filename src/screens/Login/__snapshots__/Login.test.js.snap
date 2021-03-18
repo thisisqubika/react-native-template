@@ -16,7 +16,7 @@ exports[`Login should match the snapshot 1`] = `
       Array [
         Object {
           "borderRadius": 5,
-          "padding": 20,
+          "padding": 16,
           "width": "100%",
         },
         Object {
@@ -54,8 +54,8 @@ exports[`Login should match the snapshot 1`] = `
           },
           Object {
             "borderBottomWidth": 0.5,
-            "marginVertical": 15,
-            "paddingVertical": 5,
+            "marginVertical": 16,
+            "padding": 8,
           },
           null,
         ]
@@ -83,8 +83,8 @@ exports[`Login should match the snapshot 1`] = `
           },
           Object {
             "borderBottomWidth": 0.5,
-            "marginVertical": 15,
-            "paddingVertical": 5,
+            "marginVertical": 16,
+            "padding": 8,
           },
           null,
         ]
@@ -110,7 +110,7 @@ exports[`Login should match the snapshot 1`] = `
           "borderRadius": 5,
           "borderWidth": 1,
           "justifyContent": "center",
-          "marginTop": 20,
+          "marginTop": 24,
           "opacity": 1,
           "padding": 10,
           "width": "100%",

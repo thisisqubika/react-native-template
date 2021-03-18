@@ -6,7 +6,7 @@ import { logout } from '@/actions/UserActions';
 import { Button } from '@/components';
 import { strings } from '@/localization';
 import { styles } from '@/screens/Profile/Profile.styles';
-import { TextStyles } from '@/theme';
+import { typography } from '@/theme';
 
 export function Profile() {
   const { colors } = useTheme();
@@ -18,7 +18,7 @@ export function Profile() {
 
   return (
     <View style={styles.container}>
-      <Text style={[TextStyles.title, styles.title, { color: colors.text }]}>
+      <Text style={[typography.title, styles.title, { color: colors.text }]}>
         {strings.profile.message}
       </Text>
       <Button title={strings.profile.logout} onPress={logoutUser} />

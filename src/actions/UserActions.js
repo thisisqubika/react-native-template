@@ -13,14 +13,14 @@ const loginRequest = () => ({
   payload: null,
 });
 
-const loginError = error => ({
-  type: TYPES.LOGIN_ERROR,
-  payload: { error },
-});
-
-const loginSuccess = user => ({
+const loginSuccess = (user) => ({
   type: TYPES.LOGIN_SUCCESS,
   payload: { user },
+});
+
+const loginError = (error) => ({
+  type: TYPES.LOGIN_ERROR,
+  payload: { error },
 });
 
 const clearStore = () => ({
@@ -28,7 +28,7 @@ const clearStore = () => ({
   payload: null,
 });
 
-export const login = (username, password) => async dispatch => {
+export const login = (username, password) => async (dispatch) => {
   dispatch(loginRequest());
   try {
     const user = await UserController.login(username, password);
@@ -38,7 +38,7 @@ export const login = (username, password) => async dispatch => {
   }
 };
 
-export const logout = () => async dispatch => {
+export const logout = () => async (dispatch) => {
   try {
     await UserController.logout();
   } finally {

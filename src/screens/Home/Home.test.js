@@ -14,15 +14,13 @@ const fakeStore = {
 
 describe('Home', () => {
   it('should match the snapshot', () => {
-    const { toJSON } = render(withProviders(<Home />));
+    const { toJSON } = render(withProviders(<Home />, { initialState: fakeStore }));
 
     expect(toJSON()).toMatchSnapshot();
   });
 
   it('should render a welcome message with the user name', () => {
-    const { getByText } = render(
-      withProviders(<Home />, { initialState: fakeStore })
-    );
+    const { getByText } = render(withProviders(<Home />, { initialState: fakeStore }));
 
     expect(getByText(`${strings.home.message} johndoe`)).toBeTruthy();
   });
