@@ -35,64 +35,96 @@ exports[`Login should match the snapshot 1`] = `
       ]
     }
   >
-    <TextInput
-      accessibilityHint="Enter your username"
-      accessibilityLabel="Username"
-      allowFontScaling={true}
-      autoCapitalize="none"
-      onChangeText={[Function]}
-      placeholder="Username"
-      rejectResponderTermination={true}
+    <View
       style={
-        Array [
-          Object {
-            "color": "rgb(28, 28, 30)",
-          },
-          Object {
-            "fontSize": 16,
-            "fontWeight": "400",
-          },
-          Object {
-            "borderBottomWidth": 0.5,
-            "marginVertical": 16,
-            "padding": 8,
-          },
-          null,
-        ]
+        Object {
+          "borderBottomWidth": 0.5,
+          "marginBottom": 16,
+          "paddingBottom": 8,
+          "paddingTop": 24,
+        }
       }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <TextInput
-      accessibilityHint="Enter your password"
-      accessibilityLabel="Password"
-      allowFontScaling={true}
-      autoCapitalize="none"
-      onChangeText={[Function]}
-      placeholder="Password"
-      rejectResponderTermination={true}
-      secureTextEntry={true}
+    >
+      <Text
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "color": "gray",
+              "left": 8,
+              "position": "absolute",
+              "top": 0,
+            },
+            [MockFunction],
+          ]
+        }
+      >
+        Username
+      </Text>
+      <TextInput
+        accessibilityHint="Enter your username"
+        accessibilityLabel="Username"
+        allowFontScaling={true}
+        autoCapitalize="none"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "paddingHorizontal": 8,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+    <View
       style={
-        Array [
-          Object {
-            "color": "rgb(28, 28, 30)",
-          },
-          Object {
-            "fontSize": 16,
-            "fontWeight": "400",
-          },
-          Object {
-            "borderBottomWidth": 0.5,
-            "marginVertical": 16,
-            "padding": 8,
-          },
-          null,
-        ]
+        Object {
+          "borderBottomWidth": 0.5,
+          "marginBottom": 16,
+          "paddingBottom": 8,
+          "paddingTop": 24,
+        }
       }
-      textContentType="password"
-      underlineColorAndroid="transparent"
-      value=""
-    />
+    >
+      <Text
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "color": "gray",
+              "left": 8,
+              "position": "absolute",
+              "top": 0,
+            },
+            [MockFunction],
+          ]
+        }
+      >
+        Password
+      </Text>
+      <TextInput
+        accessibilityHint="Enter your password"
+        accessibilityLabel="Password"
+        allowFontScaling={true}
+        autoCapitalize="none"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        rejectResponderTermination={true}
+        secureTextEntry={true}
+        style={
+          Object {
+            "paddingHorizontal": 8,
+          }
+        }
+        textContentType="password"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
     <View
       accessible={true}
       focusable={true}

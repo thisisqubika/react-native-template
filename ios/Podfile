@@ -24,7 +24,7 @@ abstract_target 'RNTemplate' do
   end
 
   if !ENV['CI']
-    use_flipper!({ 'Flipper' => '0.80.0' })
+    use_flipper!('Flipper' => '0.87.0')
   end
 
   post_install do |installer|
