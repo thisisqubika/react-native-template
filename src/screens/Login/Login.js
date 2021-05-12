@@ -8,22 +8,15 @@ import { strings } from '@/localization';
 import { styles } from '@/screens/Login/Login.styles';
 import { errorsSelector } from '@/selectors/ErrorSelectors';
 import { isLoadingSelector } from '@/selectors/StatusSelectors';
-import { ShadowStyles } from '@/theme';
+import { shadow } from '@/theme';
 
 export function Login() {
   const { colors } = useTheme();
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const isLoading = useSelector(state =>
-    isLoadingSelector([TYPES.LOGIN], state)
-  );
-
-  const errors = useSelector(
-    state => errorsSelector([TYPES.LOGIN], state),
-    shallowEqual
-  );
+  const errors = useSelector((state) => errorsSelector([TYPES.LOGIN], state), shallowEqual);
+  const isLoading = useSelector((state) => isLoadingSelector([TYPES.LOGIN], state));
 
   const handleSubmit = () => {
     dispatch(login(username, password));
@@ -31,13 +24,7 @@ export function Login() {
 
   return (
     <View style={styles.container}>
-      <View
-        style={[
-          styles.formContainer,
-          ShadowStyles.shadow,
-          { backgroundColor: colors.primary },
-        ]}
-      >
+      <View style={[styles.formContainer, shadow.primary, { backgroundColor: colors.primary }]}>
         <TextField
           autoCapitalize="none"
           accessibilityHint={strings.login.usernameHint}

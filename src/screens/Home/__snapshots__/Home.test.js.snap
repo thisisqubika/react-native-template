@@ -25,6 +25,7 @@ exports[`Home should match the snapshot 1`] = `
   >
     Welcome
      
+    johndoe
   </Text>
   <Text
     style={

@@ -1,18 +1,19 @@
 import { StyleSheet } from 'react-native';
+import { spacing } from '@/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: spacing.xl,
   },
   formContainer: {
     borderRadius: 5,
-    padding: 20,
+    padding: spacing.s,
     width: '100%',
   },
   submitButton: {
-    marginTop: 20,
+    marginTop: spacing.m,
   },
 });

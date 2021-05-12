@@ -10,19 +10,19 @@ const client = axios.create({
 });
 
 client.interceptors.response.use(
-  response => response.data,
-  error => {
+  (response) => response.data,
+  (error) => {
     if (error.response) {
       return Promise.reject(error.response.data);
     } else if (error.request) {
-      return Promise.reject({ error: strings.common.connectionError });
+      return Promise.reject(new Error(strings.common.connectionError));
     } else {
       return Promise.reject(error);
     }
   }
 );
 
-const setAuthorization = token => {
+const setAuthorization = (token) => {
   client.defaults.headers.common.authorization = token;
 };
 

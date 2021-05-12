@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { spacing } from '@/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    padding: 40,
+    padding: spacing.xl,
   },
   title: {
     textAlign: 'center',
