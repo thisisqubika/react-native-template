@@ -124,17 +124,17 @@ For coding styling we decided to go with ESLint and [React Native community's st
 
 # How to use it
 
-The idea of this section is to explain how the template composition is the best and easiest to use when you try to use well formed arquitectures, especially using redux flow.
+The idea of this section is to explain how the template composition is the best and easiest to use when you try to use well-formed, arquitectures, especially using redux flow.
 
 The template follows a simple and convenient exporting pattern. The folder index exposes the resources, allowing to import all from the same path.
 
-With that in mind we are going to look at each folder to explain how to use it.
+With that in mind, we are going to look at each folder to explain how to use it.
 
 ## Components
 
 Components are the basic blocks of a react native application, but since we​​ aim to minimize development complexity, all the components are at the same nesting level.
 
-Another important thing is the use of propTypes to check the kind of data that your components need to work properly. If the component receives some data from others, the type of this props must be defined and in case you need it the default value of the property too.
+Another important thing is the use of propTypes to check the kind of data that your components need to work properly. If the component receives some data from others, the type of these props must be defined and in case you need it the default value of the property too.
 
 ### Static resources:
 
@@ -142,13 +142,13 @@ To keep an application scalable and organized, the global static resources that 
 
 ### We manage three main folders for that:
 
-- Assets: Here you can store all the images and icons that you need through the app. You have as example the icon ic_home.png, to respond with the different device screen densities just create inside the same folder the image and all the scaled versions that you need. RN only handles x1, x2 and x3, in this case you have.
+- Assets: Here you can store all the images and icons that you need through the app. You have as an example the icon ic_home.png, to respond with the different device screen densities just create inside the same folder the image and all the scaled versions that you need. RN only handles x1, x2 and x3, in this case you have.
 
   - assets
     - ic_home
-    - ic_home.png
-    - ic_home@2x.png
-    - ic_home@3x.png
+      - ic_home.png
+      - ic_home@2x.png
+      - ic_home@3x.png
 
 - Localization: This folder contains all the locale objects that you need to create a multilingual application. Create a file for each locale, inside define an object then maintain the nesting sorted by the screen that contains the text that you need and the text you want to show. As the last step, remember to create a reference inside the Localization.js file and add it to LocalizedStrings.
 - Theme: Here you can define all the styles that you use in different screens. To make easier the interaction of the application with device options as example you can create here assets as light and dark color palette
@@ -159,11 +159,11 @@ Once the components are defined, they are tied to the management of information 
 
 ### Controllers folder and API connection handler
 
-In order to keep logic simple to connect to the different APIs, the template uses a single axios instance in the httpClient.js. That allows us to create interceptors to define behaviors according to the responses of the service in only one part of the application.
+To keep the networking layer simple, the template uses a single Axios instance in the `httpClient.js`. It uses interceptors to define common side effects for the responses.
 
-When you need communication with a service you have to create an async function to manage the operation and grouping according to the kind of transaction inside a controller file, please keep all of those inside the controllers folder.
+When you need communication with a service you have to create a function to manage the operation and grouping according to the kind of transaction inside a controller file, please keep all of those inside the controllers's folder.
 
-While the data transfer between the API and the app is working you must use the success and error actions that help you to catch the result of the operation. With this method you can see the hold process through the redux store. This is useful because you can create behaviours based on those states in a quick and simple way
+While the data transfer between the API and the app is working you must use the success and error actions that help you to catch the result of the operation. With this method you can track the interaction trough the redux store. This is useful because you can create behaviours based on those states in a quick and simple way
 
 ### Redux folders
 There are 4 folders that divide the redux work
