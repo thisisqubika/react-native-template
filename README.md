@@ -45,6 +45,7 @@ Keep in mind that this library can cause trouble if you are renaming a project t
 After that you should proceed as with any javascript project:
 
 - Go to your project's root folder and run `npm install`.
+- If you are using xcode 12.5 or higher got to /ios and execute `pod install --repo-update`
 - Run `npm run ios` or `npm run android` to start your application!
 
 ### Option 2: Copy the structure to your project
@@ -115,15 +116,15 @@ For coding styling we decided to go with ESLint and [React Native community's st
 
 # How to use it
 
-The idea of this section is to explain how the template composition is better and easier to use when you try to use well formed arquitectures, especially using redux flow.
+The idea of this section is to explain how the template composition is the best and easiest to use when you try to use well formed arquitectures, especially using redux flow.
 
-First keep in mind that you will see the same way of classification in multiple places of the app. Different resources orchestrated by an index.js that allow you to call it as a single instance. This structure lets you use a simple way to import things.
+The template follows a simple and convenient exporting pattern. The folder index exposes the resources, allowing to import all from the same path.
 
 With that in mind we are going to look at each folder to explain how to use it.
 
 ## Components
 
-The components are the basic structure of an application in react native, but specifically for this template the idea of ​​keeping the complexity of the development to a minimum, for this the ideal is that all the components are at the same nesting folder level. A component is only created if a specific view or functionality is being worked on or if the same object is to be reused in multiple parts of the application.
+Components are the basic blocks of a react native application, but since we​​ aim to minimize development complexity, all the components are at the same nesting level.
 
 Another important thing is the use of propTypes to check the kind of data that your components need to work properly. If the component receives some data from others, the type of this props must be defined and in case you need it the default value of the property too.
 
@@ -133,18 +134,20 @@ To keep an application scalable and organized, the global static resources that 
 
 ### We manage three main folders for that:
 
-- Assets: Here you can store all the images and icons that you need through the app. You have as example the icon ic_home.png, to respond with the different device screen densities just create inside the same folder the image and all the scaled versions that you need.
-- Localization: This folder contains all the language objects that you need to create a multilingual application. Create a file for each language, inside define an object and maintain the nesting sorted by the screen that contains the text that you need and the text you want to show. As the last step, remember to create a reference inside the Localization.js file and add to LocalizedStrings.
+- Assets: Here you can store all the images and icons that you need through the app. You have as example the icon ic_home.png, to respond with the different device screen densities just create inside the same folder the image and all the scaled versions that you need. RN only handles x1, x2 and x3, in this case you have.
+
+  - assets
+    - ic_home
+    - ic_home.png
+    - ic_home@2x.png
+    - ic_home@3x.png
+
+- Localization: This folder contains all the locale objects that you need to create a multilingual application. Create a file for each locale, inside define an object then maintain the nesting sorted by the screen that contains the text that you need and the text you want to show. As the last step, remember to create a reference inside the Localization.js file and add it to LocalizedStrings.
 - Theme: Here you can define all the styles that you use in different screens. To make easier the interaction of the application with device options as example you can create here assets as light and dark color palette
 
 ## Redux
 
 Once the components are defined, they are tied to the management of information through the application. For this, Redux is implemented with the store-reducer-action structure as usual, however, not only the data is handled through the actions but the success and error responses are also defined by the same form.
-
-The template uses hooks for communication with the redux store. In that way it has two scenarios.
-
-- When you need to call an action you have to create an useDispatch function that lets you interact with the store.
-- To see what’s inside the store you should create a useSelector to extract specific info from the general store.
 
 ### Controllers folder and API connection handler
 
