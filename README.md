@@ -46,9 +46,9 @@ After that you should proceed as with any javascript project:
 
 - Go to your project's root folder and run `npm install`.
 - If you are using xcode 12.5 or higher got to /ios and execute `pod install --repo-update`
-- Run `npm run ios:development` or `npm run android:development` to start your application!
+- Run `npm run ios` or `npm run android` to start your application!
 
-(Using yarn: `yarn ios:development` or `yarn android:development`)
+(Using yarn: `yarn ios` or `yarn android`)
 
 Note: Please read the Setup environments section that is below in this file for more information about the excecution scripts.
 
@@ -92,7 +92,15 @@ To customize the splash screen (logo and background color) use the CLI provided 
 
 ### Using scripts from console
 
-The template allready has scripts to excecute the project calling an especific environment defined into the package.json file. Keep in mind that if you are going to create new `envs` you have to define the script to build the project propertly.
+The template already has scripts to execute the project calling a specific environment defined into the package.json file. Keep in mind that if you are going to create new `envs` you have to define the script to build the project properly.
+
+To define which env you want to use, just keep the structure ´yarn [platform]: [environment]´
+
+    DEV:  ´yarn ios o yarn android´
+    STG: ´yarn ios:staging o yarn android:staging´
+    PROD:  ´yarn ios:prod o yarn android:prod´
+
+or using npm: ´npm run ios:staging´
 
 Modify the environment variables files in root folder (`.env.development`, `.env.production` and `.env.staging`)
 
