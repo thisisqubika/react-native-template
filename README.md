@@ -46,7 +46,11 @@ After that you should proceed as with any javascript project:
 
 - Go to your project's root folder and run `npm install`.
 - If you are using xcode 12.5 or higher got to /ios and execute `pod install --repo-update`
-- Run `npm run ios` or `npm run android` to start your application!
+- Run `npm run ios:development` or `npm run android:development` to start your application!
+
+(Using yarn: `yarn ios:development` or `yarn android:development`)
+
+Note: Please read the Setup environments section that is below in this file for more information about the excecution scripts.
 
 ### Option 2: Copy the structure to your project
 
@@ -85,6 +89,10 @@ This template follows a very simple project structure:
 To customize the splash screen (logo and background color) use the CLI provided in the [official docs](https://github.com/zoontek/react-native-bootsplash#assets-generation).
 
 ## Setup environments
+
+### Using scripts from console
+
+The template allready has scripts to excecute the project calling an especific environment defined into the package.json file. Keep in mind that if you are going to create new `envs` you have to define the script to build the project propertly.
 
 Modify the environment variables files in root folder (`.env.development`, `.env.production` and `.env.staging`)
 
