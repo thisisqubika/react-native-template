@@ -128,7 +128,7 @@ Expand the "Build" settings on left
 
 ## Generate production version
 
-These are the steps to generate the .apk and .ipa files
+These are the steps to generate `.apk`, `.aab` and `.ipa` files
 
 ### Android
 
@@ -179,11 +179,11 @@ To keep an application scalable and organized, the global static resources that 
 
 - Assets: Here you can store all the images and icons that you need through the app. You have as an example the icon ic_home.png, to respond with the different device screen densities just create inside the same folder the image and all the scaled versions that you need. RN only handles x1, x2 and x3 in this case, you have.
 
-- assets
-- ic_home
-- ic_home.png
-- ic_home@2x.png
-- ic_home@3x.png
+  - assets
+    - ic_home
+      - ic_home.png
+      - ic_home@2x.png
+      - ic_home@3x.png
 
 - Localization: This folder contains all the locale objects that you need to create a multilingual application. Create a file for each locale, inside define an object then maintain the nesting sorted by the screen that contains the text that you need and the text you want to show. As the last step, remember to create a reference inside the Localization.js file and add it to LocalizedStrings.
 - Theme: Here you can define all the styles that you use on different screens. To make easier the interaction of the application with device options for example you can create here assets as light and dark color palette
