@@ -94,15 +94,19 @@ To customize the splash screen (logo and background color) use the CLI provided 
 
 The template already has scripts to execute the project calling a specific environment defined into the package.json file. Keep in mind that if you are going to create new `envs` you have to define the script to build the project properly.
 
-To define which env you want to use, just keep the structure ´yarn [platform]: [environment]´
+To define which env you want to use, just keep the structure `yarn [platform]: [environment]`
 
-DEV: ´yarn ios o yarn android´
-STG: ´yarn ios:staging o yarn android:staging´
-PROD: ´yarn ios:prod o yarn android:prod´
 
-or using npm: ´npm run ios:staging´
+DEV: `yarn ios` or `yarn android`
+
+STG: `yarn ios:staging` or `yarn android:staging`
+
+PROD: `yarn ios:prod` o `yarn android:prod`
+
+Also, you can use npm following the same rule as before: `npm run ios:staging`
 
 Modify the environment variables files in root folder (`.env.development`, `.env.production` and `.env.staging`)
+
 
 #### Android
 
@@ -121,10 +125,13 @@ To create a new scheme:
 - Give it a proper name on the top left. For instance: "qa"
 - Then edit the newly created scheme to make it use a different env file. From the same "manage scheme" window:
 
-Expand the "Build" settings on left
+  Expand the "Build" tab on the left menu
+  - Click "Pre-actions", and under the plus sign select "New Run Script Action"
+  - Where it says "Type a script or drag a script file", type: `echo ".env.qa" > /tmp/envfile` replacing `.env.qa` with your file.
+- Also, you will need to select the executable for the new schema:
 
-- Click "Pre-actions", and under the plus sign select "New Run Script Action"
-- Where it says "Type a script or drag a script file", type: `echo ".env.qa" > /tmp/envfile` replacing `.env.qa` with your file.
+  Expand the "Run" tab on the left menu
+  - Under the "Executable" dropdown select the ".app" you would like to use for that schema
 
 ## Generate production version
 
