@@ -46,17 +46,45 @@ exports[`Login should match the snapshot 1`] = `
       }
     >
       <Text
+        animatedStyle={
+          Object {
+            "value": Object {
+              "opacity": 1,
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+                Object {
+                  "translateX": -0,
+                },
+                Object {
+                  "translateY": 24,
+                },
+              ],
+            },
+          }
+        }
+        collapsable={false}
         onLayout={[Function]}
         style={
-          Array [
-            Object {
-              "color": "gray",
-              "left": 8,
-              "position": "absolute",
-              "top": 0,
-            },
-            [MockFunction],
-          ]
+          Object {
+            "color": "gray",
+            "left": 8,
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": -0,
+              },
+              Object {
+                "translateY": 24,
+              },
+            ],
+          }
         }
       >
         Username
@@ -90,17 +118,45 @@ exports[`Login should match the snapshot 1`] = `
       }
     >
       <Text
+        animatedStyle={
+          Object {
+            "value": Object {
+              "opacity": 1,
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+                Object {
+                  "translateX": -0,
+                },
+                Object {
+                  "translateY": 24,
+                },
+              ],
+            },
+          }
+        }
+        collapsable={false}
         onLayout={[Function]}
         style={
-          Array [
-            Object {
-              "color": "gray",
-              "left": 8,
-              "position": "absolute",
-              "top": 0,
-            },
-            [MockFunction],
-          ]
+          Object {
+            "color": "gray",
+            "left": 8,
+            "opacity": 1,
+            "position": "absolute",
+            "top": 0,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+              Object {
+                "translateX": -0,
+              },
+              Object {
+                "translateY": 24,
+              },
+            ],
+          }
         }
       >
         Password

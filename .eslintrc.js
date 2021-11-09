@@ -16,6 +16,7 @@ module.exports = {
     'testing-library/await-async-utils': 'error',
     'testing-library/no-await-sync-events': 'error',
     'testing-library/no-await-sync-query': 'error',
+    'testing-library/no-unnecessary-act': 'error',
     'testing-library/no-wait-for-empty-callback': 'error',
     'testing-library/no-wait-for-multiple-assertions': 'error',
     'testing-library/no-wait-for-snapshot': 'error',

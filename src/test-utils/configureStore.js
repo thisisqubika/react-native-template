@@ -4,6 +4,14 @@ import { rootReducer } from '@/reducers';
 
 const initialStore = { error: {}, status: {}, user: {} };
 
-export function configureStore(initialState = initialStore) {
-  return createStore(rootReducer, initialState, applyMiddleware(thunk));
+export function configureStore({
+  initialState = initialStore,
+  demoMode = false,
+  networkService = {},
+}) {
+  return createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(thunk.withExtraArgument({ networkService, demoMode }))
+  );
 }
