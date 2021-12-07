@@ -15,7 +15,7 @@ describe('Login', () => {
     expect(toJSON()).toMatchSnapshot();
   });
 
-  it('should make the request with credentials are valid', async () => {
+  it('should make the request with valid credentials', async () => {
     const loginSpy = jest.spyOn(UserActions, 'login');
 
     const { getByHintText, getByText } = render(
