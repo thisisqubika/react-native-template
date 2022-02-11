@@ -37,7 +37,7 @@
     "react-native-config": "^1.4.5",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-localization": "^2.1.7",
-    "react-native-reanimated": "^2.2.4",
+    "react-native-reanimated": "^2.4.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.0",
     "react-redux": "^7.2.6",
