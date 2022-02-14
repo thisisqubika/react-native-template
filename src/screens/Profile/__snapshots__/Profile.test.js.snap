@@ -30,6 +30,7 @@ exports[`Profile should match the snapshot 1`] = `
   </Text>
   <View
     accessible={true}
+    collapsable={false}
     focusable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}

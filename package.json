@@ -20,6 +20,7 @@
     "clean": "watchman watch-del-all && rm -rf package-lock.json && rm -rf node_modules && npm install",
     "start": "react-native start",
     "test": "jest --watchAll",
+    "coverage": "jest --coverage",
     "test:ci": "jest",
     "lint": "eslint ."
   },
@@ -31,12 +32,12 @@
     "axios": "^0.24.0",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
-    "react-native": "0.64.1",
+    "react-native": "0.67.2",
     "react-native-bootsplash": "^3.2.6",
     "react-native-config": "^1.4.5",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-localization": "^2.1.7",
-    "react-native-reanimated": "^2.2.4",
+    "react-native-reanimated": "^2.4.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.0",
     "react-redux": "^7.2.6",
@@ -64,5 +65,12 @@
     "metro-react-native-babel-preset": "^0.66.2",
     "react-test-renderer": "17.0.2",
     "redux-mock-store": "^1.5.4"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
 }

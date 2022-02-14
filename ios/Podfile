@@ -24,10 +24,11 @@ abstract_target 'RNTemplate' do
   end
 
   if !ENV['CI']
-    use_flipper!('Flipper' => '0.87.0')
+    use_flipper!({ 'Flipper' => '0.132.0' })
   end
 
   post_install do |installer|
     react_native_post_install(installer)
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
