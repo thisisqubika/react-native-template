@@ -14,12 +14,11 @@ export function AppNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarActiveTintColor: colors.activeTab,
+        tabBarInactiveTintColor: colors.inactiveTab,
         tabBarIcon: ({ color }) => <TabBarIcon color={color} routeName={route.name} />,
       })}
-      tabBarOptions={{
-        activeTintColor: colors.activeTab,
-        inactiveTintColor: colors.inactiveTab,
-      }}
     >
       <Tab.Screen name={NAVIGATION.home} component={HomeNavigator} />
       <Tab.Screen name={NAVIGATION.profile} component={ProfileNavigator} />
