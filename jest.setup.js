@@ -9,7 +9,6 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 jest.mock('react-native-bootsplash', () => ({
   hide: jest.fn().mockResolvedValueOnce(),
-  show: jest.fn().mockResolvedValueOnce(),
   getVisibilityStatus: jest.fn().mockResolvedValue('hidden'),
 }));
 
