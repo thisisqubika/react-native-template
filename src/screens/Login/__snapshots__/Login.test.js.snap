@@ -3,7 +3,7 @@
 exports[`Login should match the snapshot 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "flex": 1,
       "justifyContent": "center",
@@ -13,23 +13,23 @@ exports[`Login should match the snapshot 1`] = `
 >
   <View
     style={
-      Array [
-        Object {
+      [
+        {
           "borderRadius": 5,
           "padding": 16,
           "width": "100%",
         },
-        Object {
+        {
           "elevation": 5,
           "shadowColor": "#000000",
-          "shadowOffset": Object {
+          "shadowOffset": {
             "height": 2,
             "width": 0,
           },
           "shadowOpacity": 0.25,
           "shadowRadius": 3.84,
         },
-        Object {
+        {
           "backgroundColor": "rgb(0, 122, 255)",
         },
       ]
@@ -37,7 +37,7 @@ exports[`Login should match the snapshot 1`] = `
   >
     <View
       style={
-        Object {
+        {
           "borderBottomWidth": 0.5,
           "marginBottom": 16,
           "paddingBottom": 8,
@@ -46,45 +46,30 @@ exports[`Login should match the snapshot 1`] = `
       }
     >
       <Text
-        animatedStyle={
-          Object {
-            "value": Object {
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "color": "gray",
+              "left": 8,
+              "position": "absolute",
+              "top": 0,
+            },
+            {
               "opacity": 1,
-              "transform": Array [
-                Object {
+              "transform": [
+                {
                   "scale": 1,
                 },
-                Object {
+                {
                   "translateX": -0,
                 },
-                Object {
+                {
                   "translateY": 24,
                 },
               ],
             },
-          }
-        }
-        collapsable={false}
-        onLayout={[Function]}
-        style={
-          Object {
-            "color": "gray",
-            "left": 8,
-            "opacity": 1,
-            "position": "absolute",
-            "top": 0,
-            "transform": Array [
-              Object {
-                "scale": 1,
-              },
-              Object {
-                "translateX": -0,
-              },
-              Object {
-                "translateY": 24,
-              },
-            ],
-          }
+          ]
         }
       >
         Username
@@ -97,7 +82,7 @@ exports[`Login should match the snapshot 1`] = `
         onChangeText={[Function]}
         onFocus={[Function]}
         style={
-          Object {
+          {
             "paddingHorizontal": 8,
           }
         }
@@ -106,7 +91,7 @@ exports[`Login should match the snapshot 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "borderBottomWidth": 0.5,
           "marginBottom": 16,
           "paddingBottom": 8,
@@ -115,45 +100,30 @@ exports[`Login should match the snapshot 1`] = `
       }
     >
       <Text
-        animatedStyle={
-          Object {
-            "value": Object {
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "color": "gray",
+              "left": 8,
+              "position": "absolute",
+              "top": 0,
+            },
+            {
               "opacity": 1,
-              "transform": Array [
-                Object {
+              "transform": [
+                {
                   "scale": 1,
                 },
-                Object {
+                {
                   "translateX": -0,
                 },
-                Object {
+                {
                   "translateY": 24,
                 },
               ],
             },
-          }
-        }
-        collapsable={false}
-        onLayout={[Function]}
-        style={
-          Object {
-            "color": "gray",
-            "left": 8,
-            "opacity": 1,
-            "position": "absolute",
-            "top": 0,
-            "transform": Array [
-              Object {
-                "scale": 1,
-              },
-              Object {
-                "translateX": -0,
-              },
-              Object {
-                "translateY": 24,
-              },
-            ],
-          }
+          ]
         }
       >
         Password
@@ -167,7 +137,7 @@ exports[`Login should match the snapshot 1`] = `
         onFocus={[Function]}
         secureTextEntry={true}
         style={
-          Object {
+          {
             "paddingHorizontal": 8,
           }
         }
@@ -187,7 +157,7 @@ exports[`Login should match the snapshot 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Object {
+        {
           "alignItems": "center",
           "borderColor": "rgb(216, 216, 216)",
           "borderRadius": 5,
@@ -202,11 +172,11 @@ exports[`Login should match the snapshot 1`] = `
     >
       <Text
         style={
-          Array [
-            Object {
+          [
+            {
               "color": "rgb(28, 28, 30)",
             },
-            Object {
+            {
               "fontSize": 16,
               "fontWeight": "700",
             },

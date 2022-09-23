@@ -3,7 +3,7 @@
 exports[`Profile should match the snapshot 1`] = `
 <View
   style={
-    Object {
+    {
       "flex": 1,
       "justifyContent": "space-between",
       "padding": 40,
@@ -12,15 +12,15 @@ exports[`Profile should match the snapshot 1`] = `
 >
   <Text
     style={
-      Array [
-        Object {
+      [
+        {
           "fontSize": 18,
           "fontWeight": "700",
         },
-        Object {
+        {
           "textAlign": "center",
         },
-        Object {
+        {
           "color": "rgb(28, 28, 30)",
         },
       ]
@@ -40,7 +40,7 @@ exports[`Profile should match the snapshot 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "alignItems": "center",
         "borderColor": "rgb(216, 216, 216)",
         "borderRadius": 5,
@@ -54,11 +54,11 @@ exports[`Profile should match the snapshot 1`] = `
   >
     <Text
       style={
-        Array [
-          Object {
+        [
+          {
             "color": "rgb(28, 28, 30)",
           },
-          Object {
+          {
             "fontSize": 16,
             "fontWeight": "700",
           },
