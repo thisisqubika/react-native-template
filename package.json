@@ -59,6 +59,7 @@
     "eslint-import-resolver-babel-module": "5.3.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-module-resolver": "^1.4.0",
+    "eslint-plugin-react-native": "^4.0.0",
     "eslint-plugin-react-native-a11y": "^3.2.1",
     "eslint-plugin-testing-library": "^5.0.5",
     "jest": "^27.5.1",
