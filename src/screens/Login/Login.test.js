@@ -6,6 +6,8 @@ import { mockLoginNetworkService } from '@/mocks';
 import { Login } from '@/screens/Login/Login';
 import { withProviders } from '@/test-utils';
 
+jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'));
+
 describe('Login', () => {
   it('should match the snapshot', () => {
     const { toJSON } = render(
