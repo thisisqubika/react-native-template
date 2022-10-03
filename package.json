@@ -66,5 +66,8 @@
     "metro-react-native-babel-preset": "^0.72.1",
     "react-test-renderer": "18.1.0",
     "redux-mock-store": "^1.5.4"
+  },
+  "resolutions": {
+    "**/pretty-format": "25.1.0"
   }
 }
