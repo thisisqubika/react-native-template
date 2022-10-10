@@ -27,7 +27,7 @@ public class MainActivity extends ReactActivity {
         return new ReactActivityDelegate(this, getMainComponentName()) {
             @Override
             protected void loadApp(String appKey) {
-                RNBootSplash.init(MainActivity.this);
+                RNBootSplash.init(R.drawable.bootsplash, MainActivity.this);
                 super.loadApp(appKey);
             }
         };
