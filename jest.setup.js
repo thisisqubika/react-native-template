@@ -3,7 +3,7 @@ import { NativeModules } from 'react-native';
 
 NativeModules.ReactLocalization = { language: 'en' };
 
-require('react-native-reanimated/lib/reanimated2/jestUtils').setUpTests();
+jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'));
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
