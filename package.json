@@ -13,8 +13,8 @@
   "scripts": {
     "postinstall": "npx pod-install",
     "android": "react-native run-android --variant=developmentDebug --appIdSuffix=dev",
-    "android:prod": "react-native run-android --variant=productionDebug --appIdSuffix=staging",
-    "android:staging": "react-native run-android --variant=stagingDebug",
+    "android:prod": "react-native run-android --variant=productionDebug",
+    "android:staging": "react-native run-android --variant=stagingDebug --appIdSuffix=staging",
     "ios": "react-native run-ios --scheme 'Development'",
     "ios:prod": "react-native run-ios --scheme 'Production'",
     "ios:staging": "react-native run-ios --scheme 'Staging'",
