@@ -17,11 +17,13 @@ jobs:
   lint:
     executor: node/default
     steps:
+      - node/install-packages:
+          pkg-manager: yarn
       - attach_workspace:
           at: .
       - run:
           name: Run linter
-          command: npm run lint
+          command: yarn lint
 
   test:
     executor: node/default
@@ -30,7 +32,7 @@ jobs:
           at: .
       - run:
           name: Run tests
-          command: npm run test:ci
+          command: yarn test:ci
 
 workflows:
   lint-and-test:
