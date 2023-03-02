@@ -2,7 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import React from 'react';
 import { Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { logout } from '@/actions/UserActions';
+import { logout } from '@/features/user/userSlice';
 import { Button } from '@/components';
 import { strings } from '@/localization';
 import { styles } from '@/screens/Profile/Profile.styles';

@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { Config } from 'react-native-config';
 import { useSelector } from 'react-redux';
 import { strings } from '@/localization';
-import { getUser } from '@/selectors/UserSelectors';
+import { getUser } from '@/features/user/userSlice';
 import { styles } from '@/screens/Home/Home.styles';
 import { typography } from '@/theme';
 

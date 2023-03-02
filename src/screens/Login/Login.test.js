@@ -1,6 +1,5 @@
 import { fireEvent, render, waitForElementToBeRemoved } from '@testing-library/react-native';
 import React from 'react';
-import * as UserActions from '@/actions/UserActions';
 import { strings } from '@/localization';
 import { mockLoginNetworkService } from '@/mocks';
 import { Login } from '@/screens/Login/Login';
@@ -16,8 +15,7 @@ describe('Login', () => {
   });
 
   it('should make the request with valid credentials', async () => {
-    const loginSpy = jest.spyOn(UserActions, 'login');
-
+    const loginSpy = jest.spyOn(mockLoginNetworkService, 'request');
     const { getByHintText, getByText } = render(
       withProviders(<Login />, { networkService: mockLoginNetworkService })
     );
@@ -30,14 +28,12 @@ describe('Login', () => {
     fireEvent.changeText(passwordInput, 'password');
     fireEvent.press(submitButton);
 
-    expect(loginSpy).toHaveBeenCalledWith('username', 'password');
-
     await waitForElementToBeRemoved(() => getByText(strings.common.loading));
 
-    loginSpy.mockRestore();
+    expect(loginSpy).toHaveBeenCalled();
   });
 
-  it('should show an error with invalid credentials', () => {
+  it('should show an error with invalid credentials', async () => {
     const { getByHintText, getByText } = render(
       withProviders(<Login />, { networkService: mockLoginNetworkService })
     );
@@ -49,6 +45,8 @@ describe('Login', () => {
     fireEvent.changeText(usernameInput, 'username');
     fireEvent.changeText(passwordInput, 'invalidPassword');
     fireEvent.press(submitButton);
+
+    await waitForElementToBeRemoved(() => getByText(strings.common.loading));
 
     expect(getByText(strings.login.invalidCredentials)).toBeTruthy();
   });

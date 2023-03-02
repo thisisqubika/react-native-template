@@ -32,6 +32,7 @@
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
+    "@reduxjs/toolkit": "^1.9.3",
     "axios": "^0.26.0",
     "prop-types": "^15.8.1",
     "react": "18.1.0",
@@ -70,7 +71,9 @@
     "metro-react-native-babel-preset": "^0.72.3",
     "prettier": "^2.8.1",
     "react-native-codegen": "^0.0.18",
+    "react-native-flipper": "^0.182.0",
     "react-test-renderer": "18.1.0",
+    "redux-flipper": "^2.0.2",
     "redux-mock-store": "^1.5.4"
   }
 }

@@ -3,12 +3,15 @@ import React from 'react';
 import { strings } from '@/localization';
 import { Home } from '@/screens/Home/Home';
 import { withProviders } from '@/test-utils';
+import { STATUS } from '@/constants';
 
 const fakeStore = {
-  error: {},
-  status: {},
   user: {
-    username: 'johndoe',
+    user: {
+      username: 'johndoe',
+    },
+    status: STATUS.SUCCESS,
+    error: null,
   },
 };
 

@@ -11,24 +11,20 @@ const styles = StyleSheet.create({
   },
 });
 
-export function ErrorView({ errors }) {
+export function ErrorView({ error }) {
   const { colors } = useTheme();
 
-  if (errors.length === 0) {
+  if (error === null) {
     return null;
   }
 
   return (
     <View style={styles.container}>
-      {errors.map((error) => (
-        <Text key={error} style={[typography.error, { color: colors.error }]}>
-          {error}
-        </Text>
-      ))}
+      <Text style={[typography.error, { color: colors.error }]}>{error}</Text>
     </View>
   );
 }
 
 ErrorView.propTypes = {
-  errors: PropTypes.array.isRequired,
+  error: PropTypes.string,
 };

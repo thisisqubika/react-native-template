@@ -1,13 +1,11 @@
 import { useTheme } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { login, TYPES } from '@/actions/UserActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserError, getUserIsLoading, login } from '@/features/user/userSlice';
 import { Button, ErrorView, TextField } from '@/components';
 import { strings } from '@/localization';
 import { styles } from '@/screens/Login/Login.styles';
-import { errorsSelector } from '@/selectors/ErrorSelectors';
-import { isLoadingSelector } from '@/selectors/StatusSelectors';
 import { shadow } from '@/theme';
 
 export function Login() {
@@ -15,11 +13,11 @@ export function Login() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const errors = useSelector((state) => errorsSelector([TYPES.LOGIN], state), shallowEqual);
-  const isLoading = useSelector((state) => isLoadingSelector([TYPES.LOGIN], state));
+  const error = useSelector(getUserError);
+  const isLoading = useSelector(getUserIsLoading);
 
   const handleSubmit = () => {
-    dispatch(login(username, password));
+    dispatch(login({ username, password }));
   };
 
   return (
@@ -43,7 +41,7 @@ export function Login() {
           textContentType="password"
           value={password}
         />
-        <ErrorView errors={errors} />
+        <ErrorView error={error} />
         <Button
           onPress={handleSubmit}
           style={styles.submitButton}

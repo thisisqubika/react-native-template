@@ -1,2 +1,2 @@
-export { configureStore } from '@/test-utils/configureStore';
+export { setupStore } from '@/test-utils/setupStore';
 export { withProviders } from '@/test-utils/render';
