@@ -32,7 +32,7 @@
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
-    "axios": "^0.26.0",
+    "axios": "^0.28.0",
     "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-native": "0.70.8",
